@@ -1,2 +1,2 @@
 # COCS345
-COSC354 Project
+COSC345 Project
