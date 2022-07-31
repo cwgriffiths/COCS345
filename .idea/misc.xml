@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/layout/activity_main.xml" value="0.2692502532928065" />
-        <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.5441025641025641" />
+        <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/layout/fragment_home.xml" value="0.3109375" />
+        <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/layout/fragment_meal_planner.xml" value="0.3109375" />
+        <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/layout/fragment_recipie.xml" value="0.3038949275362319" />
+        <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/layout/fragment_shopping_list.xml" value="0.3109375" />
+        <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.33" />
         <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/menu/menu_main.xml" value="0.5441025641025641" />
       </map>
     </option>
