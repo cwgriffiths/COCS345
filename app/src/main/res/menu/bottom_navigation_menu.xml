@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/shoppingList"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/ic_baseline_list_24"
         android:title="@string/shopping_list"/>
     <item
         android:id="@+id/recipes"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/ic_chef_hat_svgrepo_com"
         android:title="@string/recipes"/>
     <item
         android:id="@+id/mealPlanner"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
         android:title="@string/meal_planner"/>
 </menu>
