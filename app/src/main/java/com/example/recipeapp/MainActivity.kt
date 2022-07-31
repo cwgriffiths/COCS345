@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
 
         // Set default fragment
-        setFragment(shoppingListFragment)
+        setFragment(recipeFragment)
+        navBar.menu.findItem(R.id.recipes).setChecked(true)
 
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
