@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val toolbar = findViewById<Toolbar>(R.id.materialToolbar)
         setSupportActionBar(toolbar)
 
@@ -21,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
         val recipeFragment = Recipe()
-
-
         // Set default fragment
         setFragment(recipeFragment)
         navBar.menu.findItem(R.id.recipes).setChecked(true)
