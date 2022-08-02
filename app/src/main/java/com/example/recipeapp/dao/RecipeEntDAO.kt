@@ -15,7 +15,7 @@ interface RecipeEntDAO {
     fun getRecipes() : List<RecipeEnt>
 
     @Insert
-    fun insertRecipe(recipe: Recipe)
+    fun insertRecipe(recipe: RecipeEnt)
 
 
 }

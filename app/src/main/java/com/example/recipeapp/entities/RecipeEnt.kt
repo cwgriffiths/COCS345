@@ -10,8 +10,8 @@ data class RecipeEnt(
     @ColumnInfo(name = "title") val name: String,
     //Regions 1-7 represent the 7 continents
     @ColumnInfo(name = "region") val region: Int,
-    @ColumnInfo(name = "ingredients") val ingredients: ArrayList<String>,
-    @ColumnInfo(name = "method") val method: ArrayList<String>,
+    @ColumnInfo(name = "ingredients") val ingredients: String,
+    @ColumnInfo(name = "method") val method: String,
     @ColumnInfo(name = "extra_info") val extra: String,
     @ColumnInfo(name = "servings") val servings: Int
 )

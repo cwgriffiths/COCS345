@@ -17,7 +17,7 @@ class RecipeViewModel(application: Application): AndroidViewModel(application) {
         readAllData = repository.getAllRecipes
     }
 
-    fun addRecipe(recipe: Recipe) {
+    fun addRecipe(recipe: RecipeEnt) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertRecipe(recipe)
         }
