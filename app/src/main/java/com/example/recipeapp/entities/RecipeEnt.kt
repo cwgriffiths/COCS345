@@ -13,6 +13,5 @@ data class RecipeEnt(
     @ColumnInfo(name = "region") val region: Int,
     @ColumnInfo(name = "ingredients") val ingredients: String,
     @ColumnInfo(name = "method") val method: String,
-    @ColumnInfo(name = "extra_info") val extra: String,
     @ColumnInfo(name = "servings") val servings: Int
 )

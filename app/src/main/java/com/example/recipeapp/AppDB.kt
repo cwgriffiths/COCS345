@@ -11,10 +11,21 @@ import com.example.recipeapp.entities.RecipeEnt
 abstract class AppDB : RoomDatabase() {
     abstract fun recipeDAO(): RecipeEntDAO
 
+
+    /**
+     * The only instance of the database. Implementing Singleton pattern.
+     * Checks if the database is null, if the database is null creates new
+     * database from assets folder.
+     */
     companion object {
         @Volatile
         private var INSTANCE: AppDB? = null
 
+        /**
+         * Returns the only instance of the database.
+         * @param context The context of the application.
+         * @return The only instance of the database.
+         */
         fun getInstance(context: Context): AppDB {
             synchronized(this) {
                 var instance = INSTANCE
@@ -24,7 +35,7 @@ abstract class AppDB : RoomDatabase() {
                         context.applicationContext,
                         AppDB::class.java,
                         "recipe_database"
-                    ).createFromAsset("/database/recipe_table.db").build()
+                    ).createFromAsset("database/recipe_table.db").allowMainThreadQueries().build()
                     INSTANCE = instance
                 }
                 return instance
