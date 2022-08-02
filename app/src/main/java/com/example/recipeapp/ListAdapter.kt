@@ -9,17 +9,15 @@ import com.example.recipeapp.entities.RecipeEnt
 
 class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
-    private var _binding: RecipeRowBinding? = null
-    private val binding get() = _binding!!
 
     private var recipeList = emptyList<RecipeEnt>()
 
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {}
+    class MyViewHolder(binding: RecipeRowBinding): RecyclerView.ViewHolder(binding.root) {}
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        _binding = RecipeRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(binding.root)
+        val binding = RecipeRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MyViewHolder(binding)
     }
 
 
