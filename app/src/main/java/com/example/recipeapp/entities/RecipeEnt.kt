@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 data class RecipeEnt(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "title") val name: String,
+    @ColumnInfo(name = "description") val description: String,
     //Regions 1-7 represent the 7 continents
     @ColumnInfo(name = "region") val region: Int,
     @ColumnInfo(name = "ingredients") val ingredients: String,

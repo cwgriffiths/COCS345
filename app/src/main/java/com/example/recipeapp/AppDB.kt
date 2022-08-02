@@ -24,7 +24,7 @@ abstract class AppDB : RoomDatabase() {
                         context.applicationContext,
                         AppDB::class.java,
                         "recipe_database"
-                    ).build()
+                    ).createFromAsset("/database/recipe_table.db").build()
                     INSTANCE = instance
                 }
                 return instance
