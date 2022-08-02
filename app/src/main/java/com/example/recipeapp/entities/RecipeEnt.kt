@@ -1,16 +1,17 @@
 package com.example.recipeapp.entities
 
-import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "recipe_table")
 data class RecipeEnt(
-    @PrimaryKey val id: Int,
-    @ColumnInfo(name = "country") val country: String,
-    @ColumnInfo(name = "ingredients") val ingredients: String,
-    @ColumnInfo(name = "method") val method: String,
+    @PrimaryKey(autoGenerate = true) val id: Int,
+    @ColumnInfo(name = "title") val name: String,
+    //Regions 1-7 represent the 7 continents
+    @ColumnInfo(name = "region") val region: Int,
+    @ColumnInfo(name = "ingredients") val ingredients: ArrayList<String>,
+    @ColumnInfo(name = "method") val method: ArrayList<String>,
     @ColumnInfo(name = "extra_info") val extra: String,
-    @ColumnInfo(name = "servings") val servings: String
+    @ColumnInfo(name = "servings") val servings: Int
 )
