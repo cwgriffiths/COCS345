@@ -9,20 +9,24 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var toolbar: Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val toolbar = findViewById<Toolbar>(R.id.materialToolbar)
+        toolbar = findViewById(R.id.materialToolbar)
         setSupportActionBar(toolbar)
-
         val navBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
         val recipeFragment = Recipe()
+
+
         // Set default fragment
         setFragment(recipeFragment)
-        navBar.menu.findItem(R.id.recipes).setChecked(true)
+        navBar.menu.findItem(R.id.recipes).isChecked = true
 
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
@@ -33,8 +37,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -47,6 +49,7 @@ class MainActivity : AppCompatActivity() {
      * @param fragment The fragment to set as the current one.
      */
     private fun setFragment(fragment: Fragment) {
+        toolbar.setTitle(fragment.toString())
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
