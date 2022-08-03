@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="350"
+        android:layout_width="350dp"
         android:layout_height="50dp">
 
     </RelativeLayout>
