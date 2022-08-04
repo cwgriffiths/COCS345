@@ -7,14 +7,6 @@
     tools:context=".ShoppingList">
 
 
-    <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="350dp"
-        android:layout_height="50dp">
-
-    </RelativeLayout>
-
-
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
@@ -24,10 +16,10 @@
         android:text="Shopping List"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
@@ -44,14 +36,6 @@
         tools:layout_editor_absoluteY="667dp" />
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="61dp"
-        android:layout_height="73dp"
-        android:text="+"
-        tools:layout_editor_absoluteX="350dp"
-        tools:layout_editor_absoluteY="-8dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="550dp"
@@ -66,7 +50,8 @@
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#42f587" />
+            android:background="" />
+
     </LinearLayout>
 
 
@@ -78,6 +63,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="61dp"
+        android:layout_height="73dp"
+        android:text="+"
+        tools:layout_editor_absoluteX="331dp"
+        tools:layout_editor_absoluteY="8dp" />
 
 
     <![CDATA[
