@@ -5,24 +5,28 @@ import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.recipeapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        toolbar = findViewById(R.id.materialToolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        toolbar = binding.materialToolbar
         setSupportActionBar(toolbar)
-        val navBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val navBar = binding.bottomNavigation
 
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
         val recipeFragment = Recipe()
-
 
         // Set default fragment
         setFragment(recipeFragment)
@@ -48,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     /**Set the current fragment to the one passed in.
      * @param fragment The fragment to set as the current one.
      */
-    fun setFragment(fragment: Fragment) {
+    private fun setFragment(fragment: Fragment) {
         toolbar.title = fragment.toString()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
