@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
      * @param fragment The fragment to set as the current one.
      */
     private fun setFragment(fragment: Fragment) {
-        toolbar.setTitle(fragment.toString())
+        toolbar.title = fragment.toString()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()

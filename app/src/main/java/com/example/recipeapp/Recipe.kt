@@ -38,4 +38,12 @@ class Recipe:Fragment(){
         return view
     }
 
+    /**
+     * Returns this instance as a string
+     * Used to set the title of the view
+     */
+    override fun toString(): String {
+        return "Recipeeees"
+    }
+
 }
