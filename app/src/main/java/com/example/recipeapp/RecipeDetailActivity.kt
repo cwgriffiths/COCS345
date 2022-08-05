@@ -35,9 +35,9 @@ class RecipeDetailActivity() : AppCompatActivity() {
      * Take a comma separated string and return a string formatted with bullet points and new lines
      */
     private fun commaStringToList(s: String): Spannable {
-        var st = s.replace(".", ",")
+       // var st = s.replace(".", ",")
         val builder = SpannableStringBuilder()
-        val ingredients = st.split(",")
+        val ingredients = s.split("\\")
         for (ingredient in ingredients){
             if(ingredient.trim().isNotEmpty()) {
                 builder.append(
