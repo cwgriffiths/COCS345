@@ -1,25 +1,39 @@
 package com.example.recipeapp
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.RecipeRowBinding
 import com.example.recipeapp.entities.RecipeEnt
 
-class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class ListAdapter(private val listener: OnItemClickListener): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
 
     private var recipeList = emptyList<RecipeEnt>()
+    //private var listener: OnItemClickListener;
 
-    inner class MyViewHolder(val binding: RecipeRowBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class MyViewHolder(val binding: RecipeRowBinding, private val onClickListener: OnItemClickListener): RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+        init {
+            binding.root.setOnClickListener(this)
+        }
+        override fun onClick(v: View?) {
+            val recipe = recipeList[adapterPosition]
+            onClickListener.onItemClick(recipe)
+        }
     }
+
+    interface OnItemClickListener {
+        fun onItemClick(recipe: RecipeEnt)
+    }
+
 
     /**
      * Creates and returns a new ViewHolder object with a reference to the view binding
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = RecipeRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(binding)
+        return MyViewHolder(binding, listener)
     }
 
 

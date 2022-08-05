@@ -5,24 +5,32 @@ import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.recipeapp.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var toolbar: Toolbar
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val toolbar = findViewById<Toolbar>(R.id.materialToolbar)
-        setSupportActionBar(toolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val navBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        toolbar = binding.materialToolbar
+        setSupportActionBar(toolbar)
+        val navBar = binding.bottomNavigation
 
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
         val recipeFragment = Recipe()
+
         // Set default fragment
         setFragment(recipeFragment)
-        navBar.menu.findItem(R.id.recipes).setChecked(true)
+        navBar.menu.findItem(R.id.recipes).isChecked = true
 
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
@@ -33,13 +41,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
@@ -47,6 +52,7 @@ class MainActivity : AppCompatActivity() {
      * @param fragment The fragment to set as the current one.
      */
     private fun setFragment(fragment: Fragment) {
+        toolbar.title = fragment.toString()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
