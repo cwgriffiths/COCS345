@@ -28,18 +28,21 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingTop="10dp"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            >
 
             <TextView
                 android:id="@+id/serves_txt"
@@ -47,7 +50,8 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 app:layout_constraintStart_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/method_txt" />
+                app:layout_constraintTop_toBottomOf="@id/method_txt"
+                />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -64,15 +68,17 @@
 
             <TextView
                 android:id="@+id/title_txt"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
+                android:textAlignment="center"
                 android:text="TextView"
                 android:textSize="40sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                />
 
             <TextView
                 android:id="@+id/method_txt"
