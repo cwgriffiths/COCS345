@@ -12,6 +12,7 @@ data class RecipeEnt(
     @ColumnInfo(name = "title") val name: String,
     @ColumnInfo(name = "description") val description: String,
     //Regions 1-7 represent the 7 continents
+    // 1= north america, 2 = south america, 3 = africa , 4 = europe, 5= Asia, 6 = oceanania, 7 = antaric
     @ColumnInfo(name = "region") val region: Int,
     @ColumnInfo(name = "ingredients") val ingredients: String,
     @ColumnInfo(name = "method") val method: String,
