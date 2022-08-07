@@ -4,16 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShoppingList">
+    android:background="@color/cardview_dark_background">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Meal Planner"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="409dp"
+            android:layout_height="630dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="100dp">
+
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="2dp"
+                android:text="Monday"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tuesday"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="2dp"
+                android:text="Tuesday"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Wednesday"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="2dp"
+                android:text="Wednesday"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Thursday"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="2dp"
+                android:text="Thursday"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Friday"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="2dp"
+                android:text="Friday"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/Saturday"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="2dp"
+                android:text="Saturday"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/Sunday"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginTop="2dp"
+                android:text="Sunday"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
