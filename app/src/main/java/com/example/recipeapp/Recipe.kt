@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.entities.RecipeEnt
+import com.example.recipeapp.entities.ShoppingItemEnt
 
 class Recipe:Fragment(), ListAdapter.OnItemClickListener {
 
@@ -35,9 +36,10 @@ class Recipe:Fragment(), ListAdapter.OnItemClickListener {
 
         //Try reading the data from the database
         recipes = AppDB.getInstance(view.context).recipeDAO().getRecipes()
+        var testList = AppDB.getInstance(view.context).shoppingItemDAO().getShoppingList()
         adapter.setRecipeList(recipes)
         //Set the adapter on the recycler view
-
+//        var items = AppDB.getInstance(view.context).shoppingItemDAO().addItem(ShoppingItemEnt(item="Apples",amount=2, metric = "kg", checked = false, id = 12))
 
         return view
     }

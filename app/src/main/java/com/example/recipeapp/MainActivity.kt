@@ -5,7 +5,9 @@ import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.recipeapp.dao.ShoppingItemEntDAO
 import com.example.recipeapp.databinding.ActivityMainBinding
+import com.example.recipeapp.entities.ShoppingItemEnt
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -13,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
     private lateinit var binding: ActivityMainBinding
+    private var db: AppDB? = null
+    private var itemDAO: ShoppingItemEntDAO? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
         val recipeFragment = Recipe()
-
         // Set default fragment
         setFragment(recipeFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
