@@ -16,6 +16,6 @@ interface ShoppingItemEntDAO {
     @Insert
     fun addItem(item : ShoppingItemEnt)
 
-    @Query("UPDATE item_table SET checked = 1 WHERE id = (:id)")
-    fun checkItem(id : Int)
+    @Query("UPDATE item_table SET checked = (:check) WHERE id = (:id)")
+    fun checkItem(id : Int, check : Boolean)
 }
