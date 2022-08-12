@@ -11,6 +11,9 @@ import com.example.recipeapp.fragments.Recipe
 import com.example.recipeapp.fragments.ShoppingList
 import com.example.recipeapp.databinding.ActivityMainBinding
 
+/**
+ * @author Conor Griffiths
+ */
 
 class MainActivity : AppCompatActivity() {
 

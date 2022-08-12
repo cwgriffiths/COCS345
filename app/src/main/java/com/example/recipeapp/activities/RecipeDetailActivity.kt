@@ -11,6 +11,10 @@ import com.example.recipeapp.R
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
 import com.example.recipeapp.entities.RecipeEnt
 
+/**
+ * @author Conor Griffiths
+ */
+
 class RecipeDetailActivity() : AppCompatActivity() {
 
     private lateinit var recipe: RecipeEnt
