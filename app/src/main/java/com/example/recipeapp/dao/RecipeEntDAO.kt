@@ -3,7 +3,6 @@ package com.example.recipeapp.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.recipeapp.Recipe
 import com.example.recipeapp.entities.RecipeEnt
 
 @Dao

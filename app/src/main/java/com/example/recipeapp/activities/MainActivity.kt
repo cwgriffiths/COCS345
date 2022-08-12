@@ -1,13 +1,15 @@
-package com.example.recipeapp
+package com.example.recipeapp.activities
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.recipeapp.fragments.MealPlanner
+import com.example.recipeapp.R
+import com.example.recipeapp.fragments.Recipe
+import com.example.recipeapp.fragments.ShoppingList
 import com.example.recipeapp.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,9 +37,9 @@ class MainActivity : AppCompatActivity() {
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.shoppingList->setFragment(shoppingListFragment)
-                R.id.recipes->setFragment(recipeFragment)
-                R.id.mealPlanner->setFragment(mealPlannerFragment)
+                R.id.shoppingList ->setFragment(shoppingListFragment)
+                R.id.recipes ->setFragment(recipeFragment)
+                R.id.mealPlanner ->setFragment(mealPlannerFragment)
             }
             true
         }
