@@ -37,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         setFragment(recipeFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
 
+        RecipeFilter.setup(this.applicationContext)
+        RecipeFilter.test()
+
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
             when(it.itemId){
