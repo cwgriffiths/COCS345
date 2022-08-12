@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.activities
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.text.*
 import android.text.style.BulletSpan
 import android.view.Menu
 import androidx.core.text.toSpannable
+import com.example.recipeapp.R
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
 import com.example.recipeapp.entities.RecipeEnt
 
