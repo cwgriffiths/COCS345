@@ -9,7 +9,7 @@ import com.example.recipeapp.dao.ShoppingItemEntDAO
 import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.entities.ShoppingItemEnt
 
-@Database(entities = [RecipeEnt::class,ShoppingItemEnt::class], version = 1, exportSchema = true)
+@Database(entities = [RecipeEnt::class,ShoppingItemEnt::class], version = 1, exportSchema = false)
 
 abstract class AppDB : RoomDatabase() {
     abstract fun recipeDAO(): RecipeEntDAO
