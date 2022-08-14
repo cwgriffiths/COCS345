@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.recipeapp.fragments.MealPlanner
 import com.example.recipeapp.R
+import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.fragments.Recipe
 import com.example.recipeapp.fragments.ShoppingList
 import com.example.recipeapp.databinding.ActivityMainBinding
