@@ -23,6 +23,7 @@
         <entry key="app/src/main/res/layout/activity_recipe_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_meal_planner.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_recipe.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_region_select.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_shopping_list.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/meal_planner_row.xml" value="0.17346014492753623" />
         <entry key="app/src/main/res/layout/recipe_row.xml" value="0.37484893798828123" />
