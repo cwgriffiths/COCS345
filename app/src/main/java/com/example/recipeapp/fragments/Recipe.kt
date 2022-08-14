@@ -14,7 +14,7 @@ import com.example.recipeapp.R
 import com.example.recipeapp.activities.RecipeDetailActivity
 import com.example.recipeapp.entities.RecipeEnt
 
-class Recipe:Fragment(), ListAdapter.OnItemClickListener {
+class Recipe(private val regionID: Int = -1):Fragment(), ListAdapter.OnItemClickListener {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var recipes : List<RecipeEnt>
@@ -37,7 +37,11 @@ class Recipe:Fragment(), ListAdapter.OnItemClickListener {
         recyclerView.adapter = adapter
 
         //Try reading the data from the database
-        recipes = AppDB.getInstance(view.context).recipeDAO().getRecipes()
+        recipes = if(regionID==-1) {
+            AppDB.getInstance(view.context).recipeDAO().getRecipes()
+        } else{
+            AppDB.getInstance(view.context).recipeDAO().getRecipeByCountry(regionID)
+        }
         adapter.setRecipeList(recipes)
         //Set the adapter on the recycler view
 

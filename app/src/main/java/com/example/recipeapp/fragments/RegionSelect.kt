@@ -5,26 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import com.example.recipeapp.R
+import com.example.recipeapp.dao.Maps
+import com.example.recipeapp.databinding.FragmentRegionSelectBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RegionSelect.newInstance] factory method to
- * create an instance of this fragment.
- */
-class RegionSelect : Fragment() {
+class RegionSelect(private val supportFragmentManager: FragmentManager) : Fragment(), View.OnClickListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var binding: FragmentRegionSelectBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_region_select, container, false)
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentRegionSelectBinding.inflate(layoutInflater)
+
+        binding.NorthAmerica.setOnClickListener(this)
+        binding.SouthAmerica.setOnClickListener(this)
+        binding.Europe.setOnClickListener(this)
+        binding.Asia.setOnClickListener(this)
+        binding.Africa.setOnClickListener(this)
+        binding.Oceania.setOnClickListener(this)
+        binding.All.setOnClickListener(this)
+
+
+        return binding.root
+    }
+
+    override fun onClick(p0: View?) {
+        val fragment = Recipe()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
 }

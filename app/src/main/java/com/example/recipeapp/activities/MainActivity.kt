@@ -11,6 +11,7 @@ import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.fragments.Recipe
 import com.example.recipeapp.fragments.ShoppingList
 import com.example.recipeapp.databinding.ActivityMainBinding
+import com.example.recipeapp.fragments.RegionSelect
 
 /**
  * @author Conor Griffiths
@@ -34,8 +35,9 @@ class MainActivity : AppCompatActivity() {
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
         val recipeFragment = Recipe()
+        val recipeSelectFragment = RegionSelect(supportFragmentManager)
         // Set default fragment
-        setFragment(recipeFragment)
+        setFragment(recipeSelectFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
 
         RecipeFilter.setup(this.applicationContext)
@@ -51,6 +53,10 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
+
+
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
