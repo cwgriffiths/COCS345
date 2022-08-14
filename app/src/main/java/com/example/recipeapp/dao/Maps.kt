@@ -13,7 +13,8 @@ data class Maps(
         "Garlic" to 9,
         "Kumara" to 10,
         "Corn" to 11,
-        "Chicken" to 12
+        "Chicken" to 12,
+        "Bacon" to 13
     ),
     val cont: Map<String, Int> = mapOf(
             "north America" to 1,
