@@ -43,7 +43,9 @@ class RecipeDetailActivity() : AppCompatActivity() {
     private fun commaStringToList(s: String): Spannable {
        // var st = s.replace(".", ",")
         val builder = SpannableStringBuilder()
-        val ingredients = s.split("\\")
+        var newS = s.replace("[","").replace("]","");
+
+        val ingredients = newS.split("\\")
         for (ingredient in ingredients){
             if(ingredient.trim().isNotEmpty()) {
                 builder.append(
