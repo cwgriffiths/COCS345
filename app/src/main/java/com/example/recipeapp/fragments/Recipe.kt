@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.AppDB
 import com.example.recipeapp.ListAdapter
 import com.example.recipeapp.R
+import com.example.recipeapp.activities.MainActivity
 import com.example.recipeapp.activities.RecipeDetailActivity
 import com.example.recipeapp.entities.RecipeEnt
 
@@ -35,7 +36,7 @@ class Recipe(private val regionID: Int = -1):Fragment(), ListAdapter.OnItemClick
         //Set the layout manager for the recycler view
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = adapter
-
+        MainActivity.setContinentID(regionID)
         //Try reading the data from the database
         recipes = if(regionID==-1) {
             AppDB.getInstance(view.context).recipeDAO().getRecipes()

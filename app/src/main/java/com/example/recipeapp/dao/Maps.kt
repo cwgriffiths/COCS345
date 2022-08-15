@@ -16,13 +16,10 @@ data class Maps(
         "Chicken" to 12,
         "Bacon" to 13
     ),
-    val cont: Map<String, Int> = mapOf(
-            "north America" to 1,
-            "south America" to 2,
-            "africa" to 3,
-            "europe" to 4,
-            "asia" to 5,
-            "oceania" to 6,
-            "antarctica" to 7
-    )
+    val NORTH_AMERICA: Int = 1,
+    val SOUTH_AMERICA: Int = 2,
+    val AFRICA: Int = 3,
+    val EUROPE: Int = 4,
+    val ASIA: Int = 5,
+    val OCEANIA: Int = 6,
 )

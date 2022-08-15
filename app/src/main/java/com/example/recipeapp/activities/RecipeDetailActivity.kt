@@ -12,6 +12,7 @@ import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
 import com.example.recipeapp.entities.RecipeEnt
 
 /**
+ *
  * @author Conor Griffiths
  */
 
@@ -54,7 +55,6 @@ class RecipeDetailActivity() : AppCompatActivity() {
         }
         return builder.toSpannable()
     }
-
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

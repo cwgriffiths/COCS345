@@ -34,7 +34,31 @@ class RegionSelect(private val supportFragmentManager: FragmentManager) : Fragme
     }
 
     override fun onClick(p0: View?) {
-        val fragment = Recipe()
+        val maps = Maps()
+        val regionId = when(p0?.id){
+                R.id.NorthAmerica -> {
+                    maps.NORTH_AMERICA
+                }
+                R.id.SouthAmerica -> {
+                    maps.SOUTH_AMERICA
+                }
+                R.id.Europe -> {
+                    maps.EUROPE
+                }
+                R.id.Asia -> {
+                    maps.ASIA
+                }
+                R.id.Africa -> {
+                    maps.AFRICA
+                }
+                R.id.Oceania -> {
+                    maps.OCEANIA
+                }
+            else -> {
+                -1
+            }
+        }
+        val fragment = Recipe(regionId)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
