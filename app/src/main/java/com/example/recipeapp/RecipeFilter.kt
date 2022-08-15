@@ -11,19 +11,30 @@ class RecipeFilter() {
         fun setup(view: Context){
             db = AppDB.getInstance(view)
         }
-        fun getRecipesWithIngredients(inged : List<Int>){
+        fun getRecipesWithIngredients(inged : List<Int>): Map<Int, List<Int>> {
             val recipes = db?.recipeDAO()?.getRecipes()
-            println(m.staples.keys)
-//            println(m.staples.values)
-//            println(m.staples.get("Milk"))
-//            println(m.staples.getValue("Milk"))
+            var ids = mutableMapOf<Int,MutableList<Int>>()
             if (recipes != null) {
                 for (r in recipes){
-                    this.getRecipeStaples(r)
+                    var count = 0
+                    val staples = this.getRecipeStaples(r)
+                    for (staple in staples){
+                        if(inged.indexOf(m.staples[staple]) != -1){
+                            count++
+                        }
+                    }
+                    if (count >0) {
+                        if (ids.containsKey(count)) {
+                            ids[count]?.add(r.id)
+                        } else {
+                            ids.put(count, mutableListOf(r.id))
+                        }
+                    }
                 }
             }
+            return ids
         }
-        private fun getRecipeStaples(recipe : RecipeEnt){
+        private fun getRecipeStaples(recipe : RecipeEnt): List<String> {
             var ingredients = recipe.ingredients.split("\\ ").toMutableList()
             val reg = Regex("\\[[^\\[\\]]+]")
             var staples = ArrayList<String>()
@@ -36,7 +47,7 @@ class RecipeFilter() {
                     }
                 }
             }
-            println(staples)
+            return staples.toList()
         }
     }
 }
