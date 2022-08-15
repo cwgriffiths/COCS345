@@ -13,7 +13,7 @@ class RecipeFilter() {
         }
         fun getRecipesWithIngredients(inged : List<Int>){
             val recipes = db?.recipeDAO()?.getRecipes()
-//            println(m.staples.keys)
+            println(m.staples.keys)
 //            println(m.staples.values)
 //            println(m.staples.get("Milk"))
 //            println(m.staples.getValue("Milk"))
@@ -24,25 +24,19 @@ class RecipeFilter() {
             }
         }
         private fun getRecipeStaples(recipe : RecipeEnt){
-            var a = recipe.ingredients.split("\\ ").toMutableList()
+            var ingredients = recipe.ingredients.split("\\ ").toMutableList()
             val reg = Regex("\\[[^\\[\\]]+]")
-
             var staples = ArrayList<String>()
-            println(a)
-            println("aaaa")
-            for(i in a){
-                val ab= reg.findAll(i)
-                val ac = ab.toMutableList()
-                for(z in ac){
-                    println(z.value)
+            for(ing in ingredients){
+                val matches = reg.findAll(ing)
+                val listOfMatches = matches.toMutableList()
+                for(match in listOfMatches){
+                    if(m.staples.containsKey(match.value.lowercase().replace("[","").replace("]",""))){
+                        staples.add(match.value.lowercase().replace("[","").replace("]",""))
+                    }
                 }
-
-//                a[i] = (a[i].substring(a[i].indexOf("{")+1,a[i].indexOf("}"))).lowercase()
             }
-//            for (i in a){
-//                println(i)
-//            }
-
+            println(staples)
         }
     }
 }

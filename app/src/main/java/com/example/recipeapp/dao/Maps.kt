@@ -2,19 +2,19 @@ package com.example.recipeapp.dao
 
 data class Maps(
     val staples: Map<String, Int> = mapOf(
-        "Milk" to 1,
-        "Eggs" to 2,
-        "Flour" to 3,
-        "Rice" to 4,
-        "Potatoes" to 5,
-        "Butter" to 6,
-        "Pasta" to 7,
-        "Onions" to 8,
-        "Garlic" to 9,
-        "Kumara" to 10,
-        "Corn" to 11,
-        "Chicken" to 12,
-        "Bacon" to 13
+        "milk" to 1,
+        "eggs" to 2,
+        "flour" to 3,
+        "rice" to 4,
+        "potatoes" to 5,
+        "butter" to 6,
+        "pasta" to 7,
+        "onions" to 8,
+        "garlic" to 9,
+        "kumara" to 10,
+        "corn" to 11,
+        "chicken" to 12,
+        "bacon" to 13
     ),
     val NORTH_AMERICA: Int = 1,
     val SOUTH_AMERICA: Int = 2,
