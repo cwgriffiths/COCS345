@@ -59,6 +59,7 @@
         android:id="@+id/button"
         android:layout_width="61dp"
         android:layout_height="73dp"
+        android:onClick="onClick"
         android:text="+"
         tools:layout_editor_absoluteX="331dp"
         tools:layout_editor_absoluteY="8dp" />

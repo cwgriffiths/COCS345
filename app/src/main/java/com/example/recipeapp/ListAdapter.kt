@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.RecipeRowBinding
 import com.example.recipeapp.entities.RecipeEnt
+import com.example.recipeapp.fragments.Recipe
+import com.example.recipeapp.fragments.ShoppingList
 
-class ListAdapter(private val listener: OnItemClickListener): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
 
     private var recipeList = emptyList<RecipeEnt>()
