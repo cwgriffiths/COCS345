@@ -6,6 +6,16 @@ plugins {
 apply plugin: "org.jetbrains.dokka"
 apply plugin: 'jacoco'
 
+jacoco {
+    toolVersion = "$jacocoVersion"
+    reportsDirectory = file("$buildDir/reports/coverage")
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+}
+
 task jacocoCombinedTestReports(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
     group = "Verification"
     description = "Creates JaCoCo test coverage report for Unit and Instrumented Tests (combined) on the Debug build"
