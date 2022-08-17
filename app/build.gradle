@@ -2,8 +2,9 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'org.jetbrains.dokka'
 }
+apply plugin: "org.jetbrains.dokka"
+apply plugin: 'jacoco'
 
 task jacocoCombinedTestReports(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
     group = "Verification"
