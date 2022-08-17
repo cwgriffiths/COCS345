@@ -4,17 +4,7 @@ plugins {
     id 'kotlin-kapt'
 }
 apply plugin: "org.jetbrains.dokka"
-apply plugin: 'jacoco'
 
-jacoco {
-    toolVersion = "$jacocoVersion"
-    reportsDirectory = file("$buildDir/reports/coverage")
-}
-
-tasks.withType(Test) {
-    jacoco.includeNoLocationClasses = true
-    jacoco.excludes = ['jdk.internal.*']
-}
 
 task jacocoCombinedTestReports(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
     group = "Verification"
