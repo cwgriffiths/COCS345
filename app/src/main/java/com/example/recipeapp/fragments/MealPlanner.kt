@@ -14,37 +14,40 @@ import com.example.recipeapp.databinding.FragmentMealPlannerBinding
 import com.example.recipeapp.databinding.FragmentRegionSelectBinding
 import com.example.recipeapp.entities.RecipeEnt
 
-class MealPlanner:Fragment(R.layout.fragment_meal_planner), ListAdapter.OnItemClickListener {
+class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener {
 
     private lateinit var binding: FragmentMealPlannerBinding
+    private lateinit var recipe: RecipeEnt
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_meal_planner, container, false)
+        val view = inflater.inflate(R.layout.fragment_recipe, container, false)
+
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(151)
 
 
         binding = FragmentMealPlannerBinding.inflate(layoutInflater)
 
-        binding.lunchMon.setOnClickListener {
-            val recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(151)
-            val intent = Intent(context, RecipeDetailActivity()::class.java)
-            intent.putExtra("recipe", recipe)
-            startActivity(intent)
-        }
-//        binding.dinnerMon.setOnClickListener(this)
-//        binding.lunchTue.setOnClickListener(this)
-//        binding.dinnerTue.setOnClickListener(this)
-//        binding.lunchWed.setOnClickListener(this)
-//        binding.dinnerWed.setOnClickListener(this)
-//        binding.lunchThu.setOnClickListener(this)
-//        binding.dinnerThu.setOnClickListener(this)
-//        binding.lunchSat.setOnClickListener(this)
-//        binding.dinnerSat.setOnClickListener(this)
-//        binding.lunchSun.setOnClickListener(this)
-//        binding.dinnerSun.setOnClickListener(this)
+
+
+        binding.lunchMon.setOnClickListener(this)
+
+        binding.dinnerMon.setOnClickListener(this)
+        binding.lunchTue.setOnClickListener(this)
+        binding.dinnerTue.setOnClickListener(this)
+        binding.lunchWed.setOnClickListener(this)
+        binding.dinnerWed.setOnClickListener(this)
+        binding.lunchThu.setOnClickListener(this)
+        binding.dinnerThu.setOnClickListener(this)
+        binding.lunchSat.setOnClickListener(this)
+        binding.dinnerSat.setOnClickListener(this)
+        binding.lunchSun.setOnClickListener(this)
+        binding.dinnerSun.setOnClickListener(this)
 
 
 
@@ -52,8 +55,8 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), ListAdapter.OnItemCl
         return binding.root
     }
 
-    override fun onItemClick(recipe: RecipeEnt) {
-
+    override fun onClick(p0: View?) {
+        // Currently random recipe
         val intent = Intent (context, RecipeDetailActivity()::class.java)
         intent.putExtra("recipe", recipe)
         startActivity(intent)
@@ -65,6 +68,14 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), ListAdapter.OnItemCl
      */
     override fun toString(): String {
         return "Meal Planner"
+    }
+
+    /**
+     * Sets the recipe to be displayed
+     * Do not think this should be in here but just for now
+     */
+    fun setRecipe(recipe: RecipeEnt) {
+        this.recipe = recipe
     }
 
 }
