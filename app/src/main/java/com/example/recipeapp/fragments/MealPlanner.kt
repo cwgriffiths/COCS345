@@ -19,6 +19,9 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
     private lateinit var binding: FragmentMealPlannerBinding
     private lateinit var recipe: RecipeEnt
 
+    // Have a reference to the veiw binding - all button=s nned id
+    // Access each id one by one,
+    // get ID from meal planner use that id to get from the recipe db
 
 
     override fun onCreateView(
@@ -26,7 +29,7 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_recipe, container, false)
+        val view = inflater.inflate(R.layout.fragment_meal_planner, container, false)
 
         recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(151)
 
