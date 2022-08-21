@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.AppDB
 import com.example.recipeapp.ListAdapter
 import com.example.recipeapp.R
-import com.example.recipeapp.ShoppingListAdapter
+//import com.example.recipeapp.ShoppingListAdapter
 import com.example.recipeapp.entities.ShoppingItemEnt
 
 class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
@@ -26,10 +26,10 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
     ): View? {
         super.onCreate(savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_shopping_list, container, false)
-        val adapter = ShoppingListAdapter(this, items)
+       // val adapter = ShoppingListAdapter(this, items)
         recyclerView = view.findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = adapter
+       // recyclerView.adapter = adapter
 
         items = AppDB.getInstance(view.context).shoppingItemDAO().getShoppingList()
 
