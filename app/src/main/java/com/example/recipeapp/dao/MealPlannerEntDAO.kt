@@ -14,6 +14,9 @@ import com.example.recipeapp.entities.MealPlannerEnt
 interface MealPlannerEntDAO {
     @Query("SELECT * FROM meal_planner_table")
     fun getMealPlanner() : List<MealPlannerEnt>
+
+    @Query("SELECT lunch_recipe FROM meal_planner_table WHERE id = 0")
+    fun getMondayLunch() : MealPlannerEnt
 }
 
 

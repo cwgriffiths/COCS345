@@ -59,10 +59,11 @@
         android:id="@+id/button"
         android:layout_width="61dp"
         android:layout_height="73dp"
-        android:onClick="onClick"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:text="+"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="331dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
