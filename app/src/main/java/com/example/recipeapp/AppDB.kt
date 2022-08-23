@@ -4,16 +4,19 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.recipeapp.dao.MealPlannerEntDAO
 import com.example.recipeapp.dao.RecipeEntDAO
 import com.example.recipeapp.dao.ShoppingItemEntDAO
+import com.example.recipeapp.entities.MealPlannerEnt
 import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.entities.ShoppingItemEnt
 
-@Database(entities = [RecipeEnt::class,ShoppingItemEnt::class], version = 1, exportSchema = false)
+@Database(entities = [RecipeEnt::class,ShoppingItemEnt::class,MealPlannerEnt::class], version = 1, exportSchema = false)
 
 abstract class AppDB : RoomDatabase() {
     abstract fun recipeDAO(): RecipeEntDAO
     abstract fun shoppingItemDAO(): ShoppingItemEntDAO
+    abstract fun mealPlannerDAO(): MealPlannerEntDAO
 
 
     /**
