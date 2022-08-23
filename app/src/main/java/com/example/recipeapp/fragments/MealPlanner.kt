@@ -63,7 +63,7 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
 
     override fun onClick(p0: View) {
         var typeMeal = 0
-        val mealId = when(p0?.id){
+        val mealId = when(p0.id){
             R.id.lunchMon -> {
                 typeMeal = 0
                 0
@@ -128,6 +128,8 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
         // AppDB.getInstance(view2.context).mealPlannerDAO().addItem()
 
         mealList = AppDB.getInstance(view2.context).mealPlannerDAO().getMealPlanner()
+
+        print(mealList)
 
         var meal = mealList[mealId]
 
