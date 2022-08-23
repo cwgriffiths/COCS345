@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
      * Otherwise, show the user the screen to select a continent
      */
     private fun onRecipeSelected() {
-        if (continentID == -1) {
+        if (continentID == -1 || supportFragmentManager.findFragmentById(R.id.fragmentContainer) is Recipe) {
             setFragment(RegionSelect(supportFragmentManager))
         } else {
             setFragment(Recipe(continentID))
