@@ -7,7 +7,6 @@
     tools:context=".activities.RecipeDetailActivity"
     android:background="@color/cardview_dark_background"
     >
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/materialToolbar"
         style="@style/Widget.MaterialComponents.Toolbar.Primary"
