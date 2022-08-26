@@ -4,7 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
+/**
+ * MealPlanner Entity data class
+ *
+ * @author Ariana
+ */
 @Entity(tableName = "meal_planner_table")
 data class MealPlannerEnt (
     @PrimaryKey(autoGenerate = false) val id: Int,
