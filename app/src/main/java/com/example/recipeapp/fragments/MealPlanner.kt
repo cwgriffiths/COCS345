@@ -13,6 +13,13 @@ import com.example.recipeapp.databinding.FragmentMealPlannerBinding
 import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.entities.MealPlannerEnt
 
+/**
+ * Meal Planner class
+ *
+ * Add click listeners to fragment buttons to show Recipe
+ * @author Ariana
+ */
+
 class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener {
 
     private lateinit var binding: FragmentMealPlannerBinding
@@ -21,6 +28,9 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
 
     private lateinit var view2 : View
 
+    /**
+     * This method is called when the fragment is created.
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,87 +44,85 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
 
         binding = FragmentMealPlannerBinding.inflate(layoutInflater)
 
-        var id = 0
-
         binding.lunchMon.setOnClickListener(this)
-        id = mealList[0].lunch_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        var id:Int = mealList[0].lunch_recipe
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.lunchMon.text = recipe.name
 
         binding.dinnerMon.setOnClickListener(this)
         id = mealList[0].dinner_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.dinnerMon.text = recipe.name
 
 
         binding.lunchTue.setOnClickListener(this)
         id = mealList[1].lunch_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.lunchTue.text = recipe.name
 
         binding.dinnerTue.setOnClickListener(this)
         id = mealList[1].dinner_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.dinnerTue.text = recipe.name
 
         binding.lunchWed.setOnClickListener(this)
         id = mealList[2].lunch_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.lunchWed.text = recipe.name
 
         binding.dinnerWed.setOnClickListener(this)
         id = mealList[2].dinner_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.dinnerWed.text = recipe.name
 
         binding.lunchThu.setOnClickListener(this)
         id = mealList[3].lunch_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.lunchThu.text = recipe.name
 
         binding.dinnerThu.setOnClickListener(this)
         id = mealList[3].dinner_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.dinnerThu.text = recipe.name
 
         binding.lunchFri.setOnClickListener(this)
         id = mealList[4].lunch_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.lunchFri.text = recipe.name
 
 
         binding.dinnerFri.setOnClickListener(this)
         id = mealList[4].dinner_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.dinnerFri.text = recipe.name
 
         binding.lunchSat.setOnClickListener(this)
         id = mealList[5].lunch_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.lunchSat.text = recipe.name
 
         binding.dinnerSat.setOnClickListener(this)
         id = mealList[5].dinner_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.dinnerSat.text = recipe.name
 
         binding.lunchSun.setOnClickListener(this)
         id = mealList[6].lunch_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.lunchSun.text = recipe.name
 
         binding.dinnerSun.setOnClickListener(this)
         id = mealList[6].dinner_recipe
-        recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
+        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
         binding.dinnerSun.text = recipe.name
-
-
-
-
 
         return binding.root
     }
 
+    /**
+     * On button Click function
+     * @param p0 the view
+     */
     override fun onClick(p0: View) {
         var typeMeal = 0
         val mealId = when(p0.id){
@@ -179,12 +187,6 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
             }
         }
 
-        // AppDB.getInstance(view2.context).mealPlannerDAO().addItem()
-
-        //mealList = AppDB.getInstance(view2.context).mealPlannerDAO().getMealPlanner()
-
-        //print(mealList)
-
         val meal = mealList[mealId]
 
 
@@ -203,6 +205,7 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
     /**
      * Returns this instance as a string
      * Used to set the title of the view
+     * @return fragment name
      */
     override fun toString(): String {
         return "Meal Planner"
