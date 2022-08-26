@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         navBar.menu.findItem(R.id.recipes).isChecked = true
 
         RecipeFilter.setup(this.applicationContext)
-        RecipeFilter.getRecipesWithIngredients(listOf(1,2,3,29))
+        println(RecipeFilter.getRecipesWithIngredients(listOf(1,2,3,29)))
 
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {

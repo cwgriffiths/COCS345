@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.AppDB
@@ -19,6 +20,7 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: SItemAdapter
     private lateinit var items : List<ShoppingItemEnt>
+    private lateinit var db : AppDB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,8 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_add_item -> {
-                startActivity(Intent(requireActivity(), AddShoppingItem::class.java))
+                var intent: Intent = Intent(requireActivity(), AddShoppingItem::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
@@ -41,12 +44,22 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        items = AppDB.getInstance(view.context).shoppingItemDAO().getShoppingList()
+        db = AppDB.getInstance(view.context)
+        items = db.shoppingItemDAO().getShoppingList()
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.shoppingListRecycle)
         recyclerView.layoutManager = layoutManager
         adapter = SItemAdapter(items)
         recyclerView.adapter = adapter
+    }
+
+
+
+    override fun onResume() {
+        items = db.shoppingItemDAO().getShoppingList()
+        adapter = SItemAdapter(items)
+        recyclerView.adapter = adapter
+        super.onResume()
     }
 
 }

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.ShoppingListRvBinding
 import com.example.recipeapp.entities.RecipeEnt
@@ -13,7 +14,6 @@ import com.example.recipeapp.entities.ShoppingItemEnt
 import com.example.recipeapp.fragments.ShoppingList
 
 class SItemAdapter(private val shoppingList: List<ShoppingItemEnt>) : RecyclerView.Adapter<SItemAdapter.MyViewHolder>() {
-
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view){
         val name: TextView = view.findViewById<TextView>(R.id.slist_name)
         val metric: TextView = view.findViewById<TextView>(R.id.slist_amount_metric)
@@ -30,6 +30,6 @@ class SItemAdapter(private val shoppingList: List<ShoppingItemEnt>) : RecyclerVi
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = shoppingList[position]
         holder.name.text = item.item
-        holder.metric.text = item.amount.toString() + item.metric
+        holder.metric.text = item.amount.toString() + " "+ item.metric
     }
 }
