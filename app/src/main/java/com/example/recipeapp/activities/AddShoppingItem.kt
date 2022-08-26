@@ -15,11 +15,11 @@ class AddShoppingItem : AppCompatActivity() {
     }
 
     fun addItem(view: View){
-        var name = findViewById<EditText>(R.id.name).text.toString()
-        var cate = findViewById<EditText>(R.id.category).text.toString()
-        var metric = findViewById<EditText>(R.id.metric).text.toString()
-        var amount = findViewById<EditText>(R.id.amount).text.toString()
-        var ent: ShoppingItemEnt = ShoppingItemEnt(0,name,amount.toInt(),metric,false,cate)
+        val name = findViewById<EditText>(R.id.name).text.toString()
+        val cate = findViewById<EditText>(R.id.category).text.toString()
+        val metric = findViewById<EditText>(R.id.metric).text.toString()
+        val amount = findViewById<EditText>(R.id.amount).text.toString()
+        val ent = ShoppingItemEnt(0,name,amount.toIntOrNull() ?: 0,metric,false,cate)
         AppDB.getInstance(applicationContext).shoppingItemDAO().addItem(ent)
         println(AppDB.getInstance(applicationContext).shoppingItemDAO().getShoppingList())
         finish()

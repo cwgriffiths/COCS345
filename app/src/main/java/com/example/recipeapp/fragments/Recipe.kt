@@ -62,7 +62,7 @@ class Recipe(private val regionID: Int = -1):Fragment(), ListAdapter.OnItemClick
      * Used to set the title of the view
      */
     override fun toString(): String {
-        return "Recipeeees"
+        return "Recipes"
     }
 
 }
