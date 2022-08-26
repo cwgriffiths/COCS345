@@ -39,7 +39,6 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
         val view = inflater.inflate(R.layout.fragment_meal_planner, container, false)
         view2 = view
 
-
         mealList = AppDB.getInstance(view.context).mealPlannerDAO().getMealPlanner()
 
         binding = FragmentMealPlannerBinding.inflate(layoutInflater)
