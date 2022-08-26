@@ -41,7 +41,8 @@ class AppDBTest : TestCase(){
         val item = ShoppingItemEnt(item = "milk", id = 3, amount = 1, metric = "cup", checked = false, cat = "dairy")
         dao.addItem(item)
         val worked = dao.getShoppingList()
-
+        if(worked.isNotEmpty()){
+            assertEquals(item.id, worked[0].id)        }
 
     }
 
