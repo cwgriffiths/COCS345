@@ -60,6 +60,7 @@ class AppDBTest : TestCase(){
         if (check.id == 2){
             assertEquals(recpie.id, check.id)
         }
+        val check2 = daoRecipe.getRecipeByCountry(3)
     }
 
 }
