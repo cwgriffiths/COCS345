@@ -5,7 +5,9 @@ import androidx.room.Room
 import androidx.room.Room.inMemoryDatabaseBuilder
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.recipeapp.dao.RecipeEntDAO
 import com.example.recipeapp.dao.ShoppingItemEntDAO
+import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.entities.ShoppingItemEnt
 import junit.framework.TestCase
 import org.junit.After
@@ -15,12 +17,14 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runner.manipulation.Ordering
 import org.junit.runners.JUnit4
+import java.util.stream.Stream
 
 @RunWith(AndroidJUnit4::class)
 class AppDBTest : TestCase(){
 
     private lateinit var db: AppDB
     private lateinit var dao: ShoppingItemEntDAO
+    private lateinit var daoRecipe: RecipeEntDAO
 
     @Before
     public override fun setUp() {
@@ -28,6 +32,7 @@ class AppDBTest : TestCase(){
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = inMemoryDatabaseBuilder(context, AppDB::class.java).build()
         dao = db.shoppingItemDAO()
+        daoRecipe = db.recipeDAO()
     }
 
     @After
@@ -44,6 +49,17 @@ class AppDBTest : TestCase(){
         if(worked.isNotEmpty()){
             assertEquals(item.id, worked[0].id)        }
 
+    }
+
+    @Test
+    fun writeAndReadRecipe(){
+
+        val recpie = RecipeEnt(id = 2, name = "apps suck", description = "this sucks", region = 3, ingredients = "5 apples", method = "cook appples", servings = 5)
+        daoRecipe.insertRecipe(recpie)
+        val check = daoRecipe.getRecipeById(2)
+        if (check.id == 2){
+            assertEquals(recpie.id, check.id)
+        }
     }
 
 }
