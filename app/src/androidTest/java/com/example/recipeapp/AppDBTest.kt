@@ -61,6 +61,11 @@ class AppDBTest : TestCase(){
             assertEquals(recpie.id, check.id)
         }
         val check2 = daoRecipe.getRecipeByCountry(3)
+        val recp = daoRecipe.getRecipes()
+        if(recp.isEmpty()){
+            assert(false)
+        }
+
     }
 
 }
