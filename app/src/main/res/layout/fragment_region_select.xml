@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.RegionSelect"
-    android:background="@color/cardview_dark_background"
-    >
+    android:background="@color/primaryBackgroundColor">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -34,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Select a Region"
+            android:textColor="@color/TextColor"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
