@@ -14,7 +14,7 @@ import com.example.recipeapp.fragments.ShoppingList;
 import java.util.List;
 
 /**
- * @author Cordell
+ * @author Cordell O'Leary
  */
 
 class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapter.MyViewHolder> {
