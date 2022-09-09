@@ -13,6 +13,10 @@ import com.example.recipeapp.fragments.ShoppingList;
 
 import java.util.List;
 
+/**
+ * @author Cordell
+ */
+
 class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListAdapter.MyViewHolder> {
 
     Context context;
