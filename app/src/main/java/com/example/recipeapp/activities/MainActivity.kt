@@ -7,13 +7,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.example.recipeapp.fragments.MealPlanner
 import com.example.recipeapp.R
 import com.example.recipeapp.RecipeFilter
-import com.example.recipeapp.fragments.Recipe
-import com.example.recipeapp.fragments.ShoppingList
 import com.example.recipeapp.databinding.ActivityMainBinding
-import com.example.recipeapp.fragments.RegionSelect
+import com.example.recipeapp.fragments.*
 
 /**
  * @author Conor Griffiths
@@ -44,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
-        val recipeSelectFragment = RegionSelect(supportFragmentManager)
+        val recipeSelectFragment = RegionSelectNew(supportFragmentManager)
         // Set default fragment
         setFragment(recipeSelectFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
@@ -70,11 +67,11 @@ class MainActivity : AppCompatActivity() {
      * If the user is on the recipe select fragment and presses the back button the app is closed
      */
     override fun onBackPressed() {
-        if(supportFragmentManager.findFragmentById(R.id.fragmentContainer) is RegionSelect){
+        if(supportFragmentManager.findFragmentById(R.id.fragmentContainer) is RegionSelectNew){
             super.onBackPressed()
         } else {
             continentID = -1
-            setFragment(RegionSelect(supportFragmentManager))
+            setFragment(RegionSelectNew(supportFragmentManager))
         }
     }
 
@@ -85,7 +82,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun onRecipeSelected() {
         if (continentID == -1 || supportFragmentManager.findFragmentById(R.id.fragmentContainer) is Recipe) {
-            setFragment(RegionSelect(supportFragmentManager))
+            setFragment(RegionSelectNew(supportFragmentManager))
         } else {
             setFragment(Recipe(continentID))
         }
