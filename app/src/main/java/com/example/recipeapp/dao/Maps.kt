@@ -21,5 +21,7 @@ data class Maps(
     val AFRICA: Int = 3,
     val EUROPE: Int = 4,
     val ASIA: Int = 5,
-    val OCEANIA: Int = 6
+    val OCEANIA: Int = 6,
+
+
 )
