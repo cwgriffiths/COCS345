@@ -62,4 +62,8 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
         super.onResume()
     }
 
+    override fun toString(): String {
+        return "Shopping List"
+    }
+
 }
