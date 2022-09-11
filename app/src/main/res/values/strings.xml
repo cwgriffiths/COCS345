@@ -6,6 +6,19 @@
     <string name="shopping_list">Shopping List</string>
     <string name="shopping_list_title">Shopping List</string>
     <string name="appname">Scrap Kitchen</string>
+    <string-array name="Metrics">
+        <item>Kg</item>
+        <item>L</item>
+        <item>Whole</item>
+    </string-array>
+    <string-array name="Categories">
+        <item>Produce</item>
+        <item>Meats &amp; Seafood</item>
+        <item>Baking Goods</item>
+        <item>Frozen</item>
+        <item>Pantry</item>
+        <item>Bakery</item>
+    </string-array>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

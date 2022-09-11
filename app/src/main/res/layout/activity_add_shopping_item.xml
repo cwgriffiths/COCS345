@@ -10,31 +10,45 @@
         android:layout_width="match_parent"
         android:orientation="vertical" >
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/materialToolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:title="Add Shopping Item"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            />
+
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:text="Name"
+            android:hint="Name"
             />
-        <EditText
+        <Spinner
             android:id="@+id/category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Category" />
-        <EditText
+            android:entries="@array/Categories"/>
+
+
+        <Spinner
             android:id="@+id/metric"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Metric" />
+            android:entries="@array/Metrics" />
+
         <EditText
             android:id="@+id/amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Amount" />
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Amount"
+            />
 
         <Button
             android:id="@+id/submit"

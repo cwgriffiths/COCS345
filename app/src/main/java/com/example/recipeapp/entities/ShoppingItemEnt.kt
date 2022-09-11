@@ -10,6 +10,6 @@ data class ShoppingItemEnt(
     @ColumnInfo(name = "item") val item: String,
     @ColumnInfo(name = "amount") val amount: Int,
     @ColumnInfo(name = "metric") val metric: String,
-    @ColumnInfo(name = "checked") val checked: Boolean,
+    @ColumnInfo(name = "checked") var checked: Boolean,
     @ColumnInfo(name = "category") val cat: String
 )
