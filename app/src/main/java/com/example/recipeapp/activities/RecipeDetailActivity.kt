@@ -43,8 +43,18 @@ class RecipeDetailActivity() : AppCompatActivity() {
         val builder = SpannableStringBuilder()
         val newS = s.replace("[","").replace("]","");
 
-        val ingredients = newS.split("\\")
-        for (ingredient in ingredients){
+        var ingredients = newS.split("\\").toMutableList()
+        var newIngredients = ArrayList<String>()
+
+        for (i in 0..ingredients.lastIndex) {
+            if(i!=ingredients.lastIndex && ingredients[i].contains("Step")) {
+                newIngredients.add("${ingredients[i]}\n${ingredients[i+1].trim()}")
+                ingredients[i+1] = ""
+            }else if(ingredients[1].isNotEmpty()) {
+                newIngredients.add(ingredients[i])
+            }
+        }
+        for (ingredient in newIngredients){
             if(ingredient.trim().isNotEmpty()) {
                 builder.append(
                     "${ingredient.trim()}\n\n",

@@ -14,12 +14,17 @@
         <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.33" />
         <entry key="..\:/Users/conor/AndroidStudioProjects/COCS345/app/src/main/res/menu/menu_main.xml" value="0.5441025641025641" />
         <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/activity_add_shopping_item.xml" value="0.485054347826087" />
-        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/activity_main.xml" value="0.4338768115942029" />
+        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/activity_main.xml" value="0.2692307692307692" />
         <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/activity_recipe_detail.xml" value="0.25" />
-        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/fragment_meal_planner.xml" value="0.1" />
+        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/fragment_america_view.xml" value="0.26403985507246375" />
+        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/fragment_meal_planner.xml" value="0.165" />
         <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/fragment_recipe.xml" value="0.485054347826087" />
         <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/fragment_region_select.xml" value="0.335" />
+        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/fragment_region_select_new.xml" value="0.2694300518134715" />
         <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/fragment_shopping_list.xml" value="0.485054347826087" />
+        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/meal_planner_row.xml" value="0.1859375" />
+        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/recipe_row.xml" value="0.335" />
+        <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/layout/shopping_list_rv.xml" value="0.1859375" />
         <entry key="..\:/Users/conor/StudioProjects/COCS345/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.5505208333333333" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_add_shopping_item.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_loading.xml" value="0.22" />
@@ -30,7 +35,6 @@
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_region_select.xml" value="0.1703125" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_shopping_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/recipe_row.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/shopping_list_category_rv.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/shopping_list_rv.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/menu/menu_add_item.xml" value="0.2705078125" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/menu/menu_main.xml" value="0.1984375" />

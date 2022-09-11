@@ -54,7 +54,7 @@ class AppDBTest : TestCase(){
     @Test
     fun writeAndReadRecipe(){
 
-        val recpie = RecipeEnt(id = 2, name = "apps suck", description = "this sucks", region = 3, ingredients = "5 apples", method = "cook appples", servings = 5)
+        val recpie = RecipeEnt(id = 2, name = "apps suck", description = "this sucks", region = 3, ingredients = "5 apples", method = "cook appples", servings = 5, country = "America", recipeShopping = "apples, milk, sugar")
         daoRecipe.insertRecipe(recpie)
         val check = daoRecipe.getRecipeById(2)
         if (check.id == 2){
