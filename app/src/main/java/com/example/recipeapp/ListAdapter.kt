@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recipeapp.dao.Emojis
 import com.example.recipeapp.databinding.RecipeRowBinding
 import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.fragments.Recipe
@@ -11,8 +12,8 @@ import com.example.recipeapp.fragments.ShoppingList
 
 class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
-
     private var recipeList = emptyList<RecipeEnt>()
+    private val emojis = Emojis()
     //private var listener: OnItemClickListener;
 
     inner class MyViewHolder(val binding: RecipeRowBinding, private val onClickListener: OnItemClickListener): RecyclerView.ViewHolder(binding.root), View.OnClickListener {
@@ -49,9 +50,10 @@ class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapte
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = recipeList[position]
         //Sets the text fields of the recipe list item
-        //holder.binding.idTxt.text = currentItem.id.toString()
-        holder.binding.titleTxt.text = currentItem.name
-        //holder.binding.descriptionTxt.text = currentItem.description
+        val title = "\n${currentItem.name}\n".replace("(","\n(")
+        holder.binding.titleTxt.text = title
+        holder.binding.idTxt.text = if(emojis.countries.containsKey(currentItem.country))
+            emojis.countries[currentItem.country] else emojis.countries["other"]
     }
 
     /**
