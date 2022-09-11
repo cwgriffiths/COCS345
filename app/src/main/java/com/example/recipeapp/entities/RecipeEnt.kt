@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "recipe_table")
 data class RecipeEnt(
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey val id: Int,
     @ColumnInfo(name = "title") val name: String,
     @ColumnInfo(name = "description") val description: String,
     //Regions 1-7 represent the 7 continents
