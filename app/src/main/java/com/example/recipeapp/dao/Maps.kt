@@ -15,8 +15,7 @@ data class Maps(
         "corn" to 11,
         "chicken" to 12,
         "bacon" to 13
-    ),
-    //map of countries to their flag as an emoji
+    ),/**
     val countries: Map<String, String> = mapOf(
         "america" to "🇺🇸",
         "australia" to "🇦🇺",
@@ -60,7 +59,7 @@ data class Maps(
         "uk" to "🇬🇧",
         "ukraine" to "🇺🇦",
         "vietnam" to "🇻🇳"
-    ),
+    ),*/
     val NORTH_AMERICA: Int = 1,
     val SOUTH_AMERICA: Int = 2,
     val AFRICA: Int = 3,
