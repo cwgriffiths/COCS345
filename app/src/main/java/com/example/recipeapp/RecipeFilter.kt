@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.recipeapp.dao.Maps
 import com.example.recipeapp.entities.RecipeEnt
 
-class RecipeFilter() {
+class RecipeFilter {
     companion object{
         private var db: AppDB? = null;
         private val m = Maps()
