@@ -10,12 +10,23 @@ import com.example.recipeapp.R
 import com.example.recipeapp.dao.Maps
 import com.example.recipeapp.databinding.FragmentRegionSelectNewBinding
 
+/**
+ * Continent select fragment
+ * @author Conor Griffiths
+ */
+
 class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentRegionSelectNewBinding
 
     private var selectedRecipes = -1
 
+    /**
+     * This method is called when the fragment is created
+     * @param inflater inflater to be called on the layout
+     * @param container the container to be inflated
+     * @param savedInstanceState if there is a previous version of this fragment use that
+     */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,12 +46,22 @@ class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fra
         return binding.root
     }
 
+    /**
+     * This function changes the view to the recipes from the selected region
+     */
     private fun viewRecipes() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, Recipe(selectedRecipes))
             .commit()
     }
 
+    /**
+     * Click handler for hidden continent buttons and view recipes button
+     * If a continent is tapped show info about food from that continent, if continent already
+     * selected show recipes from that continent
+     * If view recipes is tapped show the recipes from the selected continent
+     * @param p0 the view that was clicked
+     */
     override fun onClick(p0: View?) {
         if(p0?.id==R.id.view_recipes){
             viewRecipes()
@@ -118,8 +139,10 @@ class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fra
         binding.blurb.text = blurb
     }
 
+    /**
+     * toString is used to set the view title
+     */
     override fun toString(): String {
         return "Select a Region"
     }
-
 }
