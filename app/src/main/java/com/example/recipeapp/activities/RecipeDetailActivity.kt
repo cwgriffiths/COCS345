@@ -47,7 +47,7 @@ class RecipeDetailActivity() : AppCompatActivity() {
         for (ingredient in ingredients){
             if(ingredient.trim().isNotEmpty()) {
                 builder.append(
-                    "${ingredient.trim()}\n",
+                    "${ingredient.trim()}\n\n",
                     BulletSpan(20, Color.DKGRAY, 6),
                     SpannableStringBuilder.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
