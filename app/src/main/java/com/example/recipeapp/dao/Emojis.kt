@@ -44,5 +44,6 @@ data class Emojis(
         "uk" to "🇬🇧",
         "ukraine" to "🇺🇦",
         "vietnam" to "🇻🇳",
+        "peru" to "🇵🇪",
         "other" to "🌎"
     ))

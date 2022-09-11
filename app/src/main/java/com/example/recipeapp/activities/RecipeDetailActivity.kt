@@ -8,6 +8,7 @@ import android.text.style.BulletSpan
 import android.view.Menu
 import androidx.core.text.toSpannable
 import com.example.recipeapp.R
+import com.example.recipeapp.dao.Emojis
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
 import com.example.recipeapp.entities.RecipeEnt
 
@@ -33,24 +34,21 @@ class RecipeDetailActivity() : AppCompatActivity() {
 
         setContentView(binding.root)
         populateView()
-
-
     }
 
     /**
      * Take a comma separated string and return a string formatted with bullet points and new lines
      */
     private fun commaStringToList(s: String): Spannable {
-       // var st = s.replace(".", ",")
         val builder = SpannableStringBuilder()
-        var newS = s.replace("[","").replace("]","");
+        val newS = s.replace("[","").replace("]","");
 
         val ingredients = newS.split("\\")
         for (ingredient in ingredients){
             if(ingredient.trim().isNotEmpty()) {
                 builder.append(
                     "${ingredient.trim()}\n",
-                    BulletSpan(40, Color.DKGRAY, 10),
+                    BulletSpan(20, Color.DKGRAY, 6),
                     SpannableStringBuilder.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
             }
@@ -69,7 +67,10 @@ class RecipeDetailActivity() : AppCompatActivity() {
      * Populate the view with the recipe data
      */
     private fun populateView() {
-        binding.titleTxt.text = recipe.name
+        val emojis = Emojis()
+        binding.flag.text = if(emojis.countries.containsKey(recipe.country))
+            emojis.countries[recipe.country] else emojis.countries["other"]
+        binding.titleTxt.text = recipe.name.replace("(","\n(")
         binding.descriptionTxt.text = recipe.description
         binding.ingredientsTxt.text = commaStringToList(recipe.ingredients)
         binding.methodTxt.text = commaStringToList(recipe.method)

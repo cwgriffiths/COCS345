@@ -40,6 +40,8 @@ data class RecipeEnt(
         parcel.writeString(ingredients)
         parcel.writeString(method)
         parcel.writeInt(servings)
+        parcel.writeString(country)
+        parcel.writeString(recipeShopping)
     }
 
     override fun describeContents(): Int {
