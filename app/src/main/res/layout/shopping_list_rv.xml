@@ -34,7 +34,8 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
 android:layout_height="wrap_content"
 app:cardCornerRadius="8dp"
 app:contentPadding="0dp"
@@ -75,12 +76,13 @@ app:cardUseCompatPadding="false">
 
             <CheckBox
                 android:id="@+id/s_got"
-                android:layout_weight="1"
-                android:layoutDirection="rtl"
-                android:textAlignment="textEnd"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Check" />
+                android:layout_weight="1"
+                android:layoutDirection="rtl"
+                android:text="Check"
+                android:textAlignment="textEnd"
+                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

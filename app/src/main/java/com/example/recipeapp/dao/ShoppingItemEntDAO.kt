@@ -14,6 +14,9 @@ interface ShoppingItemEntDAO {
     @Query("DELETE FROM item_table where checked = 1")
     fun removedChecked()
 
+    @Query("SELECT * FROM item_table where id = (:id)")
+    fun getItem(id: Int) : ShoppingItemEnt
+
     @Insert
     fun addItem(item : ShoppingItemEnt)
 

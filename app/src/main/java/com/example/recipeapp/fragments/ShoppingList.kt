@@ -4,21 +4,19 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipeapp.AppDB
-import com.example.recipeapp.ListAdapter
-import com.example.recipeapp.R
-import com.example.recipeapp.SItemAdapter
+import com.example.recipeapp.*
 import com.example.recipeapp.activities.AddShoppingItem
 import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.entities.ShoppingItemEnt
 
-class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
+class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItemCheckListener {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: SItemAdapter
+    private lateinit var adapter: CategoryAdapter
     private lateinit var items : List<ShoppingItemEnt>
     private lateinit var db : AppDB
 
@@ -49,15 +47,22 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list) {
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.shoppingListRecycle)
         recyclerView.layoutManager = layoutManager
-        adapter = SItemAdapter(items)
+        adapter = CategoryAdapter(Util.mapByProp(items),this)
         recyclerView.adapter = adapter
     }
 
+    override fun onItemCheck(item: ShoppingItemEnt) {
+        db.shoppingItemDAO().checkItem(item.id,!item.checked)
+    }
 
+    override fun onPause() {
+        db.shoppingItemDAO().removedChecked()
+        super.onPause()
+    }
 
     override fun onResume() {
         items = db.shoppingItemDAO().getShoppingList()
-        adapter = SItemAdapter(items)
+        adapter = CategoryAdapter(Util.mapByProp(items),this)
         recyclerView.adapter = adapter
         super.onResume()
     }
