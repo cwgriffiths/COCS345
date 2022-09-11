@@ -78,7 +78,7 @@ app:cardUseCompatPadding="false">
                 android:layout_weight="1"
                 android:layoutDirection="rtl"
                 android:textAlignment="textEnd"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Check" />
         </LinearLayout>

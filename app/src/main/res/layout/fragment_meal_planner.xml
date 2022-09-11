@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -15,7 +15,6 @@
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="7dp"
-        android:background="@color/cardview_light_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -59,7 +58,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="12dp"
                     android:paddingTop="16dp"
@@ -69,7 +67,7 @@
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/lunchMon"
-                    app:layout_constraintStart_toStartOf="parent"></TextView>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
 
                 <Button
@@ -78,7 +76,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="9dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/dinnerMon"
                     app:layout_constraintEnd_toStartOf="@+id/dinnerMon"
                     app:layout_constraintStart_toEndOf="@+id/mon"
@@ -90,7 +88,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/mon"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/lunchMon"
@@ -114,9 +112,7 @@
                     android:layout_width="81dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="12dp"
                     android:paddingTop="16dp"
@@ -126,7 +122,7 @@
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/lunchTue"
-                    app:layout_constraintStart_toStartOf="parent"></TextView>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
 
                 <Button
@@ -135,7 +131,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="9dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/dinnerTue"
                     app:layout_constraintEnd_toStartOf="@+id/dinnerTue"
                     app:layout_constraintStart_toEndOf="@+id/tue"
@@ -147,7 +143,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/tue"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/lunchTue"
@@ -171,9 +167,7 @@
                     android:layout_width="81dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="12dp"
                     android:paddingTop="16dp"
@@ -183,7 +177,7 @@
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/lunchWed"
-                    app:layout_constraintStart_toStartOf="parent"></TextView>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
 
                 <Button
@@ -192,7 +186,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="9dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/dinnerWed"
                     app:layout_constraintEnd_toStartOf="@+id/dinnerWed"
                     app:layout_constraintStart_toEndOf="@+id/wed"
@@ -204,7 +198,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/wed"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/lunchWed"
@@ -228,9 +222,7 @@
                     android:layout_width="81dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="12dp"
                     android:paddingTop="16dp"
@@ -240,7 +232,7 @@
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/lunchThu"
-                    app:layout_constraintStart_toStartOf="parent"></TextView>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
 
                 <Button
@@ -249,7 +241,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="9dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/dinnerThu"
                     app:layout_constraintEnd_toStartOf="@+id/dinnerThu"
                     app:layout_constraintStart_toEndOf="@+id/thu"
@@ -261,7 +253,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/thu"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/lunchThu"
@@ -285,9 +277,7 @@
                     android:layout_width="81dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="12dp"
                     android:paddingTop="16dp"
@@ -297,7 +287,7 @@
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/lunchFri"
-                    app:layout_constraintStart_toStartOf="parent"></TextView>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
 
                 <Button
@@ -306,7 +296,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="9dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/dinnerFri"
                     app:layout_constraintEnd_toStartOf="@+id/dinnerFri"
                     app:layout_constraintStart_toEndOf="@+id/fri"
@@ -318,7 +308,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/fri"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/lunchFri"
@@ -342,9 +332,7 @@
                     android:layout_width="81dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="12dp"
                     android:paddingTop="16dp"
@@ -354,7 +342,7 @@
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/lunchSat"
-                    app:layout_constraintStart_toStartOf="parent"></TextView>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
 
                 <Button
@@ -363,7 +351,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="9dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/dinnerSat"
                     app:layout_constraintEnd_toStartOf="@+id/dinnerSat"
                     app:layout_constraintStart_toEndOf="@+id/sat"
@@ -375,7 +363,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/sat"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/lunchSat"
@@ -399,9 +387,7 @@
                     android:layout_width="81dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginEnd="34dp"
-                    android:layout_marginRight="34dp"
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="12dp"
                     android:paddingTop="16dp"
@@ -411,7 +397,7 @@
                     android:textSize="25sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/lunchSun"
-                    app:layout_constraintStart_toStartOf="parent"></TextView>
+                    app:layout_constraintStart_toStartOf="parent"/>
 
 
                 <Button
@@ -420,7 +406,7 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="9dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/dinnerSun"
                     app:layout_constraintEnd_toStartOf="@+id/dinnerSun"
                     app:layout_constraintStart_toEndOf="@+id/sun"
@@ -432,7 +418,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:text="Recipe"
-                    android:textSize="10dp"
+                    android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/sun"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/lunchSun"

@@ -49,9 +49,9 @@ class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapte
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = recipeList[position]
         //Sets the text fields of the recipe list item
-        holder.binding.idTxt.text = currentItem.id.toString()
+        //holder.binding.idTxt.text = currentItem.id.toString()
         holder.binding.titleTxt.text = currentItem.name
-        holder.binding.descriptionTxt.text = currentItem.description
+        //holder.binding.descriptionTxt.text = currentItem.description
     }
 
     /**
