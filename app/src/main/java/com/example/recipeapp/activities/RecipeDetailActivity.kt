@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.text.*
 import android.text.style.BulletSpan
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.core.text.toSpannable
 import com.example.recipeapp.R
 import com.example.recipeapp.dao.Emojis
@@ -27,6 +29,7 @@ class RecipeDetailActivity() : AppCompatActivity() {
 
         recipe = intent.getParcelableExtra("recipe")!!
         binding = ActivityRecipeDetailBinding.inflate(layoutInflater)
+        binding
 
         val toolbar = binding.materialToolbar
         toolbar.title = recipe.name
@@ -68,9 +71,17 @@ class RecipeDetailActivity() : AppCompatActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+        menuInflater.inflate(R.menu.menu_recipe,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.action_shopping_list -> Toast.makeText(this,"Shopping List Action Selected", Toast.LENGTH_SHORT).show()
+            R.id.action_meal_planner -> Toast.makeText(this,"Meal Planner Action Selected", Toast.LENGTH_SHORT).show()
+            R.id.action_settings -> Toast.makeText(this,"Settings Selected", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     /**

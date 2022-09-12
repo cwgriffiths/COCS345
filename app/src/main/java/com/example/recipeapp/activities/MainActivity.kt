@@ -1,9 +1,9 @@
 package com.example.recipeapp.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.View
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -89,10 +89,19 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        return true
+/*    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_recipe,menu)
+        return super.onCreateOptionsMenu(menu)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.action_shopping_list -> Toast.makeText(this,"Shopping List Action Selected",Toast.LENGTH_SHORT).show()
+            R.id.action_meal_planner -> Toast.makeText(this,"Meal Planner Action Selected",Toast.LENGTH_SHORT).show()
+            R.id.action_settings -> Toast.makeText(this,"Settings Selected",Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }*/
 
     /**Set the current fragment to the one passed in.
      * @param fragment The fragment to set as the current one.
