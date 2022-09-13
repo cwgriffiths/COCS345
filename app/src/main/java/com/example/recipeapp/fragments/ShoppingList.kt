@@ -52,7 +52,8 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
     }
 
     override fun onItemCheck(item: ShoppingItemEnt) {
-        db.shoppingItemDAO().checkItem(item.id,!item.checked)
+        item.checked = !item.checked
+        db.shoppingItemDAO().checkItem(item.id,item.checked)
     }
 
     override fun onPause() {
