@@ -29,6 +29,7 @@ class SItemAdapter(private val shoppingList: List<ShoppingItemEnt>,private val l
 
     interface OnItemCheckListener {
         fun onItemCheck(item: ShoppingItemEnt)
+        fun onItemSwipe(item: ShoppingItemEnt)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -38,6 +39,10 @@ class SItemAdapter(private val shoppingList: List<ShoppingItemEnt>,private val l
 
     override fun getItemCount(): Int {
         return shoppingList.size
+    }
+
+    fun deleteItem(i : Int){
+        listener.onItemSwipe(shoppingList[i])
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {

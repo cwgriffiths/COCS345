@@ -22,7 +22,6 @@ class AddShoppingItem : AppCompatActivity() {
         val amount = findViewById<EditText>(R.id.amount).text.toString()
         val ent = ShoppingItemEnt(0,name,amount.toIntOrNull() ?: 0,metric,false,cate)
         AppDB.getInstance(applicationContext).shoppingItemDAO().addItem(ent)
-        println(AppDB.getInstance(applicationContext).shoppingItemDAO().getShoppingList())
         finish()
 
     }

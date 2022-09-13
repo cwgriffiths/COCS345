@@ -16,8 +16,4 @@ interface RecipeEntDAO {
     @Query("SELECT * FROM recipe_table WHERE id = (:id)")
     fun getRecipeById(id: Int) : RecipeEnt
 
-    @Insert
-    fun insertRecipe(recipe: RecipeEnt)
-
-
 }

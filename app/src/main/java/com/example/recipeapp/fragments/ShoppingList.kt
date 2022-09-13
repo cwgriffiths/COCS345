@@ -1,17 +1,13 @@
 package com.example.recipeapp.fragments
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.CheckBox
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.*
 import com.example.recipeapp.activities.AddShoppingItem
-import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.entities.ShoppingItemEnt
 
 class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItemCheckListener {
@@ -54,6 +50,14 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
     override fun onItemCheck(item: ShoppingItemEnt) {
         item.checked = !item.checked
         db.shoppingItemDAO().checkItem(item.id,item.checked)
+    }
+
+    override fun onItemSwipe(item: ShoppingItemEnt) {
+        db.shoppingItemDAO().checkItem(item.id,true)
+        db.shoppingItemDAO().removedChecked()
+        items = db.shoppingItemDAO().getShoppingList()
+        adapter = CategoryAdapter(Util.mapByProp(items),this)
+        recyclerView.adapter = adapter
     }
 
     override fun onPause() {

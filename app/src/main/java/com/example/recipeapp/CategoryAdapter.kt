@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
 import android.widget.TextView
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.entities.ShoppingItemEnt
@@ -17,9 +18,20 @@ class CategoryAdapter(private val items : Map<String,List<ShoppingItemEnt>>,priv
         fun bind(result: List<ShoppingItemEnt>){
             itemView.findViewById<TextView>(R.id.category).text = Util.titleCase(result[0].cat)
             val childAdapter = SItemAdapter(result,listener)
+            val swipeGesture = object  : SwipeGesture(){
+                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    when(direction){
+                        ItemTouchHelper.LEFT -> {
+                            childAdapter.deleteItem(viewHolder.adapterPosition)
+                        }
+                    }
+                }
+            }
             val recycler = itemView.findViewById<RecyclerView>(R.id.category_recycle)
             recycler.layoutManager = LinearLayoutManager(itemView.context,LinearLayoutManager.VERTICAL,false)
             recycler.adapter = childAdapter
+            val touchHelper = ItemTouchHelper(swipeGesture)
+            touchHelper.attachToRecyclerView(recycler)
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder(

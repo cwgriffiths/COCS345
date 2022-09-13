@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.recipeapp.R
-import com.example.recipeapp.RecipeFilter
+//import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.databinding.ActivityMainBinding
 import com.example.recipeapp.fragments.*
 
@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         setFragment(recipeSelectFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
 
-        RecipeFilter.setup(this.applicationContext)
-        println(RecipeFilter.getRecipesWithIngredients(listOf(1,2,3,29)))
+//        RecipeFilter.setup(this.applicationContext)
+//        println(RecipeFilter.getRecipesWithIngredients(listOf(1,2,3,29)))
 
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
