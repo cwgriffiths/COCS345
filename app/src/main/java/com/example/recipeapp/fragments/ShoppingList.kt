@@ -29,7 +29,7 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_add_item -> {
-                var intent: Intent = Intent(requireActivity(), AddShoppingItem::class.java)
+                val intent = Intent(requireActivity(), AddShoppingItem::class.java)
                 startActivity(intent)
             }
         }
