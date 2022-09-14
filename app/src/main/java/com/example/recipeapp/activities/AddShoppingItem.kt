@@ -15,7 +15,7 @@ class AddShoppingItem : AppCompatActivity() {
         setContentView(R.layout.activity_add_shopping_item)
     }
 
-    fun addItem(view: View){
+    fun addItem(view: View) {
         val name = findViewById<EditText>(R.id.name).text.toString()
         val cate = findViewById<Spinner>(R.id.category).selectedItem.toString()
         val metric = findViewById<Spinner>(R.id.metric).selectedItem.toString()
@@ -23,6 +23,5 @@ class AddShoppingItem : AppCompatActivity() {
         val ent = ShoppingItemEnt(0,name,amount.toIntOrNull() ?: 0,metric,false,cate)
         AppDB.getInstance(applicationContext).shoppingItemDAO().addItem(ent)
         finish()
-
     }
 }

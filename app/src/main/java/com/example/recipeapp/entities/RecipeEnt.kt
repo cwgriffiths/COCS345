@@ -11,7 +11,6 @@ data class RecipeEnt(
     @PrimaryKey val id: Int,
     @ColumnInfo(name = "title") val name: String,
     @ColumnInfo(name = "description") val description: String,
-    //Regions 1-7 represent the 7 continents
     // 1= north america, 2 = south america, 3 = africa , 4 = europe, 5= Asia, 6 = oceanania, 7 = antarictica
     @ColumnInfo(name = "region") val region: Int,
     @ColumnInfo(name = "ingredients") val ingredients: String,
@@ -21,15 +20,15 @@ data class RecipeEnt(
     @ColumnInfo(name = "recipeShopping") val recipeShopping: String,
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString() ?: "",
-        parcel.readString() ?: "",
-        parcel.readInt(),
-        parcel.readString() ?: "",
-        parcel.readString() ?: "",
-        parcel.readInt(),
-        parcel.readString() ?: "",
-        parcel.readString() ?: ""
+        id = parcel.readInt(),
+        name = parcel.readString() ?: "",
+        description = parcel.readString() ?: "",
+        region = parcel.readInt(),
+        ingredients = parcel.readString() ?: "",
+        method = parcel.readString() ?: "",
+        servings = parcel.readInt(),
+        country = parcel.readString() ?: "",
+        recipeShopping = parcel.readString() ?: ""
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

@@ -55,9 +55,8 @@ class RecipeDetailActivity : AppCompatActivity() {
      * Populate the view with the recipe data
      */
     private fun populateView() {
-        val emojis = Emojis()
-        binding.flag.text = if(emojis.countries.containsKey(recipe.country))
-            emojis.countries[recipe.country] else emojis.countries["other"]
+        val emojis = Emojis.Companion
+        binding.flag.text = emojis.getEmoji(recipe.country)
         binding.titleTxt.text = recipe.name.replace("(","\n(")
         binding.descriptionTxt.text = recipe.description
         binding.ingredientsTxt.text = stringToFormattedList(recipe.ingredients)

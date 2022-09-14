@@ -13,7 +13,7 @@ import com.example.recipeapp.fragments.ShoppingList
 class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     private var recipeList = emptyList<RecipeEnt>()
-    private val emojis = Emojis()
+    private val emojis = Emojis.Companion
     //private var listener: OnItemClickListener;
 
     inner class MyViewHolder(val binding: RecipeRowBinding, private val onClickListener: OnItemClickListener): RecyclerView.ViewHolder(binding.root), View.OnClickListener {
@@ -52,8 +52,7 @@ class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapte
         //Sets the text fields of the recipe list item
         val title = "\n${currentItem.name}\n".replace("(","\n(")
         holder.binding.titleTxt.text = title
-        holder.binding.idTxt.text = if(emojis.countries.containsKey(currentItem.country))
-            emojis.countries[currentItem.country] else emojis.countries["other"]
+        holder.binding.idTxt.text = emojis.getEmoji(currentItem.country)
     }
 
     /**

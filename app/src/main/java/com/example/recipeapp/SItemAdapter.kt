@@ -19,8 +19,8 @@ class SItemAdapter(private val shoppingList: List<ShoppingItemEnt>,private val l
         init {
             view.findViewById<CheckBox>(R.id.s_got).setOnClickListener(this)
         }
-        val name: TextView = view.findViewById<TextView>(R.id.slist_name)
-        val metric: TextView = view.findViewById<TextView>(R.id.slist_amount_metric)
+        val name: TextView = view.findViewById(R.id.slist_name)
+        val metric: TextView = view.findViewById(R.id.slist_amount_metric)
         override fun onClick(view: View){
             val item = shoppingList[adapterPosition]
             listener.onItemCheck(item)
@@ -45,14 +45,20 @@ class SItemAdapter(private val shoppingList: List<ShoppingItemEnt>,private val l
         listener.onItemSwipe(shoppingList[i])
     }
 
+    companion object {
+        fun generateText(metric: String, amount: Int): String {
+            return if (metric == "Whole") {
+                "$amount $metric"
+            } else {
+                "$amount$metric"
+            }
+        }
+    }
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = shoppingList[position]
         holder.name.text = item.item
-        if(item.metric == "Whole"){
-            holder.metric.text = item.amount.toString() + " "+ item.metric
-        } else {
-            holder.metric.text = item.amount.toString() + item.metric
+        holder.metric.text = generateText(item.metric,item.amount)
         }
 
     }
-}

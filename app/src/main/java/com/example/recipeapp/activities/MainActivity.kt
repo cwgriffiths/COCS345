@@ -8,6 +8,7 @@ import com.example.recipeapp.R
 //import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.databinding.ActivityMainBinding
 import com.example.recipeapp.fragments.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
  * @author Conor Griffiths
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navBar : BottomNavigationView
 
     companion object {
         private var continentID: Int = -1
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         toolbar = binding.materialToolbar
         setSupportActionBar(toolbar)
-        val navBar = binding.bottomNavigation
+        navBar = binding.bottomNavigation
 
         val shoppingListFragment = ShoppingList()
         val mealPlannerFragment = MealPlanner()
@@ -42,9 +44,6 @@ class MainActivity : AppCompatActivity() {
         // Set default fragment
         setFragment(recipeSelectFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
-
-//        RecipeFilter.setup(this.applicationContext)
-//        println(RecipeFilter.getRecipesWithIngredients(listOf(1,2,3,29)))
 
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
@@ -68,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         } else {
             continentID = -1
+            navBar.menu.findItem(R.id.recipes).isChecked = true
             setFragment(RegionSelectNew(supportFragmentManager))
         }
     }
@@ -84,21 +84,6 @@ class MainActivity : AppCompatActivity() {
             setFragment(Recipe(continentID))
         }
     }
-
-
-/*    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_recipe,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId){
-            R.id.action_shopping_list -> Toast.makeText(this,"Shopping List Action Selected",Toast.LENGTH_SHORT).show()
-            R.id.action_meal_planner -> Toast.makeText(this,"Meal Planner Action Selected",Toast.LENGTH_SHORT).show()
-            R.id.action_settings -> Toast.makeText(this,"Settings Selected",Toast.LENGTH_SHORT).show()
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
 
     /**Set the current fragment to the one passed in.
      * @param fragment The fragment to set as the current one.

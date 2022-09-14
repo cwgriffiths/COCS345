@@ -29,9 +29,7 @@ class Loading : AppCompatActivity() {
                 },1000)
             }
 
-            override fun onAnimationRepeat(p0: Animation?) {
-                TODO("Not yet implemented")
-            }
+            override fun onAnimationRepeat(p0: Animation?) {}
 
         }
         )
