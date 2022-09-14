@@ -5,7 +5,7 @@ import com.example.recipeapp.entities.ShoppingItemEnt
 class Util {
     companion object {
         fun mapByProp(items : List<ShoppingItemEnt>) : Map<String, MutableList<ShoppingItemEnt>> {
-            var map = HashMap<String,MutableList<ShoppingItemEnt>>();
+            var map = HashMap<String,MutableList<ShoppingItemEnt>>()
             items.forEach{
                 if (map.containsKey(it.cat.lowercase())){
                     map[it.cat.lowercase()]?.add(it)

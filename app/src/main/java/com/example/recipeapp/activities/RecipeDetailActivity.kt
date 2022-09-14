@@ -19,7 +19,7 @@ import com.example.recipeapp.entities.RecipeEnt
  * @author Conor Griffiths
  */
 
-class RecipeDetailActivity() : AppCompatActivity() {
+class RecipeDetailActivity : AppCompatActivity() {
 
     private lateinit var recipe: RecipeEnt
     private lateinit var binding : ActivityRecipeDetailBinding
@@ -44,7 +44,7 @@ class RecipeDetailActivity() : AppCompatActivity() {
      */
     private fun commaStringToList(s: String): Spannable {
         val builder = SpannableStringBuilder()
-        val newS = s.replace("[","").replace("]","");
+        val newS = s.replace("[","").replace("]","")
 
         var ingredients = newS.split("\\").toMutableList()
         var newIngredients = ArrayList<String>()

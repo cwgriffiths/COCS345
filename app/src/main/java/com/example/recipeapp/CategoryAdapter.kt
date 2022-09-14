@@ -1,5 +1,6 @@
 package com.example.recipeapp
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,17 @@ class CategoryAdapter(private val items : Map<String,List<ShoppingItemEnt>>,priv
                             childAdapter.deleteItem(viewHolder.adapterPosition)
                         }
                     }
+                }
+                //when swipe begins set colour to red
+                override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
+                    if(actionState == ItemTouchHelper.ACTION_STATE_SWIPE){
+                        viewHolder?.itemView?.setBackgroundColor(Color.parseColor("#ff5e5e"))
+                    }
+                }
+                //on release set colour to white
+                override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+                    viewHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    super.clearView(recyclerView, viewHolder)
                 }
             }
             val recycler = itemView.findViewById<RecyclerView>(R.id.category_recycle)

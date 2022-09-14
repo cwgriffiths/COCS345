@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import com.example.recipeapp.R
+import com.example.recipeapp.activities.MainActivity
 import com.example.recipeapp.dao.Maps
 import com.example.recipeapp.databinding.FragmentRegionSelectNewBinding
 
@@ -32,6 +33,7 @@ class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fra
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        MainActivity.setContinentID(-1)
         binding = FragmentRegionSelectNewBinding.inflate(layoutInflater)
 
         binding.NorthAmerica.setOnClickListener(this)
@@ -50,6 +52,7 @@ class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fra
      * This function changes the view to the recipes from the selected region
      */
     private fun viewRecipes() {
+        MainActivity.setContinentID(selectedRecipes)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, Recipe(selectedRecipes))
             .commit()

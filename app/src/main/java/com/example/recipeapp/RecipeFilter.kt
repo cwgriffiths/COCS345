@@ -6,7 +6,7 @@ import com.example.recipeapp.entities.RecipeEnt
 
 class RecipeFilter {
     companion object{
-        private var db: AppDB? = null;
+        private var db: AppDB? = null
         private val m = Maps()
         fun setup(view: Context){
             db = AppDB.getInstance(view)

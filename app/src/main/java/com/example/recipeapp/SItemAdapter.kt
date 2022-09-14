@@ -48,7 +48,7 @@ class SItemAdapter(private val shoppingList: List<ShoppingItemEnt>,private val l
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = shoppingList[position]
         holder.name.text = item.item
-        if(item.metric.equals("Whole")){
+        if(item.metric == "Whole"){
             holder.metric.text = item.amount.toString() + " "+ item.metric
         } else {
             holder.metric.text = item.amount.toString() + item.metric
