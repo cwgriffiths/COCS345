@@ -146,6 +146,6 @@ class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fra
      * toString is used to set the view title
      */
     override fun toString(): String {
-        return "Select a Region"
+        return "Select a Continent"
     }
 }
