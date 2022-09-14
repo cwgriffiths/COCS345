@@ -13,10 +13,4 @@ abstract class SwipeGesture : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.L
     ): Boolean {
         return false
     }
-
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-        if (direction == ItemTouchHelper.LEFT){
-            viewHolder.itemView.setBackgroundColor(Color.RED)
-        }
-    }
 }

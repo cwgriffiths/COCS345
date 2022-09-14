@@ -1,16 +1,13 @@
 package com.example.recipeapp.activities
 
 import AddMealPlannerDialog
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.*
-import android.text.style.BulletSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.core.text.toSpannable
 import com.example.recipeapp.R
+import com.example.recipeapp.Util.Companion.stringToFormattedList
 import com.example.recipeapp.dao.Emojis
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
 import com.example.recipeapp.entities.RecipeEnt
@@ -39,36 +36,6 @@ class RecipeDetailActivity : AppCompatActivity() {
         populateView()
     }
 
-    /**
-     * Take a comma separated string and return a string formatted with bullet points and new lines
-     */
-    private fun commaStringToList(s: String): Spannable {
-        val builder = SpannableStringBuilder()
-        val newS = s.replace("[","").replace("]","")
-
-        val ingredients = newS.split("\\").toMutableList()
-        val newIngredients = ArrayList<String>()
-
-        for (i in 0..ingredients.lastIndex) {
-            if(i!=ingredients.lastIndex && ingredients[i].contains("Step")) {
-                newIngredients.add("${ingredients[i]}\n${ingredients[i+1].trim()}")
-                ingredients[i+1] = ""
-            }else if(ingredients[1].isNotEmpty()) {
-                newIngredients.add(ingredients[i])
-            }
-        }
-        for (ingredient in newIngredients){
-            if(ingredient.trim().isNotEmpty()) {
-                builder.append(
-                    "${ingredient.trim()}\n\n",
-                    BulletSpan(20, Color.DKGRAY, 6),
-                    SpannableStringBuilder.SPAN_EXCLUSIVE_EXCLUSIVE
-                )
-            }
-        }
-        return builder.toSpannable()
-    }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_recipe,menu)
@@ -93,8 +60,8 @@ class RecipeDetailActivity : AppCompatActivity() {
             emojis.countries[recipe.country] else emojis.countries["other"]
         binding.titleTxt.text = recipe.name.replace("(","\n(")
         binding.descriptionTxt.text = recipe.description
-        binding.ingredientsTxt.text = commaStringToList(recipe.ingredients)
-        binding.methodTxt.text = commaStringToList(recipe.method)
+        binding.ingredientsTxt.text = stringToFormattedList(recipe.ingredients)
+        binding.methodTxt.text = stringToFormattedList(recipe.method)
         binding.servesTxt.text = "Serves ${recipe.servings}"
     }
 
