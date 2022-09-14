@@ -1,6 +1,6 @@
 package com.example.recipeapp.activities
 
-import AddMealPlannerDialog
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,6 +11,7 @@ import com.example.recipeapp.Util.Companion.stringToFormattedList
 import com.example.recipeapp.dao.Emojis
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
 import com.example.recipeapp.entities.RecipeEnt
+import com.example.recipeapp.fragments.AddMealPlannerDialog
 
 /**
  *

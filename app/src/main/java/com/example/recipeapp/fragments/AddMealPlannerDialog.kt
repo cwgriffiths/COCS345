@@ -1,3 +1,5 @@
+package com.example.recipeapp.fragments
+
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
