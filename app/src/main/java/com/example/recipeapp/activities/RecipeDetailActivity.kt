@@ -1,5 +1,6 @@
 package com.example.recipeapp.activities
 
+import AddMealPlannerDialog
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,7 +30,6 @@ class RecipeDetailActivity : AppCompatActivity() {
 
         recipe = intent.getParcelableExtra("recipe")!!
         binding = ActivityRecipeDetailBinding.inflate(layoutInflater)
-        binding
 
         val toolbar = binding.materialToolbar
         toolbar.title = recipe.name
@@ -46,8 +46,8 @@ class RecipeDetailActivity : AppCompatActivity() {
         val builder = SpannableStringBuilder()
         val newS = s.replace("[","").replace("]","")
 
-        var ingredients = newS.split("\\").toMutableList()
-        var newIngredients = ArrayList<String>()
+        val ingredients = newS.split("\\").toMutableList()
+        val newIngredients = ArrayList<String>()
 
         for (i in 0..ingredients.lastIndex) {
             if(i!=ingredients.lastIndex && ingredients[i].contains("Step")) {
@@ -78,7 +78,7 @@ class RecipeDetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.action_shopping_list -> Toast.makeText(this,"Shopping List Action Selected", Toast.LENGTH_SHORT).show()
-            R.id.action_meal_planner -> Toast.makeText(this,"Meal Planner Action Selected", Toast.LENGTH_SHORT).show()
+            R.id.action_meal_planner -> AddMealPlannerDialog().show(supportFragmentManager, "AddMealPlannerDialog")
             R.id.action_settings -> Toast.makeText(this,"Settings Selected", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
