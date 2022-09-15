@@ -3,12 +3,15 @@ package com.example.recipeapp.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.*
 import com.example.recipeapp.activities.AddShoppingItem
 import com.example.recipeapp.entities.ShoppingItemEnt
+
 
 class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItemCheckListener {
     private lateinit var recyclerView: RecyclerView

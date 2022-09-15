@@ -21,30 +21,61 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             />
 
+        <TextView
+            android:id="@+id/nameTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textSize="18dp"
+            android:text="Name: " />
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/input_height"
             android:inputType="text"
+            android:layout_marginBottom="10dp"
             android:hint="Name"
             />
+        <TextView
+            android:id="@+id/categoryTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textSize="18dp"
+            android:text="Category: " />
         <Spinner
             android:id="@+id/category"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginBottom="10dp"
             android:entries="@array/Categories"/>
 
-
+        <TextView
+            android:id="@+id/metricTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textSize="18dp"
+            android:text="Metric: " />
         <Spinner
             android:id="@+id/metric"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginBottom="10dp"
             android:entries="@array/Metrics" />
 
+        <TextView
+            android:id="@+id/amountTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textSize="18dp"
+            android:text="Amount: " />
         <EditText
             android:id="@+id/amount"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/input_height"
+            android:layout_marginBottom="10dp"
             android:ems="10"
             android:inputType="number"
             android:hint="Amount"
@@ -55,6 +86,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="addItem"
-            android:text="Submit" />
+            android:text="Add Item" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

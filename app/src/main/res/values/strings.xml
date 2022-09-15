@@ -12,12 +12,12 @@
         <item>Whole</item>
     </string-array>
     <string-array name="Categories">
-        <item>Produce</item>
-        <item>Meats &amp; Seafood</item>
-        <item>Baking Goods</item>
-        <item>Frozen</item>
-        <item>Pantry</item>
-        <item>Bakery</item>
+        <item>Produce &#127822;</item>
+        <item>Meats &amp; Seafood &#127831;</item>
+        <item>Baking Goods &#129480;</item>
+        <item>Frozen &#127846;</item>
+        <item>Pantry &#127851;</item>
+        <item>Bakery &#127838;</item>
     </string-array>
     <string name="large_text">
         "Material is the metaphor.\n\n"
