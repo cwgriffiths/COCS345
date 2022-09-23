@@ -36,43 +36,6 @@ class ShoppingListTest {
     }
 
     /**
-     * Test the view is created correctly
-     */
-    @Test
-    fun onViewCreated() {
-
-    }
-
-    /**
-     * Test item checked event
-     */
-    @Test
-    fun onItemCheck() {
-
-    }
-
-    /**
-     * Tests item swipe event
-     */
-    @Test
-    fun onItemSwipe() {
-    }
-
-    /**
-     * Test pause
-     */
-    @Test
-    fun onPause() {
-    }
-
-    /**
-     * Test resume
-     */
-    @Test
-    fun onResume() {
-    }
-
-    /**
      * Test toString
      */
     @Test

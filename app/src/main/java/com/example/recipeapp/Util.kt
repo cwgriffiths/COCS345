@@ -12,8 +12,12 @@ import com.example.recipeapp.entities.ShoppingItemEnt
  */
 class Util {
     companion object {
+
+        /**
+         * TODO Cordell I don't know what this does
+         */
         fun mapByProp(items : List<ShoppingItemEnt>) : Map<String, MutableList<ShoppingItemEnt>> {
-            var map = HashMap<String,MutableList<ShoppingItemEnt>>()
+            val map = HashMap<String,MutableList<ShoppingItemEnt>>()
             items.forEach{
                 if (map.containsKey(it.cat.lowercase())){
                     map[it.cat.lowercase()]?.add(it)
@@ -24,9 +28,12 @@ class Util {
             return map.toMap()
         }
 
+        /**
+         * Turns given string to title case
+         */
         fun titleCase(str : String): String{
-            var  strList  = str.split(" ")
-            var bob = StringBuilder()
+            val strList  = str.split(" ")
+            val bob = StringBuilder()
             strList.forEach { it ->
                 bob.append( it.lowercase().replaceFirstChar { it.titlecase() })
                 bob.append(" ")

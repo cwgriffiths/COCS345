@@ -30,7 +30,7 @@ class AddMealPlannerDialog(val recipe :RecipeEnt, private val applicationContext
             alertBuilder1.setSingleChoiceItems(R.array.day, 0, DialogInterface.OnClickListener { _, index ->
                 checkedItemDay = index
             })
-            alertBuilder1.setPositiveButton("OK", DialogInterface.OnClickListener { _, _ -> addMeal(checkedItemDay, recipe)})
+            alertBuilder1.setPositiveButton("OK", DialogInterface.OnClickListener { _, _ -> addMealToTable(checkedItemDay, recipe)})
             alertBuilder1.setNegativeButton("Cancel", DialogInterface.OnClickListener { _, _ -> Log.d("DialogLog", "Cancelled") })
 
 
@@ -44,7 +44,7 @@ class AddMealPlannerDialog(val recipe :RecipeEnt, private val applicationContext
     /**
      * Adds the meal to the meal planner table
      */
-    private fun addMeal(index:Int, recipe: RecipeEnt) {
+    private fun addMealToTable(index:Int, recipe: RecipeEnt) {
         AppDB.getInstance(applicationContext).mealPlannerDAO().addToMealPlanner(index, recipe.id)
         Log.d("DialogLog",
             "Ok $index recipe id ${recipe.id}")

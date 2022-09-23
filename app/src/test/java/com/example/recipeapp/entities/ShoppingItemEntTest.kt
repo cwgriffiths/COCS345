@@ -86,15 +86,6 @@ class ShoppingItemEntTest {
     }
 
     /**
-     * Tests the hashCode method
-     */
-    @Test
-    fun testHashCode() {
-        val copy = shoppingItem.copy()
-        assertEquals(copy.hashCode(),shoppingItem.hashCode())
-    }
-
-    /**
      * Tests the equals method
      */
     @Test
