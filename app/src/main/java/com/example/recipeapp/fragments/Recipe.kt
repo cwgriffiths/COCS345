@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipeapp.AppDB
+import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.ListAdapter
 import com.example.recipeapp.R
-import com.example.recipeapp.activities.MainActivity
+import com.example.recipeapp.MainActivity
 import com.example.recipeapp.activities.RecipeDetailActivity
-import com.example.recipeapp.entities.RecipeEnt
+import com.example.recipeapp.db.entities.RecipeEnt
 
 /**
  * Fragment to show list of recipes

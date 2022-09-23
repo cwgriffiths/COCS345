@@ -4,18 +4,17 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 import com.example.recipeapp.fragments.ShoppingList
 
 /**
  * Adapter for the shopping list, used as the outer adapter with a nested inner adapter
  */
-class CategoryAdapter(private val items : Map<String,List<ShoppingItemEnt>>,private val listener: ShoppingList) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
+class CategoryAdapter(private val items : Map<String,List<ShoppingItemEnt>>, private val listener: ShoppingList) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
     /**
      * Inner adapter for the shopping list

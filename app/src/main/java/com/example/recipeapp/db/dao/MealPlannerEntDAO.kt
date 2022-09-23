@@ -1,10 +1,10 @@
 
 
-package com.example.recipeapp.dao
+package com.example.recipeapp.db.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.example.recipeapp.entities.MealPlannerEnt
+import com.example.recipeapp.db.entities.MealPlannerEnt
 
 /**
  * MealPlanner Entity DAO

@@ -1,23 +1,16 @@
 package com.example.recipeapp
 
 import android.view.View
-import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 import com.example.recipeapp.fragments.ShoppingList
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.runner.manipulation.Ordering
-import org.mockito.AdditionalAnswers.returnsFirstArg
-import org.mockito.ArgumentMatchers.anyInt
-import org.mockito.ArgumentMatchers.anyString
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.doAnswer
 import org.mockito.junit.MockitoJUnitRunner
 
 /**

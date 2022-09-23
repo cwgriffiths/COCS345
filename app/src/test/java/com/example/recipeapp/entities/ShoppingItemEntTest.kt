@@ -1,5 +1,6 @@
 package com.example.recipeapp.entities
 
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 import org.junit.Assert.*
 
 import org.junit.Test

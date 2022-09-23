@@ -1,4 +1,4 @@
-package com.example.recipeapp.fragments
+package com.example.recipeapp.ui.mealPlanner
 
 import android.app.Dialog
 import android.content.Context
@@ -7,15 +7,15 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import com.example.recipeapp.AppDB
+import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.R
-import com.example.recipeapp.entities.RecipeEnt
+import com.example.recipeapp.db.entities.RecipeEnt
 import java.lang.IllegalStateException
 
 /**
  * Class for adding an item to the meal planner popup
  */
-class AddMealPlannerDialog(val recipe :RecipeEnt, private val applicationContext: Context) : DialogFragment() {
+class AddMealPlannerDialog(val recipe : RecipeEnt, private val applicationContext: Context) : DialogFragment() {
     private lateinit var db : AppDB
 
     /**

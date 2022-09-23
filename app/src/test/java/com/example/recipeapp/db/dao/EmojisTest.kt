@@ -1,5 +1,6 @@
-package com.example.recipeapp.dao
+package com.example.recipeapp.db.dao
 
+import com.example.recipeapp.consts.Emojis
 import org.junit.Assert.*
 
 import org.junit.Test

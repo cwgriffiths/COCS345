@@ -1,5 +1,6 @@
-package com.example.recipeapp.dao
+package com.example.recipeapp.db.dao
 
+import com.example.recipeapp.consts.Constants
 import org.junit.Assert.*
 
 import org.junit.Test
@@ -7,16 +8,16 @@ import org.junit.Test
 /**
  * @author Conor Griffiths
  */
-class MapsTest {
+class ConstantsTest {
 
-    private val maps = Maps()
+    private val constants = Constants()
 
     /**
      * Asserts that get North America returns the appropriate value
      */
     @Test
     fun getNORTH_AMERICA() {
-        assertEquals(1, maps.NORTH_AMERICA)
+        assertEquals(1, constants.NORTH_AMERICA)
     }
 
     /**
@@ -24,7 +25,7 @@ class MapsTest {
      */
     @Test
     fun getSOUTH_AMERICA() {
-        assertEquals(2, maps.SOUTH_AMERICA)
+        assertEquals(2, constants.SOUTH_AMERICA)
     }
 
     /**
@@ -32,7 +33,7 @@ class MapsTest {
      */
     @Test
     fun getAFRICA() {
-        assertEquals(3, maps.AFRICA)
+        assertEquals(3, constants.AFRICA)
     }
 
     /**
@@ -40,7 +41,7 @@ class MapsTest {
      */
     @Test
     fun getEUROPE() {
-        assertEquals(4, maps.EUROPE)
+        assertEquals(4, constants.EUROPE)
     }
 
     /**
@@ -48,7 +49,7 @@ class MapsTest {
      */
     @Test
     fun getASIA() {
-        assertEquals(5, maps.ASIA)
+        assertEquals(5, constants.ASIA)
     }
 
     /**
@@ -56,7 +57,7 @@ class MapsTest {
      */
     @Test
     fun getOCEANIA() {
-        assertEquals(6, maps.OCEANIA)
+        assertEquals(6, constants.OCEANIA)
     }
 
     /**
@@ -64,8 +65,8 @@ class MapsTest {
      */
     @Test
     fun copy() {
-        val maps2 = Maps()
-        assertEquals(maps2, maps.copy())
+        val constants2 = Constants()
+        assertEquals(constants2, constants.copy())
     }
 
     /**
@@ -73,7 +74,7 @@ class MapsTest {
      */
     @Test
     fun testToString() {
-        assertEquals("Maps(NORTH_AMERICA=1, SOUTH_AMERICA=2, AFRICA=3, EUROPE=4, ASIA=5, OCEANIA=6)", maps.toString())
+        assertEquals("Maps(NORTH_AMERICA=1, SOUTH_AMERICA=2, AFRICA=3, EUROPE=4, ASIA=5, OCEANIA=6)", constants.toString())
     }
 
     /**
@@ -81,8 +82,8 @@ class MapsTest {
      */
     @Test
     fun testHashCode() {
-        val maps2 = Maps()
-        assertEquals(maps2.hashCode(), maps.hashCode())
+        val constants2 = Constants()
+        assertEquals(constants2.hashCode(), constants.hashCode())
     }
 
     /**
@@ -90,7 +91,7 @@ class MapsTest {
      */
     @Test
     fun testEquals() {
-        val maps2 = Maps()
-        assertEquals(maps2, maps)
+        val constants2 = Constants()
+        assertEquals(constants2, constants)
     }
 }

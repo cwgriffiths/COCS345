@@ -1,13 +1,13 @@
-package com.example.recipeapp.activities
+package com.example.recipeapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.example.recipeapp.R
 //import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.databinding.ActivityMainBinding
 import com.example.recipeapp.fragments.*
+import com.example.recipeapp.ui.mealPlanner.MealPlanner
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**

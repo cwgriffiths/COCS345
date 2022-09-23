@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import com.example.recipeapp.R
-import com.example.recipeapp.activities.MainActivity
-import com.example.recipeapp.dao.Maps
+import com.example.recipeapp.MainActivity
+import com.example.recipeapp.consts.Constants
 import com.example.recipeapp.databinding.FragmentRegionSelectNewBinding
 
 /**
@@ -71,61 +71,61 @@ class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fra
         }
         val blurb : String
         val title : String
-        val maps = Maps()
+        val constants = Constants()
         selectedRecipes = when(p0?.id){
             R.id.NorthAmerica -> {
                 title = getString(R.string.north_america_title)
                 blurb = getString(R.string.north_america_blurb)
-                if(selectedRecipes == maps.NORTH_AMERICA){
+                if(selectedRecipes == constants.NORTH_AMERICA){
                     viewRecipes()
                     return
                 }
-                maps.NORTH_AMERICA
+                constants.NORTH_AMERICA
             }
             R.id.SouthAmerica -> {
                 title = getString(R.string.south_america_title)
                 blurb = getString(R.string.south_america_blurb)
-                if(selectedRecipes == maps.SOUTH_AMERICA){
+                if(selectedRecipes == constants.SOUTH_AMERICA){
                     viewRecipes()
                     return
                 }
-                maps.SOUTH_AMERICA
+                constants.SOUTH_AMERICA
             }
             R.id.Europe -> {
                 title = getString(R.string.europe_title)
                 blurb = getString(R.string.europe_blurb)
-                if (selectedRecipes == maps.EUROPE) {
+                if (selectedRecipes == constants.EUROPE) {
                     viewRecipes()
                     return
                 }
-                maps.EUROPE
+                constants.EUROPE
             }
             R.id.Asia -> {
                 title = getString(R.string.asia_title)
                 blurb = getString(R.string.asia_blurb)
-                if (selectedRecipes == maps.ASIA) {
+                if (selectedRecipes == constants.ASIA) {
                     viewRecipes()
                     return
                 }
-                maps.ASIA
+                constants.ASIA
             }
             R.id.Africa -> {
                 title = getString(R.string.africa_title)
                 blurb = getString(R.string.africa_blurb)
-                if (selectedRecipes == maps.AFRICA) {
+                if (selectedRecipes == constants.AFRICA) {
                     viewRecipes()
                     return
                 }
-                maps.AFRICA
+                constants.AFRICA
             }
             R.id.Oceania -> {
                 title = getString(R.string.oceania_title)
                 blurb = getString(R.string.oceania_blurb)
-                if (selectedRecipes == maps.OCEANIA) {
+                if (selectedRecipes == constants.OCEANIA) {
                     viewRecipes()
                     return
                 }
-                maps.OCEANIA
+                constants.OCEANIA
             }
             else -> {
                 title = getString(R.string.welcome_title)

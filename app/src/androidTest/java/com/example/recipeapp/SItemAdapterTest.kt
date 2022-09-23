@@ -1,14 +1,6 @@
 package com.example.recipeapp
 
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.test.InstrumentationRegistry.getContext
-import androidx.test.core.app.ApplicationProvider.getApplicationContext
-import com.example.recipeapp.entities.ShoppingItemEnt
-import com.example.recipeapp.fragments.ShoppingList
-import org.junit.Assert
-import org.junit.Test
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 /**
  * @author Conor Griffiths

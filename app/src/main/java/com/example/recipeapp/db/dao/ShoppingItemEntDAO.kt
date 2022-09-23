@@ -1,10 +1,9 @@
-package com.example.recipeapp.dao
+package com.example.recipeapp.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 /**
  * Defines methods for using the ShoppingItemEnt class with Room.

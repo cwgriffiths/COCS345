@@ -1,9 +1,9 @@
-package com.example.recipeapp.dao
+package com.example.recipeapp.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.recipeapp.entities.RecipeEnt
+import com.example.recipeapp.db.entities.RecipeEnt
 
 /**
  * Defines methods for using the RecipeEnt class with Room.

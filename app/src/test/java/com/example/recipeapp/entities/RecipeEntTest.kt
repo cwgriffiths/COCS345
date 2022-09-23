@@ -1,6 +1,6 @@
 package com.example.recipeapp.entities
 
-import android.os.Parcel
+import com.example.recipeapp.db.entities.RecipeEnt
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner

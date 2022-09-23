@@ -1,23 +1,19 @@
 package com.example.recipeapp
 
 import android.content.Context
-import androidx.room.Room
 import androidx.room.Room.inMemoryDatabaseBuilder
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.recipeapp.dao.RecipeEntDAO
-import com.example.recipeapp.dao.ShoppingItemEntDAO
-import com.example.recipeapp.entities.RecipeEnt
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.AppDB
+import com.example.recipeapp.db.dao.RecipeEntDAO
+import com.example.recipeapp.db.dao.ShoppingItemEntDAO
+import com.example.recipeapp.db.entities.RecipeEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 import junit.framework.TestCase
 import org.junit.After
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.runner.manipulation.Ordering
-import org.junit.runners.JUnit4
-import java.util.stream.Stream
 
 /**
  * @author Conor Griffiths

@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 import com.example.recipeapp.fragments.ShoppingList
 
 /**
  * Adapter for the [RecyclerView] in [ShoppingList].
  */
-class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val listener: ShoppingList) : RecyclerView.Adapter<SItemAdapter.MyViewHolder>() {
+class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>, private val listener: ShoppingList) : RecyclerView.Adapter<SItemAdapter.MyViewHolder>() {
 
     /**
      * Inner class for creating ViewHolders.

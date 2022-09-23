@@ -5,7 +5,7 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.BulletSpan
 import androidx.core.text.toSpannable
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 /**
  * @author Conor Griffiths, Cordell O'Leary

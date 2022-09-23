@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Spinner
-import com.example.recipeapp.AppDB
+import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.R
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 /**
  * Activity for adding a new shopping item
