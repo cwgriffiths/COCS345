@@ -21,6 +21,9 @@ class RecipeDetailActivity : AppCompatActivity() {
     private lateinit var recipe: RecipeEnt
     private lateinit var binding : ActivityRecipeDetailBinding
 
+    /**
+     * onCreate method for the activity
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,12 +38,17 @@ class RecipeDetailActivity : AppCompatActivity() {
         populateView()
     }
 
-
+    /**
+     * Populates the view with the recipe details
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_recipe,menu)
         return super.onCreateOptionsMenu(menu)
     }
 
+    /**
+     * Handles the menu item clicks
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.action_shopping_list -> Toast.makeText(this,"Shopping List Action Selected", Toast.LENGTH_SHORT).show()

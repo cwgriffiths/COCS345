@@ -22,11 +22,17 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private var continentID: Int = -1
 
+        /**
+         * Sets the continent ID currently staged for the recipe list
+         */
         fun setContinentID(id: Int) {
             continentID = id
         }
     }
 
+    /**
+     * Sets up the main activity
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

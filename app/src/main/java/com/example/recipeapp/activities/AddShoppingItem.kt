@@ -18,6 +18,9 @@ class AddShoppingItem : AppCompatActivity() {
         setContentView(R.layout.activity_add_shopping_item)
     }
 
+    /**
+     * Function is triggered when the save button is clicked.
+     */
     fun addItem(view: View) {
         val name = findViewById<EditText>(R.id.name).text.toString()
         val cate = findViewById<Spinner>(R.id.category).selectedItem.toString()

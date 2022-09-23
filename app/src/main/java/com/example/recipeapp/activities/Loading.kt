@@ -28,7 +28,7 @@ class Loading : AppCompatActivity() {
              * This function is called when the animation starts
              */
             override fun onAnimationStart(p0: Animation?) {
-
+                return
             }
 
             /**
@@ -44,7 +44,9 @@ class Loading : AppCompatActivity() {
             /**
              * This function is called when the animation repeats
              */
-            override fun onAnimationRepeat(p0: Animation?) {}
+            override fun onAnimationRepeat(p0: Animation?) {
+                return
+            }
 
         }
         )
