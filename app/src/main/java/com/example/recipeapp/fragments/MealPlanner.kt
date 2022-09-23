@@ -15,6 +15,7 @@ import com.example.recipeapp.entities.MealPlannerEnt
 
 /**
  * Meal Planner class
+ * Git
  *
  * Add click listeners to fragment buttons to show Recipe
  * @author Ariana
