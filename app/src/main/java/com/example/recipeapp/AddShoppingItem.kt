@@ -1,4 +1,4 @@
-package com.example.recipeapp.activities
+package com.example.recipeapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Spinner
 import com.example.recipeapp.db.AppDB
-import com.example.recipeapp.R
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 /**

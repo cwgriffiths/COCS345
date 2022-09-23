@@ -6,8 +6,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 //import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.databinding.ActivityMainBinding
-import com.example.recipeapp.fragments.*
 import com.example.recipeapp.ui.mealPlanner.MealPlanner
+import com.example.recipeapp.ui.recipe.Recipe
+import com.example.recipeapp.ui.recipe.RegionSelectNew
+import com.example.recipeapp.ui.shoppingList.ShoppingList
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.R
-import com.example.recipeapp.activities.RecipeDetailActivity
+import com.example.recipeapp.RecipeDetailActivity
 import com.example.recipeapp.databinding.FragmentMealPlannerBinding
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.entities.MealPlannerEnt

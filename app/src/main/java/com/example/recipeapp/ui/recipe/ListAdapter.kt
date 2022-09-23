@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.ui.recipe
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.RecipeRowBinding
 import com.example.recipeapp.db.entities.RecipeEnt
-import com.example.recipeapp.fragments.Recipe
 
 /**
  * Adapter class for the list of available recipes

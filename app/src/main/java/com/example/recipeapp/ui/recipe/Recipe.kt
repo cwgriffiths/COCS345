@@ -1,4 +1,4 @@
-package com.example.recipeapp.fragments
+package com.example.recipeapp.ui.recipe
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,10 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.db.AppDB
-import com.example.recipeapp.ListAdapter
 import com.example.recipeapp.R
 import com.example.recipeapp.MainActivity
-import com.example.recipeapp.activities.RecipeDetailActivity
+import com.example.recipeapp.RecipeDetailActivity
 import com.example.recipeapp.db.entities.RecipeEnt
 
 /**

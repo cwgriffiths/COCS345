@@ -1,4 +1,4 @@
-package com.example.recipeapp.fragments
+package com.example.recipeapp.ui.shoppingList
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.*
-import com.example.recipeapp.activities.AddShoppingItem
+import com.example.recipeapp.AddShoppingItem
 import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 
@@ -15,7 +15,7 @@ import com.example.recipeapp.db.entities.ShoppingItemEnt
  * Fragment for the shopping list
  * One of three main views within the app
  */
-class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItemCheckListener {
+class ShoppingList:Fragment(R.layout.fragment_shopping_list), SItemAdapter.OnItemCheckListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CategoryAdapter
     private lateinit var items : List<ShoppingItemEnt>

@@ -23,11 +23,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.AddShoppingItem"
+            android:name=".AddShoppingItem"
             android:exported="false"
             android:label="Add Item" />
         <activity
-            android:name=".activities.RecipeDetailActivity"
+            android:name=".RecipeDetailActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

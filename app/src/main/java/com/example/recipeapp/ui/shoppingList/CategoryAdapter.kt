@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.ui.shoppingList
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recipeapp.R
+import com.example.recipeapp.Util
 import com.example.recipeapp.db.entities.ShoppingItemEnt
-import com.example.recipeapp.fragments.ShoppingList
 
 /**
  * Adapter for the shopping list, used as the outer adapter with a nested inner adapter

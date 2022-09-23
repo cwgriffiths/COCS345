@@ -4,7 +4,8 @@ import android.view.View
 import android.widget.CheckBox
 import android.widget.TextView
 import com.example.recipeapp.db.entities.ShoppingItemEnt
-import com.example.recipeapp.fragments.ShoppingList
+import com.example.recipeapp.ui.shoppingList.SItemAdapter
+import com.example.recipeapp.ui.shoppingList.ShoppingList
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

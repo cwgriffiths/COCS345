@@ -1,4 +1,4 @@
-package com.example.recipeapp.activities
+package com.example.recipeapp
 
 
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.example.recipeapp.R
 import com.example.recipeapp.Util.Companion.stringToFormattedList
 import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding

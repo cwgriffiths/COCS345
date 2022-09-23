@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.ui.shoppingList
 
 import android.graphics.Color
 import androidx.recyclerview.widget.ItemTouchHelper
