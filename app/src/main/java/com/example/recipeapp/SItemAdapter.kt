@@ -81,7 +81,7 @@ class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val l
         /**
          * Formats text
          */
-        fun generateText(metric: String, amount: Int): String {
+        fun generateText(metric: String, amount: Double): String {
             return if (metric == "Whole") {
                 "$amount $metric"
             } else {

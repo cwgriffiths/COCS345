@@ -55,7 +55,7 @@ class AppDBTest : TestCase(){
     @Test
     fun writeAndReadItem(){
 
-        val item = ShoppingItemEnt(item = "milk", id = 3, amount = 1, metric = "cup", checked = false, cat = "dairy")
+        val item = ShoppingItemEnt(item = "milk", id = 3, amount = 1.0, metric = "cup", checked = false, cat = "dairy")
         dao.addItem(item)
         val worked = dao.getShoppingList()
         if(worked.isNotEmpty()){
