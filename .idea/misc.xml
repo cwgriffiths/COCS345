@@ -23,15 +23,20 @@
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_add_shopping_item.xml" value="0.264" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_main.xml" value="0.1703125" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_recipe_detail.xml" value="0.13269927536231885" />
+        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_add_list_from_recipe.xml" value="0.1" />
+        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_add_shopping_item.xml" value="0.1" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_meal_planner.xml" value="0.11320754716981132" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_recipe.xml" value="0.12360688956433637" />
-        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_region_select.xml" value="0.1703125" />
+        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_region_select.xml" value="0.1" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_region_select_new.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_shopping_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/meal_planner_row.xml" value="0.1" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/recipe_row.xml" value="0.12715298885511653" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/shopping_list_category_rv.xml" value="0.2" />
+        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19375" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/menu/menu_add_item.xml" value="0.2705078125" />
         <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/menu/menu_main.xml" value="0.1984375" />
+        <entry key="..\:/Users/corde/AndroidStudioProjects/RecipeApp/app/src/main/res/menu/menu_recipe.xml" value="0.16296296296296298" />
         <entry key="..\:/Users/derek/StudioProjects/345/app/src/main/res/layout/activity_recipe_detail.xml" value="0.4" />
         <entry key="..\:/Users/derek/StudioProjects/345/app/src/main/res/layout/fragment_meal_planner.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/derek/StudioProjects/345/app/src/main/res/layout/fragment_recipe.xml" value="0.12158054711246201" />

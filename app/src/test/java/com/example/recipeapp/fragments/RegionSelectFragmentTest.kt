@@ -2,7 +2,7 @@ package com.example.recipeapp.fragments
 
 import android.view.View
 import androidx.fragment.app.FragmentManager
-import com.example.recipeapp.ui.recipe.RegionSelectNew
+import com.example.recipeapp.ui.recipe.RegionSelectFragment
 import org.junit.Assert.*
 
 import org.junit.Test
@@ -14,7 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner
  * Tests for the region select fragent
  */
 @RunWith(MockitoJUnitRunner::class)
-class RegionSelectNewTest {
+class RegionSelectFragmentTest {
 
     @Mock
     private lateinit var view : View
@@ -27,7 +27,7 @@ class RegionSelectNewTest {
      */
     @Test
     fun testToString() {
-        val regionSelectNew = RegionSelectNew(supportFragmentManager)
-        assertEquals(regionSelectNew.toString(), "Select a Continent")
+        val regionSelectFragment = RegionSelectFragment(supportFragmentManager)
+        assertEquals(regionSelectFragment.toString(), "Select a Continent")
     }
 }

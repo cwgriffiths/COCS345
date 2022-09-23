@@ -1,105 +1,96 @@
 package com.example.recipeapp
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
-//import com.example.recipeapp.RecipeFilter
-import com.example.recipeapp.databinding.ActivityMainBinding
-import com.example.recipeapp.ui.mealPlanner.MealPlanner
-import com.example.recipeapp.ui.recipe.Recipe
-import com.example.recipeapp.ui.recipe.RegionSelectNew
-import com.example.recipeapp.ui.shoppingList.ShoppingList
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.recipeapp.databinding.ActivityMainBinding
+import com.example.recipeapp.db.entities.RecipeEnt
+import com.example.recipeapp.ui.recipe.RecipeViewModel
+import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
 
-/**
- * @author Conor Griffiths
- */
+
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var toolbar: Toolbar
     private lateinit var binding: ActivityMainBinding
-    private lateinit var navBar : BottomNavigationView
+    private lateinit var navController: NavController
 
-    companion object {
-        private var continentID: Int = -1
+    private val recipeViewModel: RecipeViewModel by viewModels { RecipeViewModel.Factory}
+    private val shoppingListViewModel: ShoppingListViewModel by viewModels { ShoppingListViewModel.Factory  }
 
-        /**
-         * Sets the continent ID currently staged for the recipe list
-         */
-        fun setContinentID(id: Int) {
-            continentID = id
-        }
-    }
-
-    /**
-     * Sets up the main activity
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val navView: BottomNavigationView = binding.navView
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        navController = navHostFragment.findNavController()
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_region_select,R.id.navigation_meal_planner,R.id.navigation_shopping_list
+            )
+        )
+        setSupportActionBar(binding.toolbar)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+//        shoppingListViewModel.items.observe(this, Observer {
+//            println(it)
+//        })
+//        seeRecipes(recipeViewModel.getRecipes())
+    }
 
-        toolbar = binding.materialToolbar
-        setSupportActionBar(toolbar)
-        navBar = binding.bottomNavigation
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 
-        val shoppingListFragment = ShoppingList()
-        val mealPlannerFragment = MealPlanner()
-        val recipeSelectFragment = RegionSelectNew(supportFragmentManager)
-        // Set default fragment
-        setCurrentFragment(recipeSelectFragment)
-        navBar.menu.findItem(R.id.recipes).isChecked = true
+    fun seeRecipes(recipes: List<RecipeEnt>){
+        val catmap = HashMap<String,Int>()
+        val metricmap = HashMap<String,Int>()
+        val namemap = HashMap<String,Int>()
+        recipes.forEach {
+            val ingredientList = it.recipeShopping.split(",")
+            if (ingredientList.size % 4 != 0){
+                println("Recipe id " + it.name)
+            } else {
+                for (i in 0..ingredientList.size - 1 step 4) {
+                    val cat = ingredientList[i+2].trim().lowercase()
+                    val metric = ingredientList[i+1].trim().lowercase()
+                    val name = ingredientList[i+3].trim().lowercase()
+                    if (catmap.containsKey(cat)){
+                        catmap[cat]!!.plus(1)
+                    } else{
+                        catmap.put(cat,1)
+                    }
 
-        // Set onSelectedListener for bottom navigation, change the displayed fragment
-        navBar.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.shoppingList ->setCurrentFragment(shoppingListFragment)
-                R.id.recipes -> onRecipeSelected()
-                R.id.mealPlanner ->setCurrentFragment(mealPlannerFragment)
+                    if (namemap.containsKey(name)){
+                        namemap[name]!!.plus(1)
+                    } else{
+                        namemap.put(name,1)
+                    }
+
+                    if (metricmap.containsKey(metric)){
+                        metricmap[metric]!!.plus(1)
+                    } else{
+                        metricmap.put(metric,1)
+                    }
+                }
             }
-            true
         }
-
-    }
-
-
-    /**
-     * If the back button is pressed the user is taken to the recipe select fragment
-     * If the user is on the recipe select fragment and presses the back button the app is closed
-     */
-    override fun onBackPressed() {
-        if(supportFragmentManager.findFragmentById(R.id.fragmentContainer) is RegionSelectNew){
-            super.onBackPressed()
-        } else {
-            continentID = -1
-            navBar.menu.findItem(R.id.recipes).isChecked = true
-            setCurrentFragment(RegionSelectNew(supportFragmentManager))
-        }
-    }
-
-    /**
-     * Handle recipe fragment selection
-     * If continentID is set, display recipes for that continent
-     * Otherwise, show the user the screen to select a continent
-     */
-    private fun onRecipeSelected() {
-        if (continentID == -1 || supportFragmentManager.findFragmentById(R.id.fragmentContainer) is Recipe) {
-            setCurrentFragment(RegionSelectNew(supportFragmentManager))
-        } else {
-            setCurrentFragment(Recipe(continentID))
-        }
-    }
-
-    /**
-     * Set the current fragment to the one passed in.
-     * @param fragment The fragment to set as the current one.
-     */
-    private fun setCurrentFragment(fragment: Fragment) {
-        toolbar.title = fragment.toString()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
-            .commit()
+        //println(namemap.keys.sorted())
+//        println(metricmap)
+//        println(catmap)
     }
 }

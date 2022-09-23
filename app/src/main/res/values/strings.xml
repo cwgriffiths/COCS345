@@ -11,6 +11,15 @@
         <item>L</item>
         <item>Whole</item>
     </string-array>
+    <string-array name="Days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
     <string-array name="Categories">
         <item>Produce &#127822;</item>
         <item>Meats &amp; Seafood &#127831;</item>
@@ -142,4 +151,9 @@
     <string name="africa_blurb">"Africa is an extremely diverse continent, African cuisine can be broken down into a few distinct regions: Northern, Southern, Central, Eastern, and Western Africa. Northern Africa mostly uses seafood, goat, lamb or beef since it ranges along the mediterranean sea and influences of Morocco can be seen throughout. Southern Africa enjoys BBQ style meats served with seeds and vegetables. Central Africa is a harsh land and the really only spicy african foods can be found here growing their own chillies. Eastern Africa mostly produces cron based meals served with stew. Western Africa is very rice based meals served with mostly root based vegetables."</string>
     <string name="oceania_title">"Oceania"</string>
     <string name="oceania_blurb">"When you think of Oceania your mind goes straight to Australia and New Zealand and of course meat pies and Sunday roast but these two nations along with all the islands that occupy this massive continent are surrounded by water, so seafood is a huge part of all cuisine throughout. The smaller islands are mostly influenced by the countries that colonized them. For example, Fiji is influenced by India and the Philippines is influenced by Spain. This was one of the last continents to be settled which means influence from all around the world are found here but you won't find a better place to get a pavlova than right here in New Zealand."</string>
+    <string name="title_recipes">Recipes</string>
+    <string name="title_meal_planner">Meal Planner</string>
+    <string name="daySelector">Select Day</string>
+    <string name="title_shopping_list">Shopping List</string>
+    <string name="add_shopping_item">Add Shopping Item</string>
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_region_select">
+    <fragment
+        android:id="@+id/navigation_region_select"
+        android:name="com.example.recipeapp.ui.recipe.RegionSelectFragment"
+        android:label="@string/title_recipes"
+        tools:layout="@layout/fragment_region_select" >
+        <action
+            android:id="@+id/action_navigation_region_select_to_recipeListFragment"
+            app:destination="@id/recipeListFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_enter_anim"
+            app:popExitAnim="@animator/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_meal_planner"
+        android:name="com.example.recipeapp.ui.mealPlanner.MealPlannerFragment"
+        android:label="@string/title_meal_planner"
+        tools:layout="@layout/fragment_meal_planner" >
+        <action
+            android:id="@+id/action_navigation_meal_planner_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_shopping_list"
+        android:name="com.example.recipeapp.ui.shoppingList.ShoppingListFragment"
+        android:label="@string/title_shopping_list"
+        tools:layout="@layout/fragment_shopping_list" >
+        <action
+            android:id="@+id/action_navigation_shopping_list_to_navigate_addShoppingItem2"
+            app:destination="@id/navigation_addShoppingItem"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_enter_anim"
+            app:popExitAnim="@animator/nav_default_exit_anim"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_addShoppingItem"
+        android:name="com.example.recipeapp.ui.shoppingList.AddShoppingItemFragment"
+        android:label="@string/add_shopping_item"
+        tools:layout="@layout/fragment_add_shopping_item" />
+    <fragment
+        android:id="@+id/recipeListFragment"
+        android:name="com.example.recipeapp.ui.recipe.RecipeListFragment"
+        android:label="Recipes"
+        tools:layout="@layout/fragment_recipe_list">
+        <action
+            android:id="@+id/action_recipeListFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_enter_anim"
+            app:popExitAnim="@animator/nav_default_exit_anim" />
+        <argument
+            android:name="recipeTitle"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.recipeapp.ui.recipe.RecipeFragment"
+        android:label="Recipe"
+        tools:layout="@layout/fragment_recipe"
+        >
+        <action
+            android:id="@+id/action_recipeFragment_to_addListFromRecipeFragment"
+            app:destination="@id/addListFromRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addListFromRecipeFragment"
+        android:name="com.example.recipeapp.ui.shoppingList.AddListFromRecipeFragment"
+        android:label="Add to Shopping List"
+        tools:layout="@layout/fragment_add_list_from_recipe" />
+</navigation>

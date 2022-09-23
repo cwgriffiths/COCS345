@@ -9,7 +9,7 @@ import org.mockito.junit.MockitoJUnitRunner
  * @author Conor Griffiths
  */
 @RunWith(MockitoJUnitRunner::class)
-class RecipeEntTest {
+class RecipeListFragmentEntTest {
 
     private val recipe = RecipeEnt(
         id = 1,

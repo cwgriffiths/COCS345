@@ -67,9 +67,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    dataBinding{
+        true
+    }
     buildFeatures {
-        viewBinding = true
-        dataBinding = true
+        dataBinding true
+        viewBinding true
     }
 
     buildTypes {
@@ -92,7 +95,7 @@ android {
 
 dependencies {
     implementation "org.jetbrains.dokka:kotlin-as-java-plugin:1.7.10"
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
