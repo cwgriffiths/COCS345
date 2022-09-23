@@ -19,6 +19,9 @@ class RegionSelectNewTest {
     @Mock
     lateinit var supportFragmentManager : FragmentManager
 
+    /**
+     * Test the toString method
+     */
     @Test
     fun testToString() {
         val regionSelectNew = RegionSelectNew(supportFragmentManager)

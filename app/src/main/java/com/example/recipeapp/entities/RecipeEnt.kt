@@ -31,6 +31,9 @@ data class RecipeEnt(
         recipeShopping = parcel.readString() ?: ""
     )
 
+    /**
+     * This is used to save the data to the parcel
+     */
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)
         parcel.writeString(name)
@@ -43,15 +46,24 @@ data class RecipeEnt(
         parcel.writeString(recipeShopping)
     }
 
+    /**
+     * This is used to describe the content of the parcel
+     */
     override fun describeContents(): Int {
         return 0
     }
 
     companion object CREATOR : Parcelable.Creator<RecipeEnt> {
+        /**
+         * Create a new instance from the parcel
+         */
         override fun createFromParcel(parcel: Parcel): RecipeEnt {
             return RecipeEnt(parcel)
         }
 
+        /**
+         * Create a new array nulls of the specified size
+         */
         override fun newArray(size: Int): Array<RecipeEnt?> {
             return arrayOfNulls(size)
         }

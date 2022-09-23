@@ -29,15 +29,24 @@ class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val l
         fun onItemSwipe(item: ShoppingItemEnt)
     }
 
+    /**
+     * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = LayoutInflater.from(parent.context).inflate(R.layout.shopping_list_rv,parent,false)
         return MyViewHolder(binding,listener)
     }
 
+    /**
+     * Called by RecyclerView to display the data at the specified position.
+     */
     override fun getItemCount(): Int {
         return shoppingList.size
     }
 
+    /**
+     * Handles deleting an item from the list
+     */
     fun deleteItem(i : Int){
         listener.onItemSwipe(shoppingList[i])
         shoppingList = if(shoppingList.isNotEmpty()){
@@ -48,6 +57,9 @@ class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val l
     }
 
     companion object {
+        /**
+         * Formats text
+         */
         fun generateText(metric: String, amount: Int): String {
             return if (metric == "Whole") {
                 "$amount $metric"
@@ -57,6 +69,9 @@ class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val l
         }
     }
 
+    /**
+     * Binds the view holder to the data
+     */
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = shoppingList[position]
         holder.name.text = item.item

@@ -6,11 +6,9 @@ import org.junit.Test
 
 internal class UtilTest {
 
-    @Test
-    fun test() {
-        assertEquals(1, 1)
-    }
-
+    /**
+     * Test the title case method
+     */
     @Test
     fun titleCaseTest() {
         assertEquals("Hello World", titleCase("hello world"))
@@ -22,6 +20,9 @@ internal class UtilTest {
         assertEquals("Hello World", titleCase("hello World"))
     }
 
+    /**
+     * Test the mapByProp method
+     */
     @Test
     fun mapByPropTest() {
         assertEquals(true,true)

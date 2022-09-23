@@ -21,6 +21,9 @@ class RecipeEntParcelTest {
         recipeShopping = "apple"
     )
 
+    /**
+     * Test that the parcelable implementation is working correctly
+     */
     @Test
     fun parcelableTest(){
         val parcel = Parcel.obtain()
@@ -30,6 +33,9 @@ class RecipeEntParcelTest {
         assert(createdFromParcel == recipe)
     }
 
+    /**
+     * Test that the parcelable implementation is working correctly
+     */
     @Test
     fun parcelableTest3(){
         val parcel = Parcel.obtain()

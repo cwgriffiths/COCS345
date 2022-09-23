@@ -26,6 +26,9 @@ class AppDBTest : TestCase(){
     private lateinit var dao: ShoppingItemEntDAO
     private lateinit var daoRecipe: RecipeEntDAO
 
+    /**
+     * Setup the database and the DAO for testing
+     */
     @Before
     public override fun setUp() {
         super.setUp()
@@ -35,11 +38,17 @@ class AppDBTest : TestCase(){
         daoRecipe = db.recipeDAO()
     }
 
+    /**
+     * Close the database after testing
+     */
     @After
     fun closeUp(){
         db.close()
     }
 
+    /**
+     * Test the insert and get all functions of the DAO
+     */
     @Test
     fun writeAndReadItem(){
 
@@ -52,6 +61,9 @@ class AppDBTest : TestCase(){
     }
 
     @Test
+    /**
+     * Test the insert and get all functions of the DAO
+     */
     fun writeAndReadRecipe(){
 
         val recpie = RecipeEnt(id = 2, name = "apps suck", description = "this sucks", region = 3, ingredients = "5 apples", method = "cook appples", servings = 5, country = "America", recipeShopping = "apples, milk, sugar")

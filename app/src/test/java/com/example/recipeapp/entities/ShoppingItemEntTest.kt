@@ -8,59 +8,92 @@ class ShoppingItemEntTest {
 
     private val shoppingItem = ShoppingItemEnt(1,"apple",2,"kg",false,"fruit")
 
+    /**
+     * Test if the shopping item is created correctly
+     */
     @Test
     fun getId() {
         assertEquals(1,shoppingItem.id)
     }
 
+    /**
+     * Test if the getItem method returns the correct item
+     */
     @Test
     fun getItem() {
         assertEquals("apple",shoppingItem.item)
     }
 
+    /**
+     * Test if the getAmount method returns the correct amount
+     */
     @Test
     fun getAmount() {
         assertEquals(2,shoppingItem.amount)
     }
 
+    /**
+     * Test if the getUnit method returns the correct unit
+     */
     @Test
     fun getMetric() {
         assertEquals("kg",shoppingItem.metric)
     }
 
+    /**
+     * Test if the getChecked method returns the correct value
+     */
     @Test
     fun getChecked() {
         assertEquals(false,shoppingItem.checked)
     }
 
+    /**
+     * Test is setChecked method sets the correct value
+     */
     @Test
     fun setChecked() {
         shoppingItem.checked = true
         assertEquals(true,shoppingItem.checked)
     }
 
+    /**
+     * Tests the get category method
+     */
     @Test
     fun getCat() {
         assertEquals("fruit",shoppingItem.cat)
     }
 
+    /**
+     * Tests copy method
+     */
     @Test
     fun copy() {
         val copy = shoppingItem.copy()
         assertEquals(copy,shoppingItem)
     }
 
+    /**
+     * Tests the toString method
+     */
     @Test
     fun testToString() {
         assertEquals("ShoppingItemEnt(id=1, item=apple, amount=2, metric=kg, checked=false, cat=fruit)",shoppingItem.toString())
     }
 
+    /**
+     * Tests the hashCode method
+     */
     @Test
     fun testHashCode() {
         val copy = shoppingItem.copy()
         assertEquals(copy.hashCode(),shoppingItem.hashCode())
     }
 
+    /**
+     * Tests the equals method
+     */
     @Test
     fun testEquals() {
         val copy = shoppingItem.copy()
