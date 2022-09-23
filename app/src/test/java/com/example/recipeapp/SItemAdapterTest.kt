@@ -20,7 +20,10 @@ import org.mockito.Mockito.`when`
 import org.mockito.Mockito.doAnswer
 import org.mockito.junit.MockitoJUnitRunner
 
-
+/**
+ * Tests for Shopping Item Adapter
+ * @author Connor Griffiths
+ */
 @RunWith(MockitoJUnitRunner::class)
 class SItemAdapterTest {
 

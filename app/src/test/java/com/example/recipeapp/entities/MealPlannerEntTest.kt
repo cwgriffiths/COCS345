@@ -3,6 +3,10 @@ package com.example.recipeapp.entities
 import org.junit.Assert.*
 import org.junit.Test
 
+/**
+ * Tests for the meal planner entity
+ * Does not use and database calls
+ */
 class MealPlannerEntTest {
 
     private val mealPlanner = MealPlannerEnt(1,2,3)

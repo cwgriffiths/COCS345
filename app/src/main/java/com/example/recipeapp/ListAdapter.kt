@@ -10,12 +10,18 @@ import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.fragments.Recipe
 import com.example.recipeapp.fragments.ShoppingList
 
+/**
+ * Adapter class for the list of available recipes
+ */
 class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     private var recipeList = emptyList<RecipeEnt>()
     private val emojis = Emojis.Companion
     //private var listener: OnItemClickListener;
 
+    /**
+     * Inner class for the view holder
+     */
     inner class MyViewHolder(val binding: RecipeRowBinding, private val onClickListener: OnItemClickListener): RecyclerView.ViewHolder(binding.root), View.OnClickListener {
         init {
             binding.root.setOnClickListener(this)
@@ -30,7 +36,13 @@ class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapte
         }
     }
 
+    /**
+     * Interface for the click listener
+     */
     interface OnItemClickListener {
+        /**
+         * This method is called when the item is clicked
+         */
         fun onItemClick(recipe: RecipeEnt)
     }
 

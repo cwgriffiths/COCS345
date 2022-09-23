@@ -5,6 +5,9 @@ import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * @author Conor Griffiths
+ */
 @RunWith(AndroidJUnit4::class)
 class UtilTest {
 

@@ -4,6 +4,9 @@ import org.junit.Assert.*
 
 import org.junit.Test
 
+/**
+ * @author Conor Griffiths
+ */
 class ShoppingItemEntTest {
 
     private val shoppingItem = ShoppingItemEnt(1,"apple",2,"kg",false,"fruit")
@@ -80,15 +83,6 @@ class ShoppingItemEntTest {
     @Test
     fun testToString() {
         assertEquals("ShoppingItemEnt(id=1, item=apple, amount=2, metric=kg, checked=false, cat=fruit)",shoppingItem.toString())
-    }
-
-    /**
-     * Tests the hashCode method
-     */
-    @Test
-    fun testHashCode() {
-        val copy = shoppingItem.copy()
-        assertEquals(copy.hashCode(),shoppingItem.hashCode())
     }
 
     /**

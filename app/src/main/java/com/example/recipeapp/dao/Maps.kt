@@ -1,5 +1,8 @@
 package com.example.recipeapp.dao
 
+/**
+ * data class to store continent ids and names
+ */
 data class Maps(
     val NORTH_AMERICA: Int = 1,
     val SOUTH_AMERICA: Int = 2,

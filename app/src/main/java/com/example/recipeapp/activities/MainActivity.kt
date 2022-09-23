@@ -13,7 +13,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 /**
  * @author Conor Griffiths
  */
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
@@ -23,11 +22,17 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private var continentID: Int = -1
 
+        /**
+         * Sets the continent ID currently staged for the recipe list
+         */
         fun setContinentID(id: Int) {
             continentID = id
         }
     }
 
+    /**
+     * Sets up the main activity
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -42,15 +47,15 @@ class MainActivity : AppCompatActivity() {
         val mealPlannerFragment = MealPlanner()
         val recipeSelectFragment = RegionSelectNew(supportFragmentManager)
         // Set default fragment
-        setFragment(recipeSelectFragment)
+        setCurrentFragment(recipeSelectFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
 
         // Set onSelectedListener for bottom navigation, change the displayed fragment
         navBar.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.shoppingList ->setFragment(shoppingListFragment)
+                R.id.shoppingList ->setCurrentFragment(shoppingListFragment)
                 R.id.recipes -> onRecipeSelected()
-                R.id.mealPlanner ->setFragment(mealPlannerFragment)
+                R.id.mealPlanner ->setCurrentFragment(mealPlannerFragment)
             }
             true
         }
@@ -68,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             continentID = -1
             navBar.menu.findItem(R.id.recipes).isChecked = true
-            setFragment(RegionSelectNew(supportFragmentManager))
+            setCurrentFragment(RegionSelectNew(supportFragmentManager))
         }
     }
 
@@ -79,16 +84,17 @@ class MainActivity : AppCompatActivity() {
      */
     private fun onRecipeSelected() {
         if (continentID == -1 || supportFragmentManager.findFragmentById(R.id.fragmentContainer) is Recipe) {
-            setFragment(RegionSelectNew(supportFragmentManager))
+            setCurrentFragment(RegionSelectNew(supportFragmentManager))
         } else {
-            setFragment(Recipe(continentID))
+            setCurrentFragment(Recipe(continentID))
         }
     }
 
-    /**Set the current fragment to the one passed in.
+    /**
+     * Set the current fragment to the one passed in.
      * @param fragment The fragment to set as the current one.
      */
-    private fun setFragment(fragment: Fragment) {
+    private fun setCurrentFragment(fragment: Fragment) {
         toolbar.title = fragment.toString()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)

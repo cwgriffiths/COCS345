@@ -19,6 +19,9 @@ import org.junit.runner.manipulation.Ordering
 import org.junit.runners.JUnit4
 import java.util.stream.Stream
 
+/**
+ * @author Conor Griffiths
+ */
 @RunWith(AndroidJUnit4::class)
 class AppDBTest : TestCase(){
 

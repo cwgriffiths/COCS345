@@ -12,14 +12,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.entities.ShoppingItemEnt
 import com.example.recipeapp.fragments.ShoppingList
 
+/**
+ * Adapter for the shopping list, used as the outer adapter with a nested inner adapter
+ */
 class CategoryAdapter(private val items : Map<String,List<ShoppingItemEnt>>,private val listener: ShoppingList) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
 
+    /**
+     * Inner adapter for the shopping list
+     */
     inner class MyViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
 
+        /**
+         * Binds the inner adapter to the recycler view
+         */
         fun bind(result: List<ShoppingItemEnt>){
             itemView.findViewById<TextView>(R.id.category).text = Util.titleCase(result[0].cat)
             val childAdapter = SItemAdapter(result,listener)
             val swipeGesture = object  : SwipeGesture(){
+
+                /**
+                 * Called when a ViewHolder is swiped by the user.
+                 */
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                     when(direction){
                         ItemTouchHelper.LEFT -> {

@@ -9,7 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.entities.ShoppingItemEnt
 import com.example.recipeapp.fragments.ShoppingList
 
+/**
+ * Adapter for the [RecyclerView] in [ShoppingList].
+ */
 class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val listener: ShoppingList) : RecyclerView.Adapter<SItemAdapter.MyViewHolder>() {
+
+    /**
+     * Inner class for creating ViewHolders.
+     */
     inner class MyViewHolder(view: View, private val onClickListener: ShoppingList): RecyclerView.ViewHolder(view),View.OnClickListener{
         init {
             if(view.findViewById<CheckBox>(R.id.s_got)!=null){
@@ -18,14 +25,28 @@ class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val l
         }
         val name: TextView = view.findViewById(R.id.slist_name)
         val metric: TextView = view.findViewById(R.id.slist_amount_metric)
+
+        /**
+         * Handles the click on the checkbox.
+         */
         override fun onClick(view: View){
             val item = shoppingList[adapterPosition]
             listener.onItemCheck(item)
         }
     }
 
+    /**
+     * Listener for the click on the checkbox.
+     */
     interface OnItemCheckListener {
+        /**
+         * Handles the click on the checkbox.
+         */
         fun onItemCheck(item: ShoppingItemEnt)
+
+        /**
+         * Handles the swipe on the item.
+         */
         fun onItemSwipe(item: ShoppingItemEnt)
     }
 

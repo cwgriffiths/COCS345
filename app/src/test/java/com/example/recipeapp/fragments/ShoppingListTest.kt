@@ -9,6 +9,10 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 
+/**
+ * Tests for the shopping list fragment
+ * @author Conor Griffiths
+ */
 class ShoppingListTest {
 
     /**
@@ -29,43 +33,6 @@ class ShoppingListTest {
         val shoppingList = ShoppingList()
         val result = shoppingList.onOptionsItemSelected(Mockito.mock(android.view.MenuItem::class.java))
         assertFalse(result)
-    }
-
-    /**
-     * Test the view is created correctly
-     */
-    @Test
-    fun onViewCreated() {
-
-    }
-
-    /**
-     * Test item checked event
-     */
-    @Test
-    fun onItemCheck() {
-
-    }
-
-    /**
-     * Tests item swipe event
-     */
-    @Test
-    fun onItemSwipe() {
-    }
-
-    /**
-     * Test pause
-     */
-    @Test
-    fun onPause() {
-    }
-
-    /**
-     * Test resume
-     */
-    @Test
-    fun onResume() {
     }
 
     /**
