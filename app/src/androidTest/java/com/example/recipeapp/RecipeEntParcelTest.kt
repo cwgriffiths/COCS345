@@ -6,6 +6,9 @@ import com.example.recipeapp.entities.RecipeEnt
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * @author Conor Griffiths
+ */
 @RunWith(AndroidJUnit4::class)
 class RecipeEntParcelTest {
 

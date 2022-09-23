@@ -7,6 +7,9 @@ import android.text.style.BulletSpan
 import androidx.core.text.toSpannable
 import com.example.recipeapp.entities.ShoppingItemEnt
 
+/**
+ * @author Conor Griffiths, Cordell O'Leary
+ */
 class Util {
     companion object {
         fun mapByProp(items : List<ShoppingItemEnt>) : Map<String, MutableList<ShoppingItemEnt>> {
@@ -22,7 +25,7 @@ class Util {
         }
 
         fun titleCase(str : String): String{
-            var strList = str.split(" ")
+            var  strList  = str.split(" ")
             var bob = StringBuilder()
             strList.forEach { it ->
                 bob.append( it.lowercase().replaceFirstChar { it.titlecase() })

@@ -6,6 +6,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * Parcelable data class to store a recipe
+ * Acts as a row in the recipe table in the database
+ */
 @Entity(tableName = "recipe_table")
 data class RecipeEnt(
     @PrimaryKey val id: Int,

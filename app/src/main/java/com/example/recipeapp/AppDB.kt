@@ -12,10 +12,24 @@ import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.entities.ShoppingItemEnt
 
 @Database(entities = [RecipeEnt::class,ShoppingItemEnt::class,MealPlannerEnt::class], version = 1, exportSchema = false)
-
+/**
+ * The Room database for this app
+ */
 abstract class AppDB : RoomDatabase() {
+
+    /**
+     * Connects the database to the recipe DAO.
+     */
     abstract fun recipeDAO(): RecipeEntDAO
+
+    /**
+     * Connects the database to the shopping item DAO.
+     */
     abstract fun shoppingItemDAO(): ShoppingItemEntDAO
+
+    /**
+     * Connects the database to the meal planner DAO.
+     */
     abstract fun mealPlannerDAO(): MealPlannerEntDAO
 
 

@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.entities.ShoppingItemEnt
 import com.example.recipeapp.fragments.ShoppingList
 
+/**
+ * Adapter for the [RecyclerView] in [ShoppingList].
+ */
 class SItemAdapter(private var shoppingList: List<ShoppingItemEnt>,private val listener: ShoppingList) : RecyclerView.Adapter<SItemAdapter.MyViewHolder>() {
     inner class MyViewHolder(view: View, private val onClickListener: ShoppingList): RecyclerView.ViewHolder(view),View.OnClickListener{
         init {

@@ -10,6 +10,9 @@ import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.fragments.Recipe
 import com.example.recipeapp.fragments.ShoppingList
 
+/**
+ * Adapter class for the list of available recipes
+ */
 class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     private var recipeList = emptyList<RecipeEnt>()

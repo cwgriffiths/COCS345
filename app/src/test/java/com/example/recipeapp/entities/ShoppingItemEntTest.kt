@@ -4,6 +4,9 @@ import org.junit.Assert.*
 
 import org.junit.Test
 
+/**
+ * @author Conor Griffiths
+ */
 class ShoppingItemEntTest {
 
     private val shoppingItem = ShoppingItemEnt(1,"apple",2,"kg",false,"fruit")

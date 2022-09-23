@@ -12,7 +12,10 @@ import com.example.recipeapp.*
 import com.example.recipeapp.activities.AddShoppingItem
 import com.example.recipeapp.entities.ShoppingItemEnt
 
-
+/**
+ * Fragment for the shopping list
+ * One of three main views within the app
+ */
 class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItemCheckListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CategoryAdapter

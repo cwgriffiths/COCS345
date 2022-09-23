@@ -10,6 +10,9 @@ import com.example.recipeapp.fragments.ShoppingList
 import org.junit.Assert
 import org.junit.Test
 
+/**
+ * @author Conor Griffiths
+ */
 class SItemAdapterTest {
 
     private val sItem = ShoppingItemEnt(1, "item", 1, "unit", true, "food")

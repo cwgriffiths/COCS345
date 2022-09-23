@@ -13,7 +13,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 /**
  * @author Conor Griffiths
  */
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar

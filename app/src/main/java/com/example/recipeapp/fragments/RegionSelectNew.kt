@@ -15,7 +15,6 @@ import com.example.recipeapp.databinding.FragmentRegionSelectNewBinding
  * Continent select fragment
  * @author Conor Griffiths
  */
-
 class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentRegionSelectNewBinding

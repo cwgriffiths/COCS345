@@ -9,6 +9,10 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 
+/**
+ * Tests for the shopping list fragment
+ * @author Conor Griffiths
+ */
 class ShoppingListTest {
 
     /**

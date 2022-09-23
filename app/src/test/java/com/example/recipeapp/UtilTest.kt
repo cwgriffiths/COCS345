@@ -4,6 +4,10 @@ import com.example.recipeapp.Util.Companion.titleCase
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 
+/**
+ * Tests for the Util class.
+ * @author Conor Griffiths
+ */
 internal class UtilTest {
 
     /**

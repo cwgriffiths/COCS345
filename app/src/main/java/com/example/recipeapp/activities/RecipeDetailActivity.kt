@@ -14,10 +14,8 @@ import com.example.recipeapp.entities.RecipeEnt
 import com.example.recipeapp.fragments.AddMealPlannerDialog
 
 /**
- *
  * @author Conor Griffiths
  */
-
 class RecipeDetailActivity : AppCompatActivity() {
 
     private lateinit var recipe: RecipeEnt

@@ -4,6 +4,9 @@ import org.junit.Assert.*
 
 import org.junit.Test
 
+/**
+ * @author Conor Griffiths
+ */
 class MapsTest {
 
     private val maps = Maps()

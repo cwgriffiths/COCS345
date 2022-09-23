@@ -5,6 +5,9 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
 
+/**
+ * @author Conor Griffiths
+ */
 @RunWith(MockitoJUnitRunner::class)
 class RecipeEntTest {
 

@@ -10,6 +10,9 @@ import android.view.animation.AnimationUtils
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.ActivityLoadingBinding
 
+/**
+ * This activity is used to display the loading screen
+ */
 class Loading : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -9,6 +9,9 @@ import com.example.recipeapp.AppDB
 import com.example.recipeapp.R
 import com.example.recipeapp.entities.ShoppingItemEnt
 
+/**
+ * Activity for adding a new shopping item
+ */
 class AddShoppingItem : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

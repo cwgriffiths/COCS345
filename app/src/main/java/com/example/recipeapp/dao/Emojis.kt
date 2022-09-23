@@ -1,5 +1,8 @@
 package com.example.recipeapp.dao
 
+/**
+ *
+ */
 class Emojis{
 
     companion object {

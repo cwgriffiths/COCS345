@@ -5,6 +5,9 @@ import androidx.room.Insert
 import androidx.room.Query
 import com.example.recipeapp.entities.RecipeEnt
 
+/**
+ * Defines methods for using the RecipeEnt class with Room.
+ */
 @Dao
 interface RecipeEntDAO {
 

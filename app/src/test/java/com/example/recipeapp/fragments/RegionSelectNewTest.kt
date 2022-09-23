@@ -10,6 +10,9 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
+/**
+ * Tests for the region select fragent
+ */
 @RunWith(MockitoJUnitRunner::class)
 class RegionSelectNewTest {
 

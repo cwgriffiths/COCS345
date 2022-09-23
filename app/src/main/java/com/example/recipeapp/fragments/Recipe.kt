@@ -15,6 +15,9 @@ import com.example.recipeapp.activities.MainActivity
 import com.example.recipeapp.activities.RecipeDetailActivity
 import com.example.recipeapp.entities.RecipeEnt
 
+/**
+ * Fragment to show list of recipes
+ */
 class Recipe(private val regionID: Int = -1):Fragment(), ListAdapter.OnItemClickListener {
 
     private lateinit var recyclerView: RecyclerView

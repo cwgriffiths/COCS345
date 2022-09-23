@@ -6,6 +6,9 @@ import androidx.room.Insert
 import androidx.room.Query
 import com.example.recipeapp.entities.ShoppingItemEnt
 
+/**
+ * Defines methods for using the ShoppingItemEnt class with Room.
+ */
 @Dao
 interface ShoppingItemEntDAO {
 
