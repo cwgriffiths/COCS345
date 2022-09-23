@@ -11,6 +11,9 @@ import org.mockito.Mockito
 
 class ShoppingListTest {
 
+    /**
+     * Test the onCreateOptionsMenu method
+     */
     @Test
     fun onCreateOptionsMenu() {
         val shoppingList = ShoppingList()
@@ -18,6 +21,9 @@ class ShoppingListTest {
         assertNotNull(shoppingList)
     }
 
+    /**
+     * Test the on option selected method
+     */
     @Test
     fun onOptionsItemSelected() {
         val shoppingList = ShoppingList()
@@ -25,28 +31,46 @@ class ShoppingListTest {
         assertFalse(result)
     }
 
+    /**
+     * Test the view is created correctly
+     */
     @Test
     fun onViewCreated() {
 
     }
 
+    /**
+     * Test item checked event
+     */
     @Test
     fun onItemCheck() {
 
     }
 
+    /**
+     * Tests item swipe event
+     */
     @Test
     fun onItemSwipe() {
     }
 
+    /**
+     * Test pause
+     */
     @Test
     fun onPause() {
     }
 
+    /**
+     * Test resume
+     */
     @Test
     fun onResume() {
     }
 
+    /**
+     * Test toString
+     */
     @Test
     fun testToString() {
         val shoppingList = ShoppingList()

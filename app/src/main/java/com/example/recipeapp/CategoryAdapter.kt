@@ -27,13 +27,19 @@ class CategoryAdapter(private val items : Map<String,List<ShoppingItemEnt>>,priv
                         }
                     }
                 }
-                //when swipe begins set colour to red
+
+                /**
+                 * When swipe begins set the background color of the view to red
+                 */
                 override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
                     if(actionState == ItemTouchHelper.ACTION_STATE_SWIPE){
                         viewHolder?.itemView?.setBackgroundColor(Color.parseColor("#ff5e5e"))
                     }
                 }
-                //on release set colour to white
+
+                /**
+                 * On release of the swipe set the background color to white
+                 */
                 override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
                     viewHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"))
                     super.clearView(recyclerView, viewHolder)
@@ -46,15 +52,24 @@ class CategoryAdapter(private val items : Map<String,List<ShoppingItemEnt>>,priv
             touchHelper.attachToRecyclerView(recycler)
         }
     }
+
+    /**
+     * Create the view holder
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.shopping_list_category_rv,parent,false)
     )
 
+    /**
+     * Bind the view holder
+     */
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-//        println(items.keys.elementAt(position))
         items[items.keys.elementAt(position)]?.let { holder.bind(it) }
     }
 
+    /**
+     * Get the number of items in the list
+     */
     override fun getItemCount(): Int {
         return items.size
     }

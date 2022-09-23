@@ -50,6 +50,10 @@ class Recipe(private val regionID: Int = -1):Fragment(), ListAdapter.OnItemClick
         return view
     }
 
+    /**
+     * This method is called when an item in the recycler view is clicked.
+     * It starts the RecipeDetailActivity and passes the recipe ID to it.
+     */
     override fun onItemClick(recipe: RecipeEnt) {
 
         val intent = Intent (context, RecipeDetailActivity()::class.java)

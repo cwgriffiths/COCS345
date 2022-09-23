@@ -24,11 +24,17 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
         setHasOptionsMenu(true)
     }
 
+    /**
+     * Adds the option menu to the tob bar
+     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_add_item,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+    /**
+     * Handles the click on the menu item
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_add_item -> {
@@ -39,6 +45,9 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
         return super.onOptionsItemSelected(item)
     }
 
+    /**
+     * Inflates the view and sets the recycler view
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         db = AppDB.getInstance(view.context)
@@ -50,11 +59,17 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
         recyclerView.adapter = adapter
     }
 
+    /**
+     * Event when item is checcked
+     */
     override fun onItemCheck(item: ShoppingItemEnt) {
         item.checked = !item.checked
         db.shoppingItemDAO().checkItem(item.id,item.checked)
     }
 
+    /**
+     * Event when item is swiped, deletes the item
+     */
     override fun onItemSwipe(item: ShoppingItemEnt) {
         db.shoppingItemDAO().checkItem(item.id,true)
         db.shoppingItemDAO().removedChecked()
@@ -63,11 +78,17 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
         recyclerView.adapter = adapter
     }
 
+    /**
+     * Event when fragment is paused, deletes the checked items
+     */
     override fun onPause() {
         db.shoppingItemDAO().removedChecked()
         super.onPause()
     }
 
+    /**
+     * Refreshes on resume
+     */
     override fun onResume() {
         items = db.shoppingItemDAO().getShoppingList()
         adapter = CategoryAdapter(Util.mapByProp(items),this)
@@ -75,6 +96,9 @@ class ShoppingList:Fragment(R.layout.fragment_shopping_list),SItemAdapter.OnItem
         super.onResume()
     }
 
+    /**
+     * Names the fragment
+     */
     override fun toString(): String {
         return "Shopping List"
     }

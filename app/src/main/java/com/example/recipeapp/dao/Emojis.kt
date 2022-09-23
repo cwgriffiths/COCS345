@@ -50,6 +50,9 @@ class Emojis{
             "other" to "🌎"
         )
 
+        /**
+         * Returns the flag emoji for the country or the world emoji if the country is not found
+         */
         fun getEmoji(country: String): String {
             return countries[country] ?: countries["other"]!!
         }

@@ -8,6 +8,9 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class UtilTest {
 
+    /**
+     * Test that the [Util.stringToFormattedList] function returns a list of recipes.
+     */
     @Test
     fun stringToFormattedListTest() {
         assertEquals("hello, world\n\n", Util.stringToFormattedList("hello, world").toString())

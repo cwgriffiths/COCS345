@@ -20,6 +20,10 @@ class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapte
         init {
             binding.root.setOnClickListener(this)
         }
+
+        /**
+         * This method is called when the item is clicked
+         */
         override fun onClick(v: View?) {
             val recipe = recipeList[adapterPosition]
             onClickListener.onItemClick(recipe)
@@ -39,7 +43,9 @@ class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapte
         return MyViewHolder(binding, listener)
     }
 
-
+    /**
+     * Returns the size of the list
+     */
     override fun getItemCount(): Int {
         return recipeList.size
     }

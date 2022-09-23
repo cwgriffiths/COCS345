@@ -20,6 +20,9 @@ class RecipeEntTest {
         recipeShopping = "apple"
     )
 
+    /**
+     * Test the parcelable implementation
+     */
     @Test
     fun parcelableTest2(){
         assert(recipe.describeContents() == 0)
@@ -29,6 +32,9 @@ class RecipeEntTest {
         assert(testArray.size == 1)
     }
 
+    /**
+     * Test the constructor works correctly
+     */
     @Test
     fun constructorTest(){
         val recipe2 = RecipeEnt(

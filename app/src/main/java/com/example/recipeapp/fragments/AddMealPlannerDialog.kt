@@ -14,6 +14,10 @@ import java.lang.IllegalStateException
 
 class AddMealPlannerDialog(val recipe :RecipeEnt, private val applicationContext: Context) : DialogFragment() {
     private lateinit var db : AppDB
+
+    /**
+     * Creates the dialog
+     */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
 
@@ -34,6 +38,9 @@ class AddMealPlannerDialog(val recipe :RecipeEnt, private val applicationContext
         } ?: throw IllegalStateException("Exception !! Activity is null !!")
     }
 
+    /**
+     * Adds the meal to the meal planner table
+     */
     private fun addMeal(index:Int, recipe: RecipeEnt) {
         AppDB.getInstance(applicationContext).mealPlannerDAO().addToMealPlanner(index, recipe.id)
         Log.d("DialogLog",

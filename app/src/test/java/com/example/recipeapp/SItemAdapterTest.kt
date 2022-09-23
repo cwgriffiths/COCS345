@@ -43,13 +43,18 @@ class SItemAdapterTest {
     }*/
 
 
-
+    /**
+     * Teest getItemCount is accurate
+     */
     @Test
     fun getItemCount() {
         val tObject = SItemAdapter(mutableListOf(sItem), Mockito.mock(ShoppingList::class.java))
         assertEquals(1, tObject.itemCount)
     }
 
+    /**
+     * Test delete item
+     */
     @Test
     fun deleteItem() {
         val tObject = SItemAdapter(listOf(sItem), Mockito.mock(ShoppingList::class.java))
@@ -57,8 +62,9 @@ class SItemAdapterTest {
         assertEquals(0, tObject.itemCount)
     }
 
-
-
+    /**
+     * Test the companion object
+     */
     @Test
     fun testCompanion(){
         assertEquals("1kg", SItemAdapter.generateText("kg", 1))
