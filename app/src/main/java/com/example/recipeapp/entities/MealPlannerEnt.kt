@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 /**
  * MealPlanner Entity data class
  *
- * @author Ariana
+ * @author Ariana A
  */
 @Entity(tableName = "meal_planner_table")
 data class MealPlannerEnt (
