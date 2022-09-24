@@ -14,7 +14,7 @@ import com.example.recipeapp.ui.recipe.Recipe
 import com.example.recipeapp.ui.recipe.RecipeViewModel
 import com.example.recipeapp.ui.recipe.RegionSelectNew
 import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
-import com.example.scrapkitchen.ui.shoppingList.ShoppingListFragment
+import com.example.recipeapp.ui.shoppingList.ShoppingListFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**

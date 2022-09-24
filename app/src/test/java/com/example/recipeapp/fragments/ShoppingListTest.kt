@@ -2,7 +2,7 @@ package com.example.recipeapp.fragments
 
 import android.view.Menu
 import android.view.MenuInflater
-import com.example.recipeapp.ui.shoppingList.ShoppingList
+import com.example.recipeapp.ui.shoppingList.ShoppingListFragment
 import org.junit.Assert.*
 
 import org.junit.Test
@@ -19,7 +19,7 @@ class ShoppingListTest {
      */
     @Test
     fun onCreateOptionsMenu() {
-        val shoppingList = ShoppingList()
+        val shoppingList = ShoppingListFragment()
         shoppingList.onCreateOptionsMenu(Mockito.mock(Menu::class.java), Mockito.mock(MenuInflater::class.java))
         assertNotNull(shoppingList)
     }
@@ -29,7 +29,7 @@ class ShoppingListTest {
      */
     @Test
     fun onOptionsItemSelected() {
-        val shoppingList = ShoppingList()
+        val shoppingList = ShoppingListFragment()
         val result = shoppingList.onOptionsItemSelected(Mockito.mock(android.view.MenuItem::class.java))
         assertFalse(result)
     }
@@ -39,7 +39,7 @@ class ShoppingListTest {
      */
     @Test
     fun testToString() {
-        val shoppingList = ShoppingList()
+        val shoppingList = ShoppingListFragment()
         val result = shoppingList.toString()
         assertEquals("Shopping List", result)
     }

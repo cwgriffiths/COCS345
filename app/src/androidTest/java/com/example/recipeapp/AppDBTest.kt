@@ -47,7 +47,7 @@ class AppDBTest : TestCase(){
 
     /**
      * Test the insert and get all functions of the DAO
-     */
+
     @Test
     fun writeAndReadItem(){
 
@@ -58,6 +58,7 @@ class AppDBTest : TestCase(){
             assertEquals(item.id, worked[0].id)        }
 
     }
+    */
 
     @Test
     /**
