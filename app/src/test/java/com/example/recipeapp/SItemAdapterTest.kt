@@ -5,7 +5,8 @@ import android.widget.CheckBox
 import android.widget.TextView
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 import com.example.recipeapp.ui.shoppingList.ShoppingListItemAdapter
-import com.example.recipeapp.ui.shoppingList.ShoppingList
+import com.example.recipeapp.ui.shoppingList.ShoppingListFragment
+import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
@@ -45,27 +46,18 @@ class SItemAdapterTest {
      */
     @Test
     fun getItemCount() {
-        val tObject = ShoppingListItemAdapter(mutableListOf(sItem), Mockito.mock(ShoppingList::class.java))
+        val tObject = ShoppingListItemAdapter(mutableListOf(sItem), Mockito.mock(ShoppingListViewModel::class.java))
         assertEquals(1, tObject.itemCount)
     }
 
     /**
      * Test delete item
-     */
+
     @Test
     fun deleteItem() {
-        val tObject = ShoppingListItemAdapter(listOf(sItem), Mockito.mock(ShoppingList::class.java))
+        val tObject = ShoppingListItemAdapter(listOf(sItem), Mockito.mock(ShoppingListViewModel::class.java))
         tObject.deleteItem(0)
         assertEquals(0, tObject.itemCount)
     }
-
-    /**
-     * Test the companion object
-     */
-    @Test
-    fun testCompanion(){
-        assertEquals("1.0kg", ShoppingListItemAdapter.generateText("kg", 1.0))
-        assertEquals("1.0g", ShoppingListItemAdapter.generateText("g", 1.0))
-        assertEquals("1.0 Whole", ShoppingListItemAdapter.generateText("Whole", 1.0))
-    }
+    */
 }
