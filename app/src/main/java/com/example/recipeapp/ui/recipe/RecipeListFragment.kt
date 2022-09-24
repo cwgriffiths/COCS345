@@ -38,7 +38,7 @@ class RecipeListFragment : Fragment(),RecipeListAdapter.OnRecipeSelected {
 
 
     override fun onRecipeSelected(recipe: RecipeEnt) {
-//        findNavController().navigate(R.id.action_recipeListFragment_to_recipeFragment)
+        findNavController().navigate(R.id.action_recipeListFragment_to_recipeFragment)
     }
 
 }

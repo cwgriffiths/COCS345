@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentShoppingListBinding
+
 import kotlinx.coroutines.launch
 
 
@@ -39,7 +40,7 @@ class ShoppingListFragment : Fragment() {
             recyclerView.adapter = adapter
         })
         binding!!.addShoppingItem.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_shopping_list_to_navigate_addShoppingItem2)
+            findNavController().navigate(R.id.action_shoppingListFragment_to_addShoppingItemFragment)
         }
         return fragmentBinding.root
     }

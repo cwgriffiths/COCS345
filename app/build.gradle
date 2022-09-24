@@ -67,14 +67,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    dataBinding{
-        true
-    }
-    buildFeatures {
-        dataBinding true
-        viewBinding true
-    }
-
     buildTypes {
         debug {
             testCoverageEnabled true // https://github.com/codecov/example-android - we need to add this extra line!!!
@@ -90,6 +82,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
     }
 }
 
