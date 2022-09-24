@@ -12,3 +12,5 @@ In the current alpha version the working features are
 The design of the app is still very rough and this is something we will be focussing on prior to the beta release
 
 App has been tested on a google pixel 5 using gesture navigation
+
+https://codecov.io/gh/CDonalO/Scrap-Kitchen-COSC345/branch/main/graphs/icicle.svg?token=7B8DTHOTGY
