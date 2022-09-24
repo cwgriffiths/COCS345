@@ -15,7 +15,6 @@ import com.example.recipeapp.entities.MealPlannerEnt
 
 /**
  * Meal Planner class
- * Git
  *
  * Add click listeners to fragment buttons to show Recipe
  * @author Ariana
@@ -43,41 +42,57 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
 
         binding = FragmentMealPlannerBinding.inflate(layoutInflater)
 
-        binding.dinnerMon.setOnClickListener(this)
         var id = mealList[0].dinner_recipe
-        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
-        binding.dinnerMon.text = recipe.name
+        if(id != -1){
+            binding.dinnerMon.setOnClickListener(this)
+            recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
+            binding.dinnerMon.text = recipe.name
+        }
 
-        binding.dinnerTue.setOnClickListener(this)
+
+
         id = mealList[1].dinner_recipe
-        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
-        binding.dinnerTue.text = recipe.name
+        if(id != -1){
+            binding.dinnerTue.setOnClickListener(this)
+            recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
+            binding.dinnerTue.text = recipe.name
+        }
 
-        binding.dinnerWed.setOnClickListener(this)
         id = mealList[2].dinner_recipe
-        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
-        binding.dinnerWed.text = recipe.name
+        if(id != -1){
+            binding.dinnerWed.setOnClickListener(this)
+            recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
+            binding.dinnerWed.text = recipe.name
+        }
 
-        binding.dinnerThu.setOnClickListener(this)
         id = mealList[3].dinner_recipe
-        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
-        binding.dinnerThu.text = recipe.name
+        if(id != -1){
+            binding.dinnerThu.setOnClickListener(this)
+            recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
+            binding.dinnerThu.text = recipe.name
+        }
 
 
-        binding.dinnerFri.setOnClickListener(this)
         id = mealList[4].dinner_recipe
-        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
-        binding.dinnerFri.text = recipe.name
+        if(id != -1){
+            binding.dinnerFri.setOnClickListener(this)
+            recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
+            binding.dinnerFri.text = recipe.name
+        }
 
-        binding.dinnerSat.setOnClickListener(this)
         id = mealList[5].dinner_recipe
-        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
-        binding.dinnerSat.text = recipe.name
+        if(id != -1){
+            binding.dinnerSat.setOnClickListener(this)
+            recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
+            binding.dinnerSat.text = recipe.name
+        }
 
-        binding.dinnerSun.setOnClickListener(this)
         id = mealList[6].dinner_recipe
-        recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
-        binding.dinnerSun.text = recipe.name
+        if(id != -1){
+            binding.dinnerSun.setOnClickListener(this)
+            recipe = AppDB.getInstance(view.context).recipeDAO().getRecipeById(id)
+            binding.dinnerSun.text = recipe.name
+        }
 
         return binding.root
     }
@@ -113,17 +128,15 @@ class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener
                 -1
             }
         }
-
         val meal = mealList[mealId]
-
 
         val id = meal.dinner_recipe
 
-
         recipe = AppDB.getInstance(view2.context).recipeDAO().getRecipeById(id)
-        val intent = Intent (context, RecipeDetailActivity()::class.java)
+        val intent = Intent(context, RecipeDetailActivity()::class.java)
         intent.putExtra("recipe", recipe)
         startActivity(intent)
+
     }
 
     /**

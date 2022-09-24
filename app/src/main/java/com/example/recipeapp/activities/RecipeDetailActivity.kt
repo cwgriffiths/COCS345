@@ -51,9 +51,7 @@ class RecipeDetailActivity : AppCompatActivity() {
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.action_shopping_list -> Toast.makeText(this,"Shopping List Action Selected", Toast.LENGTH_SHORT).show()
             R.id.action_meal_planner -> AddMealPlannerDialog(recipe, applicationContext).show(supportFragmentManager, "AddMealPlannerDialog")
-            R.id.action_settings -> Toast.makeText(this,"Settings Selected", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
     }
