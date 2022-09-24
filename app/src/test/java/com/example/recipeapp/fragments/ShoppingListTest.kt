@@ -1,12 +1,11 @@
 package com.example.recipeapp.fragments
 
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import com.example.recipeapp.ui.shoppingList.ShoppingList
 import org.junit.Assert.*
 
 import org.junit.Test
-import org.mockito.Mock
 import org.mockito.Mockito
 
 /**

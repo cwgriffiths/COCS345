@@ -1,4 +1,4 @@
-package com.example.recipeapp.fragments
+package com.example.recipeapp.ui.recipe
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import com.example.recipeapp.R
 import com.example.recipeapp.activities.MainActivity
-import com.example.recipeapp.dao.Maps
+import com.example.recipeapp.consts.Maps
 import com.example.recipeapp.databinding.FragmentRegionSelectNewBinding
+import com.example.recipeapp.ui.recipe.Recipe
 
 /**
  * Continent select fragment

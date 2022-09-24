@@ -1,4 +1,4 @@
-package com.example.recipeapp.entities
+package com.example.recipeapp.db.entities
 
 import android.os.Parcel
 import android.os.Parcelable

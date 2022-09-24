@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.ui.shoppingList
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipeapp.entities.ShoppingItemEnt
-import com.example.recipeapp.fragments.ShoppingList
+import com.example.recipeapp.R
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 /**
  * Adapter for the [RecyclerView] in [ShoppingList].

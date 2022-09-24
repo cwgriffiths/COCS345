@@ -1,4 +1,4 @@
-package com.example.recipeapp.fragments
+package com.example.recipeapp.ui.mealPlanner
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.recipeapp.AppDB
+import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.R
 import com.example.recipeapp.activities.RecipeDetailActivity
 import com.example.recipeapp.databinding.FragmentMealPlannerBinding
-import com.example.recipeapp.entities.RecipeEnt
-import com.example.recipeapp.entities.MealPlannerEnt
+import com.example.recipeapp.db.entities.RecipeEnt
+import com.example.recipeapp.db.entities.MealPlannerEnt
 
 /**
  * Meal Planner class

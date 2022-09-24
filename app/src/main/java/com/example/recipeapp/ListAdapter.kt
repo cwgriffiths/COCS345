@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipeapp.dao.Emojis
+import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.RecipeRowBinding
-import com.example.recipeapp.entities.RecipeEnt
-import com.example.recipeapp.fragments.Recipe
-import com.example.recipeapp.fragments.ShoppingList
+import com.example.recipeapp.db.entities.RecipeEnt
+import com.example.recipeapp.ui.recipe.Recipe
 
 /**
  * Adapter class for the list of available recipes

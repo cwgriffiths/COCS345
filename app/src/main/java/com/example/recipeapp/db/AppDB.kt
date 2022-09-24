@@ -1,15 +1,15 @@
-package com.example.recipeapp
+package com.example.recipeapp.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.recipeapp.dao.MealPlannerEntDAO
-import com.example.recipeapp.dao.RecipeEntDAO
-import com.example.recipeapp.dao.ShoppingItemEntDAO
-import com.example.recipeapp.entities.MealPlannerEnt
-import com.example.recipeapp.entities.RecipeEnt
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.dao.MealPlannerEntDAO
+import com.example.recipeapp.db.dao.RecipeEntDAO
+import com.example.recipeapp.db.dao.ShoppingItemEntDAO
+import com.example.recipeapp.db.entities.MealPlannerEnt
+import com.example.recipeapp.db.entities.RecipeEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 @Database(entities = [RecipeEnt::class,ShoppingItemEnt::class,MealPlannerEnt::class], version = 1, exportSchema = false)
 /**

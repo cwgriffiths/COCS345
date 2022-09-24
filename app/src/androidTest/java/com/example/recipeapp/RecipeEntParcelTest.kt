@@ -2,7 +2,7 @@ package com.example.recipeapp
 
 import android.os.Parcel
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.recipeapp.entities.RecipeEnt
+import com.example.recipeapp.db.entities.RecipeEnt
 import org.junit.Test
 import org.junit.runner.RunWith
 

@@ -1,4 +1,4 @@
-package com.example.recipeapp.dao
+package com.example.recipeapp.consts
 
 /**
  * data class to store continent ids and names

@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import com.example.recipeapp.R
 import com.example.recipeapp.Util.Companion.stringToFormattedList
-import com.example.recipeapp.dao.Emojis
+import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
-import com.example.recipeapp.entities.RecipeEnt
-import com.example.recipeapp.fragments.AddMealPlannerDialog
+import com.example.recipeapp.db.entities.RecipeEnt
+import com.example.recipeapp.ui.mealPlanner.AddMealPlannerDialog
 
 /**
  * @author Conor Griffiths

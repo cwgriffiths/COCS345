@@ -2,12 +2,12 @@ package com.example.recipeapp.fragments
 
 import android.view.View
 import androidx.fragment.app.FragmentManager
+import com.example.recipeapp.ui.recipe.RegionSelectNew
 import org.junit.Assert.*
 
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 /**

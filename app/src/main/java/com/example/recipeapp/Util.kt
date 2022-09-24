@@ -5,7 +5,7 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.BulletSpan
 import androidx.core.text.toSpannable
-import com.example.recipeapp.entities.ShoppingItemEnt
+import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 /**
  * @author Conor Griffiths, Cordell O'Leary
@@ -68,5 +68,19 @@ class Util {
             }
             return builder.toSpannable()
         }
+
+        /**
+         * Takes a string of ingredients with 4 properties and creates a shopping item ent
+         */
+        fun ingredientsToList(ingredients: String): List<ShoppingItemEnt> {
+            val ingredientList = ingredients.split(",")
+            var itemList = emptyList<ShoppingItemEnt>().toMutableList()
+            for (i in 0..ingredientList.size-1 step 4){
+                itemList.add(ShoppingItemEnt(0,ingredientList[i+3].trimStart(),ingredientList[i].trimStart().toDouble(),ingredientList[i+1].trimStart(),true,ingredientList[i+2].trimStart()))
+            }
+
+            return itemList
+        }
+
     }
 }
