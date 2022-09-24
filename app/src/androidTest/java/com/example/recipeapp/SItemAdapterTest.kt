@@ -7,7 +7,7 @@ import com.example.recipeapp.db.entities.ShoppingItemEnt
  */
 class SItemAdapterTest {
 
-    private val sItem = ShoppingItemEnt(1, "item", 1.0, "unit", true, "food")
+//    private val sItem = ShoppingItemEnt(1, "item", 1.0, "unit", true, "food")
 /**
     @Test
     fun onCreateViewHolder() {
