@@ -40,7 +40,7 @@ class ShoppingListFragment : Fragment() {
             recyclerView.adapter = adapter
         })
         binding!!.addShoppingItem.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_shopping_list_to_navigate_addShoppingItem2)
+            findNavController().navigate(R.id.action_shoppingListFragment_to_addShoppingItemFragment)
         }
         return fragmentBinding.root
     }

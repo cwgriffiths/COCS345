@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
 import com.example.scrapkitchen.MainActivity
@@ -54,23 +55,15 @@ class RecipeFragment : Fragment() {
         when (item.itemId){
             R.id.addToList ->{
                 findNavController().navigate(R.id.action_recipeFragment_to_addListFromRecipeFragment)
+                return true
             }
             R.id.addToMealPlanner -> {
                 MealPlannerSelectDialog().show(
                     childFragmentManager,MealPlannerSelectDialog.TAG)
+                return true
             }
         }
-        return if (item.itemId == R.id.addToList){
-            findNavController().navigate(R.id.action_recipeFragment_to_addListFromRecipeFragment)
-            true
-        } else{
-            item.onNavDestinationSelected(findNavController()) || super.onOptionsItemSelected(item)
-        }
+        return false
     }
-
-    override fun toString(): String {
-        return recipe.name
-    }
-
 
 }

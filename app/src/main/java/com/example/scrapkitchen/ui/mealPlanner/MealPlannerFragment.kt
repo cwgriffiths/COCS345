@@ -66,7 +66,7 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
     override fun onClick(view: View) {
         val recipe = mealPlannerViewModel.weekRecipes[buttonList.indexOf(view)]
         recipeViewModel.setCurRecipe(recipe)
-        findNavController().navigate(R.id.action_navigation_meal_planner_to_recipeFragment)
+        findNavController().navigate(R.id.action_mealPlannerFragment_to_recipeFragment)
     }
 
 

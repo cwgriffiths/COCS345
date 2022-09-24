@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_region_select, R.id.navigation_meal_planner, R.id.navigation_shopping_list
+                R.id.regionSelectFragment, R.id.mealPlannerFragment, R.id.shoppingListFragment
             )
         )
         setSupportActionBar(binding.toolbar)
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         shoppingListViewModel.items.observe(this, Observer {
             println(it)
         })
-        seeRecipes(recipeViewModel.getRecipes())
+//        seeRecipes(recipeViewModel.getRecipes())
     }
 
     override fun onSupportNavigateUp(): Boolean {
