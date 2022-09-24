@@ -3,7 +3,9 @@ package com.example.recipeapp.db.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.recipeapp.db.entities.ShoppingItemEnt
+import kotlinx.coroutines.flow.Flow
 
 /**
  * Defines methods for using the ShoppingItemEnt class with Room.
@@ -15,7 +17,7 @@ interface ShoppingItemEntDAO {
      * Get the entire shopping list
      */
     @Query("SELECT * FROM item_table")
-    fun getShoppingList() : List<ShoppingItemEnt>
+    fun getShoppingList() : Flow<List<ShoppingItemEnt>>
 
     /**
      * Remove all checked items from the shopping list table
@@ -40,4 +42,10 @@ interface ShoppingItemEntDAO {
      */
     @Query("UPDATE item_table SET checked = (:check) WHERE id = (:id)")
     fun checkItem(id : Int, check : Boolean)
+
+    /**
+     * Updates singular shopping list item
+     */
+    @Update
+    fun updateItem(item: ShoppingItemEnt)
 }

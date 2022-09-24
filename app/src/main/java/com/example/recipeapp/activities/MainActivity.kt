@@ -1,22 +1,29 @@
 package com.example.recipeapp.activities
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.example.recipeapp.R
 //import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.databinding.ActivityMainBinding
 import com.example.recipeapp.ui.mealPlanner.MealPlanner
 import com.example.recipeapp.ui.recipe.Recipe
+import com.example.recipeapp.ui.recipe.RecipeViewModel
 import com.example.recipeapp.ui.recipe.RegionSelectNew
-import com.example.recipeapp.ui.shoppingList.ShoppingList
+import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
+import com.example.scrapkitchen.ui.shoppingList.ShoppingListFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
  * @author Conor Griffiths
  */
 class MainActivity : AppCompatActivity() {
+
+    private val recipeViewModel: RecipeViewModel by viewModels { RecipeViewModel.Factory}
+    private val shoppingListViewModel: ShoppingListViewModel by viewModels { ShoppingListViewModel.Factory  }
 
     private lateinit var toolbar: Toolbar
     private lateinit var binding: ActivityMainBinding
@@ -46,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         navBar = binding.bottomNavigation
 
-        val shoppingListFragment = ShoppingList()
+        val shoppingListFragment = ShoppingListFragment()
         val mealPlannerFragment = MealPlanner()
         val recipeSelectFragment = RegionSelectNew(supportFragmentManager)
         // Set default fragment
@@ -62,6 +69,9 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        shoppingListViewModel.items.observe(this, Observer {
+            println(it)
+        })
 
     }
 

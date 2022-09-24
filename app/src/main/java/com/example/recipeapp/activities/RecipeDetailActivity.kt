@@ -1,6 +1,7 @@
 package com.example.recipeapp.activities
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -51,6 +52,11 @@ class RecipeDetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.action_meal_planner -> AddMealPlannerDialog(recipe, applicationContext).show(supportFragmentManager, "AddMealPlannerDialog")
+            R.id.action_shopping_list -> {
+                val intent = Intent (applicationContext, AddFromRecipe()::class.java)
+                intent.putExtra("recipe2", recipe)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
