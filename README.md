@@ -2,14 +2,21 @@
 
 #Scrap Kitchen
 
-In the current alpha version the working features are
+In the current beta version the working features are
 
--   recipe filtering by region or ingredient
--   basic shopping list
--   pre populated meal planner which can be clicked on to take the user to a recipe
+-   recipe filtering by continent
+-   shopping list
+    - Items can be added via the shopping list or by adding recipe ingredients via a recipe
+-   meal planner 
+    - Meals can be added to the meal planner via a recipe
 -   Navigation scheme
 
-The design of the app is still very rough and this is something we will be focussing on prior to the beta release
+What our beta release has improved: 
+- Users can now adjust the meal planner by adding meals to particular days
+- Users can now add items from a recipe to the shopping list
+- The design has been upgraded - most notably, our home page with continent filtering
+
+The design of the app is still rough and this is something we will be focussing on prior to the final release
 
 App has been tested on a google pixel 5 using gesture navigation
 
