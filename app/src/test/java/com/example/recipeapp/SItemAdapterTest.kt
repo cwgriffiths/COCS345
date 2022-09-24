@@ -27,7 +27,7 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class SItemAdapterTest {
 
-    private val sItem = ShoppingItemEnt(1, "item", 1, "unit", true, "food")
+    private val sItem = ShoppingItemEnt(1, "item", 1.0, "unit", true, "food")
 
     @Mock
     lateinit var mockText: TextView
@@ -70,8 +70,8 @@ class SItemAdapterTest {
      */
     @Test
     fun testCompanion(){
-        assertEquals("1kg", SItemAdapter.generateText("kg", 1))
-        assertEquals("1g", SItemAdapter.generateText("g", 1))
-        assertEquals("1 Whole", SItemAdapter.generateText("Whole", 1))
+        assertEquals("1.0kg", SItemAdapter.generateText("kg", 1.0))
+        assertEquals("1.0g", SItemAdapter.generateText("g", 1.0))
+        assertEquals("1.0 Whole", SItemAdapter.generateText("Whole", 1.0))
     }
 }

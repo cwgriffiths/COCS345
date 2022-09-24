@@ -9,7 +9,7 @@ import org.junit.Test
  */
 class ShoppingItemEntTest {
 
-    private val shoppingItem = ShoppingItemEnt(1,"apple",2,"kg",false,"fruit")
+    private val shoppingItem = ShoppingItemEnt(1,"apple",2.0,"kg",false,"fruit")
 
     /**
      * Test if the shopping item is created correctly
@@ -32,7 +32,7 @@ class ShoppingItemEntTest {
      */
     @Test
     fun getAmount() {
-        assertEquals(2,shoppingItem.amount)
+        assertEquals(2.0,shoppingItem.amount, 0.0)
     }
 
     /**
@@ -82,7 +82,7 @@ class ShoppingItemEntTest {
      */
     @Test
     fun testToString() {
-        assertEquals("ShoppingItemEnt(id=1, item=apple, amount=2, metric=kg, checked=false, cat=fruit)",shoppingItem.toString())
+        assertEquals("ShoppingItemEnt(id=1, item=apple, amount=2.0, metric=kg, checked=false, cat=fruit)",shoppingItem.toString())
     }
 
     /**
