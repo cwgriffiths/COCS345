@@ -26,7 +26,7 @@ class AddShoppingItem : AppCompatActivity() {
         val cate = findViewById<Spinner>(R.id.category).selectedItem.toString()
         val metric = findViewById<Spinner>(R.id.metric).selectedItem.toString()
         val amount = findViewById<EditText>(R.id.amount).text.toString()
-        val ent = ShoppingItemEnt(0,name,amount.toIntOrNull() ?: 0,metric,false,cate)
+        val ent = ShoppingItemEnt(0,name,amount.toDoubleOrNull() ?: 0.0,metric,false,cate)
         AppDB.getInstance(applicationContext).shoppingItemDAO().addItem(ent)
         finish()
     }
