@@ -1,10 +1,13 @@
 package com.example.recipeapp
 
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.recipeapp.db.entities.ShoppingItemEnt
+import org.junit.runner.RunWith
 
 /**
  * @author Conor Griffiths
  */
+/**@RunWith(AndroidJUnit4::class)
 class SItemAdapterTest {
 
 //    private val sItem = ShoppingItemEnt(1, "item", 1.0, "unit", true, "food")
@@ -27,4 +30,4 @@ class SItemAdapterTest {
 
     }
     */
-}
+}**/
