@@ -12,8 +12,8 @@ import androidx.room.PrimaryKey
 data class ShoppingItemEnt(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "item") val item: String,
-    @ColumnInfo(name = "amount") val amount: Double,
+    @ColumnInfo(name = "amount") var amount: Double,
     @ColumnInfo(name = "metric") val metric: String,
     @ColumnInfo(name = "checked") var checked: Boolean,
-    @ColumnInfo(name = "category") val cat: String
+    @ColumnInfo(name = "category") var cat: String
 )
