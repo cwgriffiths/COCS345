@@ -5,7 +5,7 @@
     <data>
         <variable
             name="RecipeVM"
-            type="com.example.scrapkitchen.ui.recipe.RecipeViewModel" />
+            type="com.example.recipeapp.ui.recipe.RecipeViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

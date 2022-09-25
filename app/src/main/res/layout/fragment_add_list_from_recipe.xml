@@ -3,7 +3,7 @@
         <data>
                 <variable
                     name="ShoppingListVM"
-                    type="com.example.scrapkitchen.ui.shoppingList.ShoppingListViewModel" />
+                    type="com.example.recipeapp.ui.shoppingList.ShoppingListViewModel" />
         </data>
 <LinearLayout
         android:layout_width="match_parent"
