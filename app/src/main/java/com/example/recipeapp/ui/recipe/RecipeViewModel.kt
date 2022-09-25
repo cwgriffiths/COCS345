@@ -27,14 +27,14 @@ class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
     }
 
     fun getRecipeById(id: Int): RecipeEnt {
-        return repo.getRecipeById(id);
+        return repo.getRecipeById(id)
     }
 
     private fun setRecipes() {
-        if (selectedRecipes == -1) {
-            recipes = repo.getRecipes()
+        recipes = if (selectedRecipes == -1) {
+            repo.getRecipes()
         } else {
-            recipes = repo.getRecipeByCountry(selectedRecipes)
+            repo.getRecipeByCountry(selectedRecipes)
         }
     }
 

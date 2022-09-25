@@ -8,9 +8,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.MealPlannerEnt
 import com.example.recipeapp.db.repos.MealPlannerRepo
-import com.example.scrapkitchen.getOrAwaitValue
+import com.example.recipeapp.getOrAwaitValue
 import junit.framework.TestCase
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -19,7 +18,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class MealPlannerViewModelTest : TestCase(){
     private lateinit var viewModel: MealPlannerViewModel
-    private val mealPlannerData = listOf<MealPlannerEnt>(MealPlannerEnt(0,0), MealPlannerEnt(1,1),MealPlannerEnt(2,2),MealPlannerEnt(3,3),MealPlannerEnt(4,4),MealPlannerEnt(5,5),MealPlannerEnt(6,6))
+    private val mealPlannerData = listOf(MealPlannerEnt(0,0), MealPlannerEnt(1,1),MealPlannerEnt(2,2),MealPlannerEnt(3,3),MealPlannerEnt(4,4),MealPlannerEnt(5,5),MealPlannerEnt(6,6))
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()

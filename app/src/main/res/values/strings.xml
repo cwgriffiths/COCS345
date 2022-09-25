@@ -67,5 +67,7 @@
     <string name="oceania_title">"Oceania"</string>
     <string name="oceania_blurb">"When you think of Oceania your mind goes straight to Australia and New Zealand and of course meat pies and Sunday roast but these two nations along with all the islands that occupy this massive continent are surrounded by water, so seafood is a huge part of all cuisine throughout. The smaller islands are mostly influenced by the countries that colonized them. For example, Fiji is influenced by India and the Philippines is influenced by Spain. This was one of the last continents to be settled which means influence from all around the world are found here but you won't find a better place to get a pavlova than right here in New Zealand."</string>
     <string name="daySelector">Select Day</string>
+    <string name="add_to_shopping_list_option">Add to Shopping List</string>
+    <string name="add_to_meal_planner_option">Add to Meal Planner</string>
 
 </resources>

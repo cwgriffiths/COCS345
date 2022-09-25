@@ -9,7 +9,6 @@ import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.repos.RecipeRepo
 import junit.framework.TestCase
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 

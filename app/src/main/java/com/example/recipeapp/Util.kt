@@ -11,7 +11,7 @@ import com.example.recipeapp.db.entities.ShoppingItemEnt
 class Util {
     companion object {
         fun mapByProp(items: List<ShoppingItemEnt>): Map<String, List<ShoppingItemEnt>> {
-            var map = HashMap<String, MutableList<ShoppingItemEnt>>()
+            val map = HashMap<String, MutableList<ShoppingItemEnt>>()
             items.forEach {
                 if (map.containsKey(it.cat.lowercase())) {
                     map[it.cat.lowercase()]?.add(it)
@@ -23,8 +23,8 @@ class Util {
         }
 
         fun titleCase(str: String): String {
-            var strList = str.split(" ")
-            var bob = StringBuilder()
+            val strList = str.split(" ")
+            val bob = StringBuilder()
             strList.forEach { it ->
                 bob.append(it.lowercase().replaceFirstChar { it.titlecase() })
                 bob.append(" ")
@@ -60,8 +60,8 @@ class Util {
 
         fun ingredientsToList(ingredients: String): List<ShoppingItemEnt> {
             val ingredientList = ingredients.split(",")
-            var itemList = emptyList<ShoppingItemEnt>().toMutableList()
-            for (i in 0..ingredientList.size - 1 step 4) {
+            val itemList = emptyList<ShoppingItemEnt>().toMutableList()
+            for (i in ingredientList.indices step 4) {
                 itemList.add(
                     ShoppingItemEnt(
                         0,

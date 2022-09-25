@@ -11,7 +11,6 @@ import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.FragmentRecipeBinding
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.ui.mealPlanner.MealPlannerSelectDialog
-import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
 
 
 class RecipeFragment : Fragment() {
@@ -19,7 +18,7 @@ class RecipeFragment : Fragment() {
     private lateinit var binding: FragmentRecipeBinding
     private val emojis = Emojis.Companion
 
-    private val shoppingListViewModel: ShoppingListViewModel by activityViewModels { ShoppingListViewModel.Factory }
+
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
     private lateinit var recipe: RecipeEnt
 
@@ -28,7 +27,7 @@ class RecipeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         recipe = recipeViewModel.getCurRecipe()!!
-        val fragmentBinding = FragmentRecipeBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentRecipeBinding.inflate(inflater)
         binding = fragmentBinding
         binding.flag.text = emojis.getEmoji(recipe.country)
         binding.titleTxt.text = recipe.name.replace("(", "\n(")
@@ -46,7 +45,6 @@ class RecipeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.recipe_menu, menu)
-        true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

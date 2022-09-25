@@ -14,6 +14,6 @@ class MealPlannerRepo(private val dao: MealPlannerEntDAO) {
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     fun updateMealPlanner(recipeId: Int, index: Int) {
-        dao.updateMealPlanner(recipeId, index);
+        dao.updateMealPlanner(recipeId, index)
     }
 }

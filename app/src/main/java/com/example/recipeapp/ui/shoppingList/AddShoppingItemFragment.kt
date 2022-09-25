@@ -16,15 +16,15 @@ import com.example.recipeapp.db.entities.ShoppingItemEnt
 class AddShoppingItemFragment : Fragment() {
 
     private val shoppingListViewModel: ShoppingListViewModel by activityViewModels { ShoppingListViewModel.Factory }
-    private var binding: FragmentAddShoppingItemBinding? = null
+    private lateinit var binding: FragmentAddShoppingItemBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val fragmentBinding = FragmentAddShoppingItemBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentAddShoppingItemBinding.inflate(inflater)
         binding = fragmentBinding
-        binding!!.submit.setOnClickListener {
+        binding.submit.setOnClickListener {
             addItem()
             requireActivity().onBackPressed()
         }

@@ -47,13 +47,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         shoppingListViewModel.items.observeForever { println() }
-        mealPlannerViewModel.items.observeForever { println() }
+        mealPlannerViewModel.items.observeForever {}
 
 //        seeRecipes(recipeViewModel.getRecipes())
     }
 
     override fun onStart() {
         super.onStart()
+        recipeViewModel.getRecipes()
         shoppingListViewModel.items.removeObservers(this)
         mealPlannerViewModel.items.removeObservers(this)
     }

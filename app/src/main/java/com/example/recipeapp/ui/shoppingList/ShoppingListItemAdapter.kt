@@ -22,9 +22,9 @@ class ShoppingListItemAdapter(
             println(shoppingList)
         }
 
-        val name: TextView = view.findViewById<TextView>(R.id.slist_name)
-        val metric: TextView = view.findViewById<TextView>(R.id.slist_amount_metric)
-        val checkbox: CheckBox = view.findViewById<CheckBox>(R.id.s_got)
+        val name: TextView = view.findViewById(R.id.slist_name)
+        val metric: TextView = view.findViewById(R.id.slist_amount_metric)
+        val checkbox: CheckBox = view.findViewById(R.id.s_got)
         override fun onClick(view: View) {
             GlobalScope.launch {
                 val item = shoppingList[adapterPosition]
@@ -54,7 +54,7 @@ class ShoppingListItemAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = shoppingList[position]
         holder.name.text = item.item
-        holder.checkbox.setChecked(item.checked)
+        holder.checkbox.isChecked = item.checked
         var amount = item.amount.toString()
         if (item.amount == floor(item.amount)) {
             amount = item.amount.toInt().toString()

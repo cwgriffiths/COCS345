@@ -35,9 +35,9 @@ class UtilTest {
         val itemList: List<ShoppingItemEnt> = listOf( ShoppingItemEnt(0,"Apples",2.1,"kg",false,"Fruit"),ShoppingItemEnt(1,"Carrots",5.4,"kg",false,"Vege"),ShoppingItemEnt(2,"Pineapple",2.6,"kg",false,"Fruit"),ShoppingItemEnt(3,"Beef",2.1,"kg",false,"Meat"),ShoppingItemEnt(4,"Cheese",2.1,"kg",false,"Dairy"))
         val fruits: List<ShoppingItemEnt> = listOf(ShoppingItemEnt(0,"Apples",2.1,"kg",false,"Fruit"),ShoppingItemEnt(2,"Pineapple",2.6,"kg",false,"Fruit"))
         val meats: List<ShoppingItemEnt> = listOf(ShoppingItemEnt(3,"Beef",2.1,"kg",false,"Meat"))
-        val map = Util.mapByProp(itemList);
-        assertEquals(map.get("fruit"),fruits)
-        assertEquals(map.get("meat")!!.size,meats.size)
+        val map = Util.mapByProp(itemList)
+        assertEquals(map["fruit"],fruits)
+        assertEquals(map["meat"]!!.size,meats.size)
     }
 
     @Test

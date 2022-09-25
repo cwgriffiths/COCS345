@@ -48,7 +48,7 @@ class ShoppingListViewModelTest : TestCase() {
         val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
         viewModel.addItem(item)
         val itemsAdd = viewModel.items.getOrAwaitValue()
-        val fetchItem = itemsAdd.get(itemsAdd.indexOf(item))
+        val fetchItem = itemsAdd[itemsAdd.indexOf(item)]
         viewModel.removeItem(fetchItem)
         val items = viewModel.items.getOrAwaitValue()
         assert(!items.contains(fetchItem))
@@ -59,7 +59,7 @@ class ShoppingListViewModelTest : TestCase() {
         val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
         viewModel.addItem(item)
         val itemsAdd = viewModel.items.getOrAwaitValue()
-        val fetchItem = itemsAdd.get(itemsAdd.indexOf(item))
+        val fetchItem = itemsAdd[itemsAdd.indexOf(item)]
         viewModel.checkItem(fetchItem)
         item.checked = !item.checked
         val items = viewModel.items.getOrAwaitValue()

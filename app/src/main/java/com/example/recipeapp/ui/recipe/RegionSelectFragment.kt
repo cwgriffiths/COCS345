@@ -14,7 +14,7 @@ import com.example.recipeapp.databinding.FragmentRegionSelectBinding
 
 class RegionSelectFragment : Fragment(), View.OnClickListener {
 
-    private var binding: FragmentRegionSelectBinding? = null
+    private lateinit var binding: FragmentRegionSelectBinding
 
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
 
@@ -24,24 +24,20 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val fragmentBinding = FragmentRegionSelectBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentRegionSelectBinding.inflate(inflater)
         binding = fragmentBinding
-        binding!!.Africa.setOnClickListener(this)
-        binding!!.Asia.setOnClickListener(this)
-        binding!!.Antarctica.setOnClickListener(this)
-        binding!!.NorthAmerica.setOnClickListener(this)
-        binding!!.SouthAmerica.setOnClickListener(this)
-        binding!!.Oceania.setOnClickListener(this)
-        binding!!.Europe.setOnClickListener(this)
-        binding!!.viewRecipes.setOnClickListener(this)
+        binding.Africa.setOnClickListener(this)
+        binding.Asia.setOnClickListener(this)
+        binding.Antarctica.setOnClickListener(this)
+        binding.NorthAmerica.setOnClickListener(this)
+        binding.SouthAmerica.setOnClickListener(this)
+        binding.Oceania.setOnClickListener(this)
+        binding.Europe.setOnClickListener(this)
+        binding.viewRecipes.setOnClickListener(this)
         recipeViewModel.selectedRecipes = -1
         return fragmentBinding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
 
     override fun onClick(v: View) {
         var blurb = getString(R.string.welcome_blurb)
@@ -104,7 +100,7 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
                 blurb = getString(R.string.oceania_blurb)
             }
         }
-        binding?.title?.text = title
-        binding?.blurb?.text = blurb
+        binding.title.text = title
+        binding.blurb.text = blurb
     }
 }

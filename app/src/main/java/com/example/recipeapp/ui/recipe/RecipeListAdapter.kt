@@ -26,7 +26,7 @@ class RecipeListAdapter(
 
         override fun onClick(p0: View?) {
             vm.setCurRecipe(recipeList[adapterPosition])
-            listener.onRecipeSelected(recipeList[adapterPosition])
+            onRecipeSelected.onRecipeSelected(recipeList[adapterPosition])
         }
 
         var title = recipeRowBinding.titleTxt

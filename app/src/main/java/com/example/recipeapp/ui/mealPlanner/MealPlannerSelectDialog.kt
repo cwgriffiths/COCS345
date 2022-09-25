@@ -2,7 +2,6 @@ package com.example.recipeapp.ui.mealPlanner
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
@@ -19,14 +18,14 @@ class MealPlannerSelectDialog : DialogFragment() {
         return activity.let {
             val builder = AlertDialog.Builder(it)
             builder.setTitle(R.string.daySelector)
-                .setItems(R.array.Days, DialogInterface.OnClickListener { _, which ->
+                .setItems(R.array.Days) { _, which ->
                     run {
                         mealPlannerViewModel.updateMealItem(
                             recipeViewModel.getCurRecipe()!!.id,
                             which
                         )
                     }
-                })
+                }
             builder.create()
         }
     }

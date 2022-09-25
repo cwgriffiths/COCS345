@@ -14,7 +14,7 @@ import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 
 class CategoryAdapter(
-    private var itemsIn: List<ShoppingItemEnt>,
+    itemsIn: List<ShoppingItemEnt>,
     private val vm: ShoppingListViewModel
 ) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
     private val items = Util.mapByProp(itemsIn)

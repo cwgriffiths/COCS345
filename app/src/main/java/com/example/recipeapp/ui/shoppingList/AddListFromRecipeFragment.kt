@@ -27,7 +27,7 @@ class AddListFromRecipeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val fragmentBinding = FragmentAddListFromRecipeBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentAddListFromRecipeBinding.inflate(inflater)
         binding = fragmentBinding
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this.context)

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentMealPlannerBinding
@@ -16,8 +15,8 @@ import com.example.recipeapp.ui.recipe.RecipeViewModel
 
 class MealPlannerFragment : Fragment(), View.OnClickListener {
 
-    private var binding: FragmentMealPlannerBinding? = null
-    private var buttonList: MutableList<Button> = mutableListOf<Button>()
+    private lateinit var binding: FragmentMealPlannerBinding
+    private var buttonList: MutableList<Button> = mutableListOf()
 
     private val mealPlannerViewModel: MealPlannerViewModel by activityViewModels { MealPlannerViewModel.Factory }
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
@@ -27,21 +26,20 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val fragmentBinding = FragmentMealPlannerBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentMealPlannerBinding.inflate(inflater)
         binding = fragmentBinding
         buttonList.clear()
-        buttonList.add(binding!!.dinnerMon)
-        buttonList.add(binding!!.dinnerTue)
-        buttonList.add(binding!!.dinnerWed)
-        buttonList.add(binding!!.dinnerThu)
-        buttonList.add(binding!!.dinnerFri)
-        buttonList.add(binding!!.dinnerSat)
-        buttonList.add(binding!!.dinnerSun)
+        buttonList.add(binding.dinnerMon)
+        buttonList.add(binding.dinnerTue)
+        buttonList.add(binding.dinnerWed)
+        buttonList.add(binding.dinnerThu)
+        buttonList.add(binding.dinnerFri)
+        buttonList.add(binding.dinnerSat)
+        buttonList.add(binding.dinnerSun)
 
         mealPlannerViewModel.items.observe(viewLifecycleOwner) {
             mealPlannerViewModel.weekRecipes.clear()
             for (i in 0 until buttonList.size) {
-                println(i)
                 buttonList[i].setOnClickListener(this)
                 val recipe = recipeViewModel.getRecipeById(it[i].dinner_recipe)
                 mealPlannerViewModel.weekRecipes.add(recipe)
@@ -57,11 +55,5 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
         val recipe = mealPlannerViewModel.weekRecipes[buttonList.indexOf(view)]
         recipeViewModel.setCurRecipe(recipe)
         findNavController().navigate(R.id.action_mealPlannerFragment_to_recipeFragment)
-    }
-
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 }

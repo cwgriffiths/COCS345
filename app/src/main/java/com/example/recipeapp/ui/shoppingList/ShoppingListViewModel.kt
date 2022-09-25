@@ -31,37 +31,43 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
 
     fun mergeItems(newItems: List<ShoppingItemEnt>) {
 //        Could make this faster with a hash map but too lazy some in doing a double for loop
-        newItems.forEach {
-            if (it.checked) {
+        newItems.forEach { newItem ->
+            if (newItem.checked) {
                 var add = true
-                val item = it
                 items.value!!.forEach {
                     val curItem = it
-                    if (item.item.lowercase() == curItem.item.lowercase() && add) {
-                        curItem.amount += item.amount
+                    if (newItem.item.lowercase() == curItem.item.lowercase() && add) {
+                        curItem.amount += newItem.amount
                         add = false
                         updateItem(curItem)
                     }
                 }
                 if (add) {
-                    item.checked = false
-                    val cat = item.cat.lowercase().trim()
-                    if (cat == "produce") {
-                        item.cat = "Produce \uD83C\uDF4E"
-                    } else if (cat == "meats&seafood") {
-                        item.cat = "Meats & Seafood \uD83C\uDF57"
-                    } else if (cat == "baking goods") {
-                        item.cat = "Baking Goods \uD83E\uDDC8"
-                    } else if (cat == "frozen") {
-                        item.cat = "Frozen \uD83C\uDF66"
-                    } else if (cat == "pantry") {
-                        item.cat = "Pantry \uD83C\uDF6B"
-                    } else if (cat == "bakery") {
-                        item.cat = "Bakery \uD83C\uDF5E"
-                    } else if (cat == "dairy") {
-                        item.cat = "Dairy \uD83E\uDD5B"
+                    newItem.checked = false
+                    when (newItem.cat.lowercase().trim()) {
+                        "produce" -> {
+                            newItem.cat = "Produce \uD83C\uDF4E"
+                        }
+                        "meats&seafood" -> {
+                            newItem.cat = "Meats & Seafood \uD83C\uDF57"
+                        }
+                        "baking goods" -> {
+                            newItem.cat = "Baking Goods \uD83E\uDDC8"
+                        }
+                        "frozen" -> {
+                            newItem.cat = "Frozen \uD83C\uDF66"
+                        }
+                        "pantry" -> {
+                            newItem.cat = "Pantry \uD83C\uDF6B"
+                        }
+                        "bakery" -> {
+                            newItem.cat = "Bakery \uD83C\uDF5E"
+                        }
+                        "dairy" -> {
+                            newItem.cat = "Dairy \uD83E\uDD5B"
+                        }
                     }
-                    addItem(item)
+                    addItem(newItem)
                 }
             }
         }
