@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="oceanBlue">#99D9EA</color>
-    <color name="hf_green">#23AD35</color>
+    <color name="hf_green">#408349</color>
+
+    <color name="primaryColor">#408349</color>
+    <color name="primaryColorDark">#366C3D</color>
 </resources>

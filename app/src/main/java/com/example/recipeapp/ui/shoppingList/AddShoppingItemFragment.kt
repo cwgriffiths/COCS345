@@ -36,8 +36,9 @@ class AddShoppingItemFragment : Fragment() {
         val category = view?.findViewById<Spinner>(R.id.category)?.selectedItem.toString()
         val metric = view?.findViewById<Spinner>(R.id.metric)?.selectedItem.toString()
         val amount = view?.findViewById<EditText>(R.id.amount)?.text.toString()
-        val ent = ShoppingItemEnt(0, name, amount.toDouble(), metric, false, category)
-        shoppingListViewModel.addItem(ent)
+        val ent = ShoppingItemEnt(0, name, amount.toDouble(), metric, true, category)
+        shoppingListViewModel.mergeItems(listOf(ent))
+//        shoppingListViewModel.addItem(ent)
     }
 
 }
