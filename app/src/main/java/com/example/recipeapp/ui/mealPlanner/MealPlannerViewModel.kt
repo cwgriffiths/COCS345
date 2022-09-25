@@ -34,7 +34,7 @@ class MealPlannerViewModel(private val repo: MealPlannerRepo) : ViewModel() {
                 val savedStateHandle = extras.createSavedStateHandle()
 
                 return MealPlannerViewModel(
-                    (repo as MealPlannerRepo)
+                    (repo)
                 ) as T
             }
         }

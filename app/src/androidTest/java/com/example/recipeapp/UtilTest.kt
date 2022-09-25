@@ -1,11 +1,8 @@
 package com.example.recipeapp
 
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 import junit.framework.Assert.assertEquals
-import junit.framework.TestCase
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -15,15 +12,15 @@ class UtilTest {
 
     @Test
     fun titleCase(){
-        val Title = "Hello There Title Test"
+        val title = "Hello There Title Test"
         val nonTitle = "hello there title test"
-        assertEquals(Title, Util.titleCase(nonTitle))
-        val Title2 = "Hello There Title Test2 "
+        assertEquals(title, Util.titleCase(nonTitle))
+        val title2 = "Hello There Title Test2 "
         val nonTitle2 = "HeLLo ThErE tiTlE teSt2 "
-        assertEquals(Title2, Util.titleCase(nonTitle2))
-        val Title3 = " "
+        assertEquals(title2, Util.titleCase(nonTitle2))
+        val title3 = " "
         val nonTitle3 = " "
-        assertEquals(Title3, Util.titleCase(nonTitle3))
+        assertEquals(title3, Util.titleCase(nonTitle3))
 
         assertEquals("Hello World", Util.titleCase("hello world"))
         assertEquals("Hello World", Util.titleCase("HELLO WORLD"))
@@ -53,9 +50,9 @@ class UtilTest {
 
     @Test
     fun ingredientsToList(){
-        var ing = "1, Whole, pantry, Pie"
-        var expectedItem = ShoppingItemEnt(0,"Pie",1.0,"Whole",true,"pantry")
-        var list = Util.ingredientsToList(ing)
+        val ing = "1, Whole, pantry, Pie"
+        val expectedItem = ShoppingItemEnt(0,"Pie",1.0,"Whole",true,"pantry")
+        val list = Util.ingredientsToList(ing)
         println(list)
         assert(list.contains(expectedItem))
     }

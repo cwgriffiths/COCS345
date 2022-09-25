@@ -34,10 +34,10 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
         newItems.forEach {
             if (it.checked) {
                 var add = true
-                var item = it
+                val item = it
                 items.value!!.forEach {
-                    var curItem = it
-                    if (item.item.lowercase().equals(curItem.item.lowercase()) && add) {
+                    val curItem = it
+                    if (item.item.lowercase() == curItem.item.lowercase() && add) {
                         curItem.amount += item.amount
                         add = false
                         updateItem(curItem)
@@ -46,19 +46,19 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
                 if (add) {
                     item.checked = false
                     val cat = item.cat.lowercase().trim()
-                    if (cat.equals("produce")) {
+                    if (cat == "produce") {
                         item.cat = "Produce \uD83C\uDF4E"
-                    } else if (cat.equals("meats&seafood")) {
+                    } else if (cat == "meats&seafood") {
                         item.cat = "Meats & Seafood \uD83C\uDF57"
-                    } else if (cat.equals("baking goods")) {
+                    } else if (cat == "baking goods") {
                         item.cat = "Baking Goods \uD83E\uDDC8"
-                    } else if (cat.equals("frozen")) {
+                    } else if (cat == "frozen") {
                         item.cat = "Frozen \uD83C\uDF66"
-                    } else if (cat.equals("pantry")) {
+                    } else if (cat == "pantry") {
                         item.cat = "Pantry \uD83C\uDF6B"
-                    } else if (cat.equals("bakery")) {
+                    } else if (cat == "bakery") {
                         item.cat = "Bakery \uD83C\uDF5E"
-                    } else if (cat.equals("dairy")) {
+                    } else if (cat == "dairy") {
                         item.cat = "Dairy \uD83E\uDD5B"
                     }
                     addItem(item)
@@ -90,7 +90,7 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
                 )
 
                 return ShoppingListViewModel(
-                    (repo as ShoppingItemRepo)
+                    (repo)
                 ) as T
             }
         }

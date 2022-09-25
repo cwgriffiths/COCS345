@@ -19,7 +19,7 @@ class MealPlannerSelectDialog : DialogFragment() {
         return activity.let {
             val builder = AlertDialog.Builder(it)
             builder.setTitle(R.string.daySelector)
-                .setItems(R.array.Days, DialogInterface.OnClickListener { dialog, which ->
+                .setItems(R.array.Days, DialogInterface.OnClickListener { _, which ->
                     run {
                         mealPlannerViewModel.updateMealItem(
                             recipeViewModel.getCurRecipe()!!.id,

@@ -21,7 +21,7 @@ class AddShoppingItemFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentBinding = FragmentAddShoppingItemBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         binding!!.submit.setOnClickListener {

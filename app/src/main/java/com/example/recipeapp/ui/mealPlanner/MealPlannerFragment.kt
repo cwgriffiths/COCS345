@@ -38,16 +38,16 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
         buttonList.add(binding!!.dinnerSat)
         buttonList.add(binding!!.dinnerSun)
 
-        mealPlannerViewModel.items.observe(viewLifecycleOwner, Observer {
+        mealPlannerViewModel.items.observe(viewLifecycleOwner) {
             mealPlannerViewModel.weekRecipes.clear()
-            for (i in 0..buttonList.size - 1) {
+            for (i in 0 until buttonList.size) {
                 println(i)
                 buttonList[i].setOnClickListener(this)
-                var recipe = recipeViewModel.getRecipeById(it[i].dinner_recipe)
+                val recipe = recipeViewModel.getRecipeById(it[i].dinner_recipe)
                 mealPlannerViewModel.weekRecipes.add(recipe)
                 buttonList[i].text = recipe.name
             }
-        })
+        }
 
 
         return fragmentBinding.root

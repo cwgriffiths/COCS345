@@ -34,10 +34,10 @@ class ShoppingListFragment : Fragment() {
         binding = fragmentBinding
         recyclerView = binding!!.shoppingListRecycle
         recyclerView.layoutManager = LinearLayoutManager(this.context)
-        shoppingListViewModel.items.observe(viewLifecycleOwner, Observer {
+        shoppingListViewModel.items.observe(viewLifecycleOwner) {
             adapter = CategoryAdapter(it, shoppingListViewModel)
             recyclerView.adapter = adapter
-        })
+        }
         binding!!.addShoppingItem.setOnClickListener {
             findNavController().navigate(R.id.action_shoppingListFragment_to_addShoppingItemFragment)
         }

@@ -56,9 +56,10 @@ class ShoppingListItemAdapter(
         holder.name.text = item.item
         holder.checkbox.setChecked(item.checked)
         var amount = item.amount.toString()
-        if (item.amount.toDouble() == floor(item.amount.toDouble())) {
+        if (item.amount == floor(item.amount)) {
             amount = item.amount.toInt().toString()
         }
-        holder.metric.text = amount + " " + item.metric
+        val text = amount + " " + item.metric
+        holder.metric.text = text
     }
 }

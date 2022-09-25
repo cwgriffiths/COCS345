@@ -53,7 +53,7 @@ class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
                 val repo = RecipeRepo(AppDB.getInstance(application.applicationContext).recipeDAO())
 
                 return RecipeViewModel(
-                    (repo as RecipeRepo)
+                    (repo)
                 ) as T
             }
         }
