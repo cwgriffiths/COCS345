@@ -23,7 +23,7 @@ class ShoppingListFragment : Fragment() {
     private lateinit var adapter: CategoryAdapter
 
 
-    private val shoppingListViewModel: ShoppingListViewModel by activityViewModels { ShoppingListViewModel.Factory  }
+    private val shoppingListViewModel: ShoppingListViewModel by activityViewModels { ShoppingListViewModel.Factory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +35,7 @@ class ShoppingListFragment : Fragment() {
         recyclerView = binding!!.shoppingListRecycle
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         shoppingListViewModel.items.observe(viewLifecycleOwner, Observer {
-            adapter = CategoryAdapter(it,shoppingListViewModel)
+            adapter = CategoryAdapter(it, shoppingListViewModel)
             recyclerView.adapter = adapter
         })
         binding!!.addShoppingItem.setOnClickListener {

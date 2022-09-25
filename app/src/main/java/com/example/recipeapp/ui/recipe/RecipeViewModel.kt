@@ -1,37 +1,37 @@
 package com.example.recipeapp.ui.recipe
 
-import android.app.Application
-import android.os.Bundle
 import androidx.lifecycle.*
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.CreationExtras
-import androidx.savedstate.SavedStateRegistryOwner
 import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.repos.RecipeRepo
 
 
 class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
-    private var recipes : List<RecipeEnt> = repo.getRecipes()
-    private var curRecipe : RecipeEnt? = null
+    private var recipes: List<RecipeEnt> = repo.getRecipes()
+    private var curRecipe: RecipeEnt? = null
     var selectedRecipes = -1
 
-    fun setCurRecipe(recipe : RecipeEnt){
+    fun setCurRecipe(recipe: RecipeEnt) {
         this.curRecipe = recipe
     }
-    fun getCurRecipe() : RecipeEnt?{
+
+    fun getCurRecipe(): RecipeEnt? {
         return curRecipe
     }
-    fun getRecipes(): List<RecipeEnt>{
+
+    fun getRecipes(): List<RecipeEnt> {
         setRecipes()
         return recipes
     }
-    fun getRecipeById(id : Int) : RecipeEnt{
+
+    fun getRecipeById(id: Int): RecipeEnt {
         return repo.getRecipeById(id);
     }
 
-    private fun setRecipes(){
-        if (selectedRecipes == -1){
+    private fun setRecipes() {
+        if (selectedRecipes == -1) {
             recipes = repo.getRecipes()
         } else {
             recipes = repo.getRecipeByCountry(selectedRecipes)

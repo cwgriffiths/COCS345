@@ -16,7 +16,7 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
 
     private var binding: FragmentRegionSelectBinding? = null
 
-    private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory}
+    private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
 
 
     override fun onCreateView(
@@ -47,15 +47,15 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
         var blurb = getString(R.string.welcome_blurb)
         var title = getString(R.string.app_name)
         val consts = Constants()
-        when(v.id){
+        when (v.id) {
             R.id.view_recipes -> {
                 findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
             }
-            R.id.Antarctica ->{
+            R.id.Antarctica -> {
                 recipeViewModel.selectedRecipes = -1
             }
             R.id.Africa -> {
-                if (recipeViewModel.selectedRecipes == consts.AFRICA){
+                if (recipeViewModel.selectedRecipes == consts.AFRICA) {
                     recipeViewModel.selectedRecipes = -1
                     findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
                 }
@@ -64,7 +64,7 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
                 blurb = getString(R.string.africa_blurb)
             }
             R.id.Asia -> {
-                if (recipeViewModel.selectedRecipes == consts.ASIA){
+                if (recipeViewModel.selectedRecipes == consts.ASIA) {
                     findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
                 }
                 recipeViewModel.selectedRecipes = consts.ASIA
@@ -72,14 +72,15 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
                 blurb = getString(R.string.asia_blurb)
             }
             R.id.NorthAmerica -> {
-                if (recipeViewModel.selectedRecipes == consts.NORTH_AMERICA){
+                if (recipeViewModel.selectedRecipes == consts.NORTH_AMERICA) {
                     findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
                 }
                 recipeViewModel.selectedRecipes = consts.NORTH_AMERICA
                 title = getString(R.string.north_america_title)
-                blurb = getString(R.string.north_america_blurb)}
+                blurb = getString(R.string.north_america_blurb)
+            }
             R.id.SouthAmerica -> {
-                if (recipeViewModel.selectedRecipes == consts.SOUTH_AMERICA){
+                if (recipeViewModel.selectedRecipes == consts.SOUTH_AMERICA) {
                     findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
                 }
                 recipeViewModel.selectedRecipes = consts.SOUTH_AMERICA
@@ -87,14 +88,15 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
                 blurb = getString(R.string.south_america_blurb)
             }
             R.id.Europe -> {
-                if (recipeViewModel.selectedRecipes == consts.EUROPE){
+                if (recipeViewModel.selectedRecipes == consts.EUROPE) {
                     findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
                 }
                 recipeViewModel.selectedRecipes = consts.EUROPE
                 title = getString(R.string.europe_title)
-                blurb = getString(R.string.europe_blurb)}
+                blurb = getString(R.string.europe_blurb)
+            }
             R.id.Oceania -> {
-                if (recipeViewModel.selectedRecipes == consts.OCEANIA){
+                if (recipeViewModel.selectedRecipes == consts.OCEANIA) {
                     findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
                 }
                 recipeViewModel.selectedRecipes = consts.OCEANIA

@@ -6,29 +6,27 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.coroutineScope
 import com.example.recipeapp.R
 import com.example.recipeapp.ui.recipe.RecipeViewModel
 
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-
-
 class MealPlannerSelectDialog : DialogFragment() {
 
-    private val mealPlannerViewModel: MealPlannerViewModel by activityViewModels { MealPlannerViewModel.Factory  }
-    private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory  }
+    private val mealPlannerViewModel: MealPlannerViewModel by activityViewModels { MealPlannerViewModel.Factory }
+    private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?) : Dialog {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity.let {
             val builder = AlertDialog.Builder(it)
-            builder.setTitle(R.string.daySelector).setItems(R.array.Days, DialogInterface.OnClickListener {
-                dialog, which ->
-                run {
-                    mealPlannerViewModel.updateMealItem(recipeViewModel.getCurRecipe()!!.id,which)
-                }
-            })
+            builder.setTitle(R.string.daySelector)
+                .setItems(R.array.Days, DialogInterface.OnClickListener { dialog, which ->
+                    run {
+                        mealPlannerViewModel.updateMealItem(
+                            recipeViewModel.getCurRecipe()!!.id,
+                            which
+                        )
+                    }
+                })
             builder.create()
         }
     }

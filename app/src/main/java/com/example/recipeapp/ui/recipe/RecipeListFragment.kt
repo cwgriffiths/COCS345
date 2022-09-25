@@ -14,9 +14,9 @@ import com.example.recipeapp.databinding.FragmentRecipeListBinding
 import com.example.recipeapp.db.entities.RecipeEnt
 
 
-class RecipeListFragment : Fragment(),RecipeListAdapter.OnRecipeSelected {
+class RecipeListFragment : Fragment(), RecipeListAdapter.OnRecipeSelected {
 
-    private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory}
+    private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
     private lateinit var binding: FragmentRecipeListBinding
 
     private lateinit var recyclerView: RecyclerView
@@ -30,11 +30,10 @@ class RecipeListFragment : Fragment(),RecipeListAdapter.OnRecipeSelected {
         binding = fragmentBinding
         recyclerView = binding.recipeRecycler
         recyclerView.layoutManager = LinearLayoutManager(this.context)
-        adapter = RecipeListAdapter(recipeViewModel.getRecipes(),recipeViewModel,this)
+        adapter = RecipeListAdapter(recipeViewModel.getRecipes(), recipeViewModel, this)
         recyclerView.adapter = adapter
         return fragmentBinding.root
     }
-
 
 
     override fun onRecipeSelected(recipe: RecipeEnt) {

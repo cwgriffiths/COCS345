@@ -1,6 +1,6 @@
 package com.example.recipeapp.consts
 
-class Emojis{
+class Emojis {
 
     companion object {
         private val countries: Map<String, String> = mapOf(

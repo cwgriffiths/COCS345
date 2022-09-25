@@ -1,7 +1,5 @@
 package com.example.recipeapp.ui.shoppingList
 
-import android.app.Application
-import android.os.Bundle
 import androidx.lifecycle.*
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.recipeapp.db.AppDB
@@ -12,19 +10,22 @@ import com.example.recipeapp.db.repos.ShoppingItemRepo
 class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
     var items: LiveData<List<ShoppingItemEnt>> = repo.getShoppingList().asLiveData()
 
-    fun addItem(item : ShoppingItemEnt){
+    fun addItem(item: ShoppingItemEnt) {
         repo.addItem(item)
     }
-    fun removeItem(item : ShoppingItemEnt){
-        repo.checkItem(item.id,true)
+
+    fun removeItem(item: ShoppingItemEnt) {
+        repo.checkItem(item.id, true)
         repo.removedChecked()
     }
-    fun checkItem(item: ShoppingItemEnt){
+
+    fun checkItem(item: ShoppingItemEnt) {
 
         item.checked = !item.checked
-        repo.checkItem(item.id,item.checked)
+        repo.checkItem(item.id, item.checked)
     }
-    fun removeChecked(){
+
+    fun removeChecked() {
         repo.removedChecked()
     }
 
@@ -43,30 +44,30 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
                     }
                 }
                 if (add) {
-                        item.checked = false
-                        val cat = item.cat.lowercase().trim()
-                        if (cat.equals("produce")){
-                            item.cat = "Produce \uD83C\uDF4E"
-                        } else if (cat.equals("meats&seafood")){
-                            item.cat = "Meats & Seafood \uD83C\uDF57"
-                        } else if (cat.equals("baking goods")) {
-                            item.cat = "Baking Goods \uD83E\uDDC8"
-                        } else if (cat.equals("frozen")){
-                            item.cat = "Frozen \uD83C\uDF66"
-                        } else if (cat.equals("pantry")){
-                            item.cat = "Pantry \uD83C\uDF6B"
-                        } else if (cat.equals("bakery")){
-                            item.cat = "Bakery \uD83C\uDF5E"
-                        } else if (cat.equals("dairy")){
-                            item.cat = "Dairy \uD83E\uDD5B"
-                        }
-                        addItem(item)
+                    item.checked = false
+                    val cat = item.cat.lowercase().trim()
+                    if (cat.equals("produce")) {
+                        item.cat = "Produce \uD83C\uDF4E"
+                    } else if (cat.equals("meats&seafood")) {
+                        item.cat = "Meats & Seafood \uD83C\uDF57"
+                    } else if (cat.equals("baking goods")) {
+                        item.cat = "Baking Goods \uD83E\uDDC8"
+                    } else if (cat.equals("frozen")) {
+                        item.cat = "Frozen \uD83C\uDF66"
+                    } else if (cat.equals("pantry")) {
+                        item.cat = "Pantry \uD83C\uDF6B"
+                    } else if (cat.equals("bakery")) {
+                        item.cat = "Bakery \uD83C\uDF5E"
+                    } else if (cat.equals("dairy")) {
+                        item.cat = "Dairy \uD83E\uDD5B"
+                    }
+                    addItem(item)
                 }
             }
         }
     }
 
-    private fun updateItem(item: ShoppingItemEnt){
+    private fun updateItem(item: ShoppingItemEnt) {
         repo.updateItem(item)
     }
 
@@ -80,10 +81,13 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
                 extras: CreationExtras
             ): T {
                 // Get the Application object from extras
-                val application = checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY])
+                val application =
+                    checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY])
                 // Create a SavedStateHandle for this ViewModel from extras
                 val savedStateHandle = extras.createSavedStateHandle()
-                val repo = ShoppingItemRepo(AppDB.getInstance(application.applicationContext).shoppingItemDAO())
+                val repo = ShoppingItemRepo(
+                    AppDB.getInstance(application.applicationContext).shoppingItemDAO()
+                )
 
                 return ShoppingListViewModel(
                     (repo as ShoppingItemRepo)

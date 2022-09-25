@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
  * @author Ariana
  */
 @Entity(tableName = "meal_planner_table")
-data class MealPlannerEnt (
+data class MealPlannerEnt(
     @PrimaryKey(autoGenerate = false) var id: Int,
     @ColumnInfo(name = "dinner_recipe") val dinner_recipe: Int
 )

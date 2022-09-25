@@ -12,7 +12,11 @@ import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 
 
-@Database(entities = [RecipeEnt::class, ShoppingItemEnt::class, MealPlannerEnt::class], version = 1, exportSchema = false)
+@Database(
+    entities = [RecipeEnt::class, ShoppingItemEnt::class, MealPlannerEnt::class],
+    version = 1,
+    exportSchema = false
+)
 
 abstract class AppDB : RoomDatabase() {
     abstract fun recipeDAO(): RecipeEntDAO

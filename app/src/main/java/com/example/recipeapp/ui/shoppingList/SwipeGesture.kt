@@ -4,7 +4,7 @@ import android.graphics.Color
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class SwipeGesture : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {
+abstract class SwipeGesture : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
     override fun onMove(
         recyclerView: RecyclerView,
@@ -15,7 +15,7 @@ abstract class SwipeGesture : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.L
     }
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-        if (direction == ItemTouchHelper.LEFT){
+        if (direction == ItemTouchHelper.LEFT) {
             viewHolder.itemView.setBackgroundColor(Color.RED)
         }
     }

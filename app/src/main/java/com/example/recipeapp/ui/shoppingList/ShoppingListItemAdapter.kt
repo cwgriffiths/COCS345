@@ -12,16 +12,20 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlin.math.floor
 
-class ShoppingListItemAdapter(private val shoppingList: List<ShoppingItemEnt>, private val vm:ShoppingListViewModel) : RecyclerView.Adapter<ShoppingListItemAdapter.MyViewHolder>() {
-    inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view),View.OnClickListener{
+class ShoppingListItemAdapter(
+    private val shoppingList: List<ShoppingItemEnt>,
+    private val vm: ShoppingListViewModel
+) : RecyclerView.Adapter<ShoppingListItemAdapter.MyViewHolder>() {
+    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         init {
             view.findViewById<CheckBox>(R.id.s_got).setOnClickListener(this)
             println(shoppingList)
         }
+
         val name: TextView = view.findViewById<TextView>(R.id.slist_name)
         val metric: TextView = view.findViewById<TextView>(R.id.slist_amount_metric)
-        val checkbox : CheckBox = view.findViewById<CheckBox>(R.id.s_got)
-        override fun onClick(view: View){
+        val checkbox: CheckBox = view.findViewById<CheckBox>(R.id.s_got)
+        override fun onClick(view: View) {
             GlobalScope.launch {
                 val item = shoppingList[adapterPosition]
                 vm.checkItem(item)
@@ -30,7 +34,8 @@ class ShoppingListItemAdapter(private val shoppingList: List<ShoppingItemEnt>, p
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = LayoutInflater.from(parent.context).inflate(R.layout.shopping_list_rv,parent,false)
+        val binding =
+            LayoutInflater.from(parent.context).inflate(R.layout.shopping_list_rv, parent, false)
         return MyViewHolder(binding)
     }
 
@@ -38,11 +43,11 @@ class ShoppingListItemAdapter(private val shoppingList: List<ShoppingItemEnt>, p
         return shoppingList.size
     }
 
-    fun getItems() : List<ShoppingItemEnt>{
+    fun getItems(): List<ShoppingItemEnt> {
         return shoppingList
     }
 
-    fun deleteItem(i : Int){
+    fun deleteItem(i: Int) {
         vm.removeItem(shoppingList[i])
     }
 
@@ -51,11 +56,9 @@ class ShoppingListItemAdapter(private val shoppingList: List<ShoppingItemEnt>, p
         holder.name.text = item.item
         holder.checkbox.setChecked(item.checked)
         var amount = item.amount.toString()
-        if (item.amount.toDouble() == floor(item.amount.toDouble())){
+        if (item.amount.toDouble() == floor(item.amount.toDouble())) {
             amount = item.amount.toInt().toString()
         }
-        holder.metric.text = amount + " "+ item.metric
-
-
+        holder.metric.text = amount + " " + item.metric
     }
 }
