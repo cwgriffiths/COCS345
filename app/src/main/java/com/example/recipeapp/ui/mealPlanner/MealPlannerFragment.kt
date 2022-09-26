@@ -12,7 +12,10 @@ import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentMealPlannerBinding
 import com.example.recipeapp.ui.recipe.RecipeViewModel
 
-
+/**
+ * Meal planner fragment to show the current meal planner
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 class MealPlannerFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentMealPlannerBinding
@@ -21,6 +24,9 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
     private val mealPlannerViewModel: MealPlannerViewModel by activityViewModels { MealPlannerViewModel.Factory }
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
 
+    /**
+     * Creates a binding and sets up the layout
+     * */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,6 +57,10 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
         return fragmentBinding.root
     }
 
+    /**
+     * Overrides the onClick which navigates to the recipe each button is connected to
+     * @param view the button that was clicked
+     * */
     override fun onClick(view: View) {
         val recipe = mealPlannerViewModel.weekRecipes[buttonList.indexOf(view)]
         recipeViewModel.setCurRecipe(recipe)

@@ -16,6 +16,11 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+
+/**
+ * @author Ariana,Conor,Cordell,Derek
+ * Test class to test shopping list view model
+ * */
 @RunWith(AndroidJUnit4::class)
 class ShoppingListViewModelTest : TestCase() {
 
@@ -24,6 +29,10 @@ class ShoppingListViewModelTest : TestCase() {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
+
+    /**
+     * Sets up the viewmodel for each test to use it
+     * */
     @Before
     public override fun setUp() {
         super.setUp()
@@ -35,6 +44,9 @@ class ShoppingListViewModelTest : TestCase() {
         viewModel = ShoppingListViewModel(ShoppingItemRepo(dao))
     }
 
+    /**
+     * Adding a item to the shopping list and checking it is in the items list
+     * */
     @Test
     fun addItem() {
         val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
@@ -43,6 +55,9 @@ class ShoppingListViewModelTest : TestCase() {
         assert(result)
     }
 
+    /**
+     * Adding and removing the item and making sure it was removed
+     * */
     @Test
     fun removeItem() {
         val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
@@ -54,6 +69,9 @@ class ShoppingListViewModelTest : TestCase() {
         assert(!items.contains(fetchItem))
     }
 
+    /**
+     * Changing the checked property of an item and making sure it changed
+     * */
     @Test
     fun checkItem() {
         val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
@@ -66,6 +84,9 @@ class ShoppingListViewModelTest : TestCase() {
         assert(items.contains(item))
     }
 
+    /**
+     * Making sure the checked item is properly removed
+     * */
     @Test
     fun removeChecked() {
         val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",true,"Dairy")
@@ -75,6 +96,9 @@ class ShoppingListViewModelTest : TestCase() {
         assert(!items.contains(item))
     }
 
+    /**
+     * Testing the merge function that merges current shopping list items with the new ones
+     * */
     @Test
     fun mergeItems() {
         val itemsToMerge : List<ShoppingItemEnt> = listOf(ShoppingItemEnt(1,"Apples",3.0,"kg",true,"Fruit"))
@@ -85,7 +109,6 @@ class ShoppingListViewModelTest : TestCase() {
         val fetchItem = viewModel.items.getOrAwaitValue().find{
             it.item == itemsToMerge[0].item && it.cat == itemsToMerge[0].cat && it.metric == itemsToMerge[0].metric
         }
-//        println(viewModel.items.getOrAwaitValue())
         assert(fetchItem!!.amount == expectedAmount)
 
     }

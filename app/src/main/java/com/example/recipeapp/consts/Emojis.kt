@@ -1,5 +1,8 @@
 package com.example.recipeapp.consts
-
+/**
+ * @author Ariana,Conor,Cordell,Derek
+ * Map of countries to emoji
+ * */
 class Emojis {
 
     companion object {
@@ -49,7 +52,11 @@ class Emojis {
             "peru" to "🇵🇪",
             "other" to "🌎"
         )
-
+        /**
+         * Returns emoji for a country and if its not found it returns other
+         * @param country the name of the country
+         * @return String emoji
+         * */
         fun getEmoji(country: String): String {
             return countries[country] ?: countries["other"]!!
         }

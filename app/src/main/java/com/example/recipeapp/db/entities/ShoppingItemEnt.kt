@@ -4,6 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * Shopping item entity data class
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 @Entity(tableName = "item_table")
 data class ShoppingItemEnt(
     @PrimaryKey(autoGenerate = true) val id: Int,

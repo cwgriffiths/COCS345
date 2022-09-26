@@ -11,10 +11,13 @@ import com.example.recipeapp.db.repos.RecipeRepo
 import junit.framework.TestCase
 import org.junit.Before
 import org.junit.Rule
-
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * @author Ariana,Conor,Cordell,Derek
+ * Test class to test recipe view model
+ * */
 @RunWith(AndroidJUnit4::class)
 class RecipeViewModelTest : TestCase() {
 
@@ -25,6 +28,9 @@ class RecipeViewModelTest : TestCase() {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
+    /**
+     * Sets up the viewmodel for each test to use it
+     * */
     @Before
     public override fun setUp() {
         super.setUp()
@@ -35,7 +41,9 @@ class RecipeViewModelTest : TestCase() {
         viewModel = RecipeViewModel(RecipeRepo(dao))
     }
 
-
+    /**
+     * Checks that the cur recipe sets properly
+     * */
     @Test
     fun setCurRecipe() {
         assertEquals(viewModel.getCurRecipe(),null)
@@ -43,17 +51,26 @@ class RecipeViewModelTest : TestCase() {
         assertEquals(viewModel.getCurRecipe(),testRecipe)
     }
 
+    /**
+     * Checks that the cur recipe works
+     * */
     @Test
     fun getCurRecipe() {
         viewModel.setCurRecipe(testRecipe)
         assertEquals(viewModel.getCurRecipe(),testRecipe)
     }
 
+    /**
+     * Checks that get recipe contains the recipe in it
+     * */
     @Test
     fun getRecipes() {
         assert(viewModel.getRecipes().contains(testRecipe))
     }
 
+    /**
+     * Getting the recipe by id
+     * */
     @Test
     fun getRecipeById() {
         assertEquals(viewModel.getRecipeById(0),testRecipe)

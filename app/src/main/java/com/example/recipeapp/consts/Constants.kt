@@ -1,5 +1,8 @@
 package com.example.recipeapp.consts
 
+/**
+ * Data class of constants used for our program
+ * */
 data class Constants(
     val NORTH_AMERICA: Int = 1,
     val SOUTH_AMERICA: Int = 2,

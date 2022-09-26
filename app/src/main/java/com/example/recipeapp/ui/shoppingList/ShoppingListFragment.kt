@@ -14,7 +14,10 @@ import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentShoppingListBinding
 import kotlinx.coroutines.launch
 
-
+/**
+ * Fragment to show a list of shopping items
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 class ShoppingListFragment : Fragment() {
 
     private lateinit var binding: FragmentShoppingListBinding
@@ -24,6 +27,9 @@ class ShoppingListFragment : Fragment() {
 
     private val shoppingListViewModel: ShoppingListViewModel by activityViewModels { ShoppingListViewModel.Factory }
 
+    /**
+     * creates a binding and binds the recycler view
+     * */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,6 +49,9 @@ class ShoppingListFragment : Fragment() {
         return fragmentBinding.root
     }
 
+    /**
+     * removes all checked shopping items when you change fragments
+     * */
     override fun onPause() {
         super.onPause()
         lifecycle.coroutineScope.launch {

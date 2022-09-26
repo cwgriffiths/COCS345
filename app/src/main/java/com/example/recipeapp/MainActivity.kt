@@ -16,7 +16,10 @@ import com.example.recipeapp.ui.mealPlanner.MealPlannerViewModel
 import com.example.recipeapp.ui.recipe.RecipeViewModel
 import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
 
-
+/**
+ * @author Ariana,Conor,Cordell,Derek
+ * Main activity for the program
+ * */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -26,6 +29,10 @@ class MainActivity : AppCompatActivity() {
     private val shoppingListViewModel: ShoppingListViewModel by viewModels { ShoppingListViewModel.Factory }
     private val mealPlannerViewModel: MealPlannerViewModel by viewModels { MealPlannerViewModel.Factory }
 
+    /**
+     * Inflates the layout and sets up the navigation controller along with loading data in view models
+     * @param savedInstanceState
+     * */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -48,21 +55,31 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         shoppingListViewModel.items.observeForever { println() }
         mealPlannerViewModel.items.observeForever {}
+        recipeViewModel.getRecipes()
 
 //        seeRecipes(recipeViewModel.getRecipes())
     }
 
+    /**
+     * Removes observers from from live data
+     * */
     override fun onStart() {
         super.onStart()
-        recipeViewModel.getRecipes()
         shoppingListViewModel.items.removeObservers(this)
         mealPlannerViewModel.items.removeObservers(this)
     }
 
+    /**
+     * Setting up the navigation back button for the fragment container
+     * */
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
+    /**
+     * This method tests the recipe list to make sure the list doesnt contain any extra categories or metrics
+     * @param recipes a list of recipes
+     * */
     fun seeRecipes(recipes: List<RecipeEnt>) {
         val catmap = HashMap<String, Int>()
         val metricmap = HashMap<String, Int>()

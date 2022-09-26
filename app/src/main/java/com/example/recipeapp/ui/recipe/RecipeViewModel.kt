@@ -7,25 +7,46 @@ import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.repos.RecipeRepo
 
-
+/**
+ * recipe view model to store all recipe data
+ * @author Ariana,Conor,Cordell,Derek
+ * @param repo the repo for the recipe data access
+ * */
 class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
     private var recipes: List<RecipeEnt> = repo.getRecipes()
     private var curRecipe: RecipeEnt? = null
     var selectedRecipes = -1
 
+    /**
+     * Sets the current recipe property
+     * @param recipe the recipe to set
+     * */
     fun setCurRecipe(recipe: RecipeEnt) {
         this.curRecipe = recipe
     }
 
+    /**
+     * Returns current recipe
+     * @return the current recipe
+     * */
     fun getCurRecipe(): RecipeEnt? {
         return curRecipe
     }
 
+    /**
+     * Gets a list of recipes
+     * @return list of recipes
+     * */
     fun getRecipes(): List<RecipeEnt> {
         setRecipes()
         return recipes
     }
 
+    /**
+     * Gets a recipe based off id
+     * @param id of the recipe
+     * @return recipe
+     * */
     fun getRecipeById(id: Int): RecipeEnt {
         return repo.getRecipeById(id)
     }

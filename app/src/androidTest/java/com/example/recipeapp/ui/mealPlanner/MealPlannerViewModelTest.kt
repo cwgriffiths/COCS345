@@ -15,6 +15,11 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+
+/**
+ * @author Ariana,Conor,Cordell,Derek
+ * Test class to test meal planner view model
+ * */
 @RunWith(AndroidJUnit4::class)
 class MealPlannerViewModelTest : TestCase(){
     private lateinit var viewModel: MealPlannerViewModel
@@ -23,6 +28,10 @@ class MealPlannerViewModelTest : TestCase(){
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
+
+    /**
+     * Sets up the viewmodel for each test to use it
+     * */
     @Before
     public override fun setUp() {
         super.setUp()
@@ -33,6 +42,9 @@ class MealPlannerViewModelTest : TestCase(){
         viewModel = MealPlannerViewModel(MealPlannerRepo(dao))
     }
 
+    /**
+     * Updating the meal planner table with a new recipe id and checking that it set
+     * */
     @Test
     fun updateMealItem() {
         viewModel.updateMealItem(15555,0)

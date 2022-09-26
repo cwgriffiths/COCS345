@@ -11,14 +11,19 @@ import com.example.recipeapp.R
 import com.example.recipeapp.consts.Constants
 import com.example.recipeapp.databinding.FragmentRegionSelectBinding
 
-
+/**
+ * Fragment to show information about each continent
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 class RegionSelectFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentRegionSelectBinding
 
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
 
-
+    /**
+     * creates a binding and sets up all the on click listeners
+     * */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,7 +43,10 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
         return fragmentBinding.root
     }
 
-
+    /**
+     * Changes the blurb and title based on which region button was clicked
+     * @param v the view of the button that was clicked
+     * */
     override fun onClick(v: View) {
         var blurb = getString(R.string.welcome_blurb)
         var title = getString(R.string.app_name)

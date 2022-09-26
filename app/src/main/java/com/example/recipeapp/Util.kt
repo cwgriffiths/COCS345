@@ -7,9 +7,17 @@ import android.text.style.BulletSpan
 import androidx.core.text.toSpannable
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 
-
+/**
+ * @author Ariana,Conor,Cordell,Derek
+ * Main activity for the program
+ * */
 class Util {
     companion object {
+        /**
+         * Creates a map of categories to shopping item entities
+         * @param items list of shopping item entities
+         * @return Map of shopping item to categories
+         * */
         fun mapByProp(items: List<ShoppingItemEnt>): Map<String, List<ShoppingItemEnt>> {
             val map = HashMap<String, MutableList<ShoppingItemEnt>>()
             items.forEach {
@@ -22,6 +30,11 @@ class Util {
             return map.toMap()
         }
 
+        /**
+         * Turns every word of a string into title case
+         * @param str the string of words
+         * @return String the new string with title case of each word
+         * */
         fun titleCase(str: String): String {
             val strList = str.split(" ")
             val bob = StringBuilder()
@@ -33,6 +46,11 @@ class Util {
             return bob.toString()
         }
 
+        /**
+         * Creates a bullet point from a string
+         * @param s string to turn into a bullet point list
+         * @return Spannable object which contains string along with bullet points
+         * */
         fun stringToFormattedList(s: String): Spannable {
             val builder = SpannableStringBuilder()
             val newS = s.replace("[", "").replace("]", "")
@@ -58,6 +76,11 @@ class Util {
             return builder.toSpannable()
         }
 
+        /**
+         * Takes a string and turns each 4 items into a shopping item entity
+         * @param ingredients string of ingredients
+         * @return List<ShoppingItemEnt> list of shopping item entities
+         * */
         fun ingredientsToList(ingredients: String): List<ShoppingItemEnt> {
             val ingredientList = ingredients.split(",")
             val itemList = emptyList<ShoppingItemEnt>().toMutableList()

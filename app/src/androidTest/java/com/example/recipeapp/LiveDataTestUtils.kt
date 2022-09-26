@@ -6,6 +6,9 @@ import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
 
+/**
+ * This function will make sure live data is fetched before its return because tests wont work without it
+ * */
 fun <T> LiveData<T>.getOrAwaitValue() : T{
     var data: T? = null
     val latch = CountDownLatch(1)

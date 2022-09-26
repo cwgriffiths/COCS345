@@ -12,7 +12,10 @@ import com.example.recipeapp.databinding.FragmentRecipeBinding
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.ui.mealPlanner.MealPlannerSelectDialog
 
-
+/**
+ * Recipe fragment for any recipe, sets up the binding
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 class RecipeFragment : Fragment() {
 
     private lateinit var binding: FragmentRecipeBinding
@@ -22,6 +25,9 @@ class RecipeFragment : Fragment() {
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
     private lateinit var recipe: RecipeEnt
 
+    /**
+     * Sets the binding fields to the current recipe in the view model
+     * */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,15 +44,29 @@ class RecipeFragment : Fragment() {
         return fragmentBinding.root
     }
 
+    /**
+     * Enables the toolbar menu
+     * @param savedInstanceState bundle of state
+     * */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    /**
+     * Inflates the menu with the recipe_menu layout
+     * @param menu the menu in the toolbar
+     * @param inflater the inflater object
+     * */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.recipe_menu, menu)
     }
 
+    /**
+     * Creating click handler for each toolbar menu item
+     * @param item the menu option that was selected
+     * @return a boolean
+     * */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.addToList -> {

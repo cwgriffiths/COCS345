@@ -7,11 +7,20 @@ import com.example.recipeapp.db.entities.MealPlannerEnt
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.repos.MealPlannerRepo
 
-
+/**
+ * View model for all meal planner data
+ * @author Ariana,Conor,Cordell,Derek
+ * @param repo the repo for the meal planner data access
+ * */
 class MealPlannerViewModel(private val repo: MealPlannerRepo) : ViewModel() {
     var items: LiveData<List<MealPlannerEnt>> = repo.getMealPlanner().asLiveData()
     var weekRecipes: MutableList<RecipeEnt> = mutableListOf()
 
+    /**
+     * uses the repo to update the meal planner
+     * @param recipeId id of the new recipe
+     * @param index of the meal planner entity to replace
+     * */
     fun updateMealItem(recipeId: Int, index: Int) {
         repo.updateMealPlanner(recipeId, index)
     }

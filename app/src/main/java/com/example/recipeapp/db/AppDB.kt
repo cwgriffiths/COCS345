@@ -17,7 +17,10 @@ import com.example.recipeapp.db.entities.ShoppingItemEnt
     version = 1,
     exportSchema = false
 )
-
+/**
+ * App database class
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 abstract class AppDB : RoomDatabase() {
     abstract fun recipeDAO(): RecipeEntDAO
     abstract fun shoppingItemDAO(): ShoppingItemEntDAO

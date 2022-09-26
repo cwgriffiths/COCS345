@@ -4,6 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * Recipe entity data class
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 @Entity(tableName = "recipe_table")
 data class RecipeEnt(
     @PrimaryKey val id: Int,

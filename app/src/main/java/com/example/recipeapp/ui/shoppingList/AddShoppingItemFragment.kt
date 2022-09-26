@@ -12,12 +12,18 @@ import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentAddShoppingItemBinding
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 
-
+/**
+ * Fragment to show a form to add a shopping item
+ * @author Ariana,Conor,Cordell,Derek
+ * */
 class AddShoppingItemFragment : Fragment() {
 
     private val shoppingListViewModel: ShoppingListViewModel by activityViewModels { ShoppingListViewModel.Factory }
     private lateinit var binding: FragmentAddShoppingItemBinding
 
+    /**
+     * creates a binding and sets the on click listener
+     * */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

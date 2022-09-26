@@ -6,10 +6,16 @@ import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * @author Ariana,Conor,Cordell,Derek
+ * Test class to test the util class
+ * */
 @RunWith(AndroidJUnit4::class)
 class UtilTest {
 
-
+    /**
+     * Test to make sure any text has title case for every word
+     * */
     @Test
     fun titleCase(){
         val title = "Hello There Title Test"
@@ -30,6 +36,10 @@ class UtilTest {
         assertEquals("Hello World", Util.titleCase("Hello world"))
         assertEquals("Hello World", Util.titleCase("hello World"))
     }
+
+    /**
+     * Testing the mapByProp which takes a list of shopping item entities and maps them by the category field
+     * */
     @Test
     fun mapByProp(){
         val itemList: List<ShoppingItemEnt> = listOf( ShoppingItemEnt(0,"Apples",2.1,"kg",false,"Fruit"),ShoppingItemEnt(1,"Carrots",5.4,"kg",false,"Vege"),ShoppingItemEnt(2,"Pineapple",2.6,"kg",false,"Fruit"),ShoppingItemEnt(3,"Beef",2.1,"kg",false,"Meat"),ShoppingItemEnt(4,"Cheese",2.1,"kg",false,"Dairy"))
@@ -40,6 +50,9 @@ class UtilTest {
         assertEquals(map["meat"]!!.size,meats.size)
     }
 
+    /**
+     * Takes a string and formats it with bullet points and removed square brackets
+     * */
     @Test
     fun stringToFormattedList(){
         val test =
@@ -48,6 +61,9 @@ class UtilTest {
         assertEquals(test.toString(),expected)
     }
 
+    /**
+     * Tests that a string with 4 parts gets turned into a shopping item entity
+     * */
     @Test
     fun ingredientsToList(){
         val ing = "1, Whole, pantry, Pie"
