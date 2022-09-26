@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.R
 import com.example.recipeapp.db.entities.ShoppingItemEnt
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlin.math.floor
 
 /**

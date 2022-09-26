@@ -37,8 +37,8 @@ class RecipeViewModelTest : TestCase() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val db = Room.inMemoryDatabaseBuilder(context, AppDB::class.java).allowMainThreadQueries().build()
         val dao = db.recipeDAO()
-        dao.insertRecipe(testRecipe)
         viewModel = RecipeViewModel(RecipeRepo(dao))
+        viewModel.insertRecipe(testRecipe)
     }
 
     /**
@@ -74,5 +74,15 @@ class RecipeViewModelTest : TestCase() {
     @Test
     fun getRecipeById() {
         assertEquals(viewModel.getRecipeById(0),testRecipe)
+    }
+
+    /**
+     * Testing insert recipe works
+     * */
+    @Test
+    fun insertRecipe(){
+        val recipe = RecipeEnt(1,"Apple","Yummy Apple",3,"Apple","Eat",1,"NZ","1, Whole, produce, Apple")
+        viewModel.insertRecipe(recipe)
+        assert(viewModel.getRecipeById(1) == recipe)
     }
 }

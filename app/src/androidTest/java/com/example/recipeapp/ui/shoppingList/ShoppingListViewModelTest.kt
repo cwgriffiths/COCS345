@@ -25,6 +25,7 @@ import org.junit.runner.RunWith
 class ShoppingListViewModelTest : TestCase() {
 
     private lateinit var viewModel: ShoppingListViewModel
+    private val testShoppingItem = ShoppingItemEnt(2,"Apples",2.0,"kg",false,"Fruit")
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -39,7 +40,7 @@ class ShoppingListViewModelTest : TestCase() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val db = Room.inMemoryDatabaseBuilder(context, AppDB::class.java).allowMainThreadQueries().build()
         val dao = db.shoppingItemDAO()
-        dao.addItem(ShoppingItemEnt(2,"Apples",2.0,"kg",false,"Fruit"))
+        dao.addItem(testShoppingItem)
 
         viewModel = ShoppingListViewModel(ShoppingItemRepo(dao))
     }
@@ -53,6 +54,14 @@ class ShoppingListViewModelTest : TestCase() {
         viewModel.addItem(item)
         val result = viewModel.items.getOrAwaitValue().contains(item)
         assert(result)
+    }
+
+    /**
+     * Testing the get item
+     * */
+    @Test
+    fun getItem(){
+        assert(viewModel.getItem(2) == testShoppingItem)
     }
 
     /**

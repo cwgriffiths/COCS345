@@ -42,6 +42,15 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
     }
 
     /**
+     * uses the repo to get a shopping item by id
+     * @param id of shopping item
+     * @return shopping item
+     * */
+    fun getItem(id: Int): ShoppingItemEnt {
+        return repo.getItem(id)
+    }
+
+    /**
      * removes all checked items in the db
      * */
     fun removeChecked() {

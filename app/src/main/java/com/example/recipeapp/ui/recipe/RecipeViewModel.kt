@@ -26,6 +26,14 @@ class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
     }
 
     /**
+     * Inserts a recipe into the db
+     * @param recipe the recipe to insert
+     * */
+    fun insertRecipe(recipe: RecipeEnt){
+        repo.insertRecipe(recipe)
+    }
+
+    /**
      * Returns current recipe
      * @return the current recipe
      * */

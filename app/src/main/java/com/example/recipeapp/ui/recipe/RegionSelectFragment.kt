@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -39,6 +38,7 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
         binding.Asia.setOnClickListener(this)
         binding.Oceania.setOnClickListener(this)
         binding.Antarctica.setOnClickListener(this)
+        binding.viewRecipes.setOnClickListener(this)
         recipeViewModel.selectedRecipes = -1
         return fragmentBinding.root
     }
