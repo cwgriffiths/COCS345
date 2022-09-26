@@ -22,8 +22,20 @@ import com.example.recipeapp.db.entities.ShoppingItemEnt
  * @author Ariana,Conor,Cordell,Derek
  * */
 abstract class AppDB : RoomDatabase() {
+    /**
+     * gets recipe dao
+     * @return recipe dao
+     * */
     abstract fun recipeDAO(): RecipeEntDAO
+    /**
+     * gets shopping item dao
+     * @return shopping item dao
+     * */
     abstract fun shoppingItemDAO(): ShoppingItemEntDAO
+    /**
+     * gets meal planner dao
+     * @return meal planner dao
+     * */
     abstract fun mealPlannerDAO(): MealPlannerEntDAO
 
 

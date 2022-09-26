@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,7 @@ import com.example.recipeapp.databinding.FragmentRegionSelectBinding
 class RegionSelectFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentRegionSelectBinding
+    private var buttonList: MutableList<Button> = mutableListOf()
 
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
 
@@ -31,14 +33,13 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
     ): View {
         val fragmentBinding = FragmentRegionSelectBinding.inflate(inflater)
         binding = fragmentBinding
-        binding.Africa.setOnClickListener(this)
-        binding.Asia.setOnClickListener(this)
-        binding.Antarctica.setOnClickListener(this)
         binding.NorthAmerica.setOnClickListener(this)
         binding.SouthAmerica.setOnClickListener(this)
-        binding.Oceania.setOnClickListener(this)
+        binding.Africa.setOnClickListener(this)
         binding.Europe.setOnClickListener(this)
-        binding.viewRecipes.setOnClickListener(this)
+        binding.Asia.setOnClickListener(this)
+        binding.Oceania.setOnClickListener(this)
+        binding.Antarctica.setOnClickListener(this)
         recipeViewModel.selectedRecipes = -1
         return fragmentBinding.root
     }

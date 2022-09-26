@@ -81,9 +81,9 @@ class MainActivity : AppCompatActivity() {
      * @param recipes a list of recipes
      * */
     fun seeRecipes(recipes: List<RecipeEnt>) {
-        val catmap = HashMap<String, Int>()
-        val metricmap = HashMap<String, Int>()
-        val namemap = HashMap<String, Int>()
+        val categoryList = mutableListOf<String>()
+        val metricList = mutableListOf<String>()
+        val nameList = mutableListOf<String>()
         recipes.forEach {
             val ingredientList = it.recipeShopping.split(",")
             if (ingredientList.size % 4 != 0) {
@@ -93,28 +93,20 @@ class MainActivity : AppCompatActivity() {
                     val cat = ingredientList[i + 2].trim().lowercase()
                     val metric = ingredientList[i + 1].trim().lowercase()
                     val name = ingredientList[i + 3].trim().lowercase()
-                    if (catmap.containsKey(cat)) {
-                        catmap[cat]!!.plus(1)
-                    } else {
-                        catmap[cat] = 1
+                    if (!categoryList.contains(cat)) {
+                        categoryList.add(cat)
                     }
-
-                    if (namemap.containsKey(name)) {
-                        namemap[name]!!.plus(1)
-                    } else {
-                        namemap[name] = 1
+                    if (!nameList.contains(name)) {
+                        nameList.add(name)
                     }
-
-                    if (metricmap.containsKey(metric)) {
-                        metricmap[metric]!!.plus(1)
-                    } else {
-                        metricmap[metric] = 1
+                    if (!metricList.contains(metric)) {
+                        metricList.add(metric)
                     }
                 }
             }
         }
-        println(namemap.keys.sorted())
-//        println(metricmap)
-//        println(catmap)
+//        println(nameList)
+//        println(metricList)
+//        println(categoryList)
     }
 }
