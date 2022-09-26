@@ -19,7 +19,6 @@ import com.example.recipeapp.databinding.FragmentRegionSelectBinding
 class RegionSelectFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentRegionSelectBinding
-    private var buttonList: MutableList<Button> = mutableListOf()
 
     private val recipeViewModel: RecipeViewModel by activityViewModels { RecipeViewModel.Factory }
 
