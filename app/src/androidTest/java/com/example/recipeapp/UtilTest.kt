@@ -56,8 +56,8 @@ class UtilTest {
     @Test
     fun stringToFormattedList(){
         val test =
-            Util.stringToFormattedList("1/4kg [whole chicken], cut into pieces or chicken wings\\ 2Tbsp [rice wine]\\ 2tsp minced [ginger]\\ 1tsp fine sea [salt]")
-        val expected = "1/4kg whole chicken, cut into pieces or chicken wings\n\n2Tbsp rice wine\n\n2tsp minced ginger\n\n1tsp fine sea salt\n\n"
+            Util.stringToFormattedList("STEP 1\\ 1/4kg [whole chicken], cut into pieces or chicken wings\\ 2Tbsp [rice wine]\\ 2tsp minced [ginger]\\ 1tsp fine sea [salt]")
+        val expected = "STEP 1\n\n1/4kg whole chicken, cut into pieces or chicken wings\n\n2Tbsp rice wine\n\n2tsp minced ginger\n\n1tsp fine sea salt\n\n"
         assertEquals(test.toString(),expected)
     }
 

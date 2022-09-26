@@ -39,6 +39,7 @@ class RecipeViewModelTest : TestCase() {
         val dao = db.recipeDAO()
         dao.insertRecipe(testRecipe)
         viewModel = RecipeViewModel(RecipeRepo(dao))
+        viewModel.selectedRecipes = -1
     }
 
     /**
@@ -65,6 +66,8 @@ class RecipeViewModelTest : TestCase() {
      * */
     @Test
     fun getRecipes() {
+        assert(viewModel.getRecipes().contains(testRecipe))
+        viewModel.selectedRecipes = 1
         assert(viewModel.getRecipes().contains(testRecipe))
     }
 
