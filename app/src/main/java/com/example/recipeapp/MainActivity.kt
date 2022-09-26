@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         mealPlannerViewModel.items.observeForever {}
         recipeViewModel.getRecipes()
 
-//        seeRecipes(recipeViewModel.getRecipes())
+        seeRecipes(recipeViewModel.getRecipes())
     }
 
     /**
