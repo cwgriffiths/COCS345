@@ -37,8 +37,8 @@ class RecipeViewModelTest : TestCase() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val db = Room.inMemoryDatabaseBuilder(context, AppDB::class.java).allowMainThreadQueries().build()
         val dao = db.recipeDAO()
+        dao.insertRecipe(testRecipe)
         viewModel = RecipeViewModel(RecipeRepo(dao))
-        viewModel.insertRecipe(testRecipe)
     }
 
     /**
