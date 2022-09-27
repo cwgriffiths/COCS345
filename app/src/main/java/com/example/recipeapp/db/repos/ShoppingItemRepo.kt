@@ -70,4 +70,14 @@ class ShoppingItemRepo(private val dao: ShoppingItemEntDAO) {
     fun updateItem(item: ShoppingItemEnt) {
         dao.updateItem(item)
     }
+
+    /**
+     * uses the dao to delete an item in the db
+     * @param item the deleted shopping item
+     * */
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    fun removeItem(item: ShoppingItemEnt) {
+        dao.removeItem(item)
+    }
 }

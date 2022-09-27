@@ -22,10 +22,10 @@ import org.junit.runner.RunWith
  * Test class to test shopping list view model
  * */
 @RunWith(AndroidJUnit4::class)
-class ShoppingListViewModelTest : TestCase() {
+class ShoppingListViewModelTest {
 
     private lateinit var viewModel: ShoppingListViewModel
-    private val testShoppingItem = ShoppingItemEnt(2,"Apples",2.0,"kg",false,"Fruit")
+    private var testShoppingItem = ShoppingItemEnt(0,"Apples",2.0,"kg",false,"Fruit")
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -35,8 +35,7 @@ class ShoppingListViewModelTest : TestCase() {
      * Sets up the viewmodel for each test to use it
      * */
     @Before
-    public override fun setUp() {
-        super.setUp()
+    fun setUp() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val db = Room.inMemoryDatabaseBuilder(context, AppDB::class.java).allowMainThreadQueries().build()
         val dao = db.shoppingItemDAO()
@@ -50,10 +49,10 @@ class ShoppingListViewModelTest : TestCase() {
      * */
     @Test
     fun addItem() {
-        val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
+        val item = ShoppingItemEnt(0,"Cheese",2.0,"kg",false,"Dairy")
         viewModel.addItem(item)
-        val result = viewModel.items.getOrAwaitValue().contains(item)
-        assert(result)
+        val result = viewModel.items.getOrAwaitValue().find { it.item == item.item }
+        assert(result != null)
     }
 
     /**
@@ -61,7 +60,8 @@ class ShoppingListViewModelTest : TestCase() {
      * */
     @Test
     fun getItem(){
-        assert(viewModel.getItem(2) == testShoppingItem)
+        val item = viewModel.items.getOrAwaitValue().find { it.item == testShoppingItem.item }
+        assert(item != null)
     }
 
     /**
@@ -69,13 +69,10 @@ class ShoppingListViewModelTest : TestCase() {
      * */
     @Test
     fun removeItem() {
-        val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
-        viewModel.addItem(item)
-        val itemsAdd = viewModel.items.getOrAwaitValue()
-        val fetchItem = itemsAdd[itemsAdd.indexOf(item)]
-        viewModel.removeItem(fetchItem)
-        val items = viewModel.items.getOrAwaitValue()
-        assert(!items.contains(fetchItem))
+        val item = viewModel.items.getOrAwaitValue().find { it.item == testShoppingItem.item }!!
+        viewModel.removeItem(item)
+        val items = viewModel.getItem(item.id)
+        assert(items == null)
     }
 
     /**
@@ -83,14 +80,10 @@ class ShoppingListViewModelTest : TestCase() {
      * */
     @Test
     fun checkItem() {
-        val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",false,"Dairy")
-        viewModel.addItem(item)
-        val itemsAdd = viewModel.items.getOrAwaitValue()
-        val fetchItem = itemsAdd[itemsAdd.indexOf(item)]
-        viewModel.checkItem(fetchItem)
-        item.checked = !item.checked
-        val items = viewModel.items.getOrAwaitValue()
-        assert(items.contains(item))
+        val item = viewModel.items.getOrAwaitValue().find { it.item == testShoppingItem.item }!!
+        viewModel.checkItem(item)
+        val items = viewModel.items.getOrAwaitValue().find { it.item == testShoppingItem.item }!!
+        assert(items.checked)
     }
 
     /**
@@ -98,10 +91,11 @@ class ShoppingListViewModelTest : TestCase() {
      * */
     @Test
     fun removeChecked() {
-        val item = ShoppingItemEnt(1,"Cheese",2.0,"kg",true,"Dairy")
-        viewModel.addItem(item)
+        val newItem = ShoppingItemEnt(0,"Cheese",2.0,"kg",true,"Dairy")
+        viewModel.addItem(newItem)
         viewModel.removeChecked()
         val items = viewModel.items.getOrAwaitValue()
+        val item = viewModel.items.getOrAwaitValue().find { it.item == newItem.item }
         assert(!items.contains(item))
     }
 

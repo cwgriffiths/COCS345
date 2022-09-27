@@ -27,8 +27,7 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
      * @param item to remove
      * */
     fun removeItem(item: ShoppingItemEnt) {
-        repo.checkItem(item.id, true)
-        repo.removedChecked()
+        repo.removeItem(item)
     }
 
     /**

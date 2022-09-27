@@ -1,9 +1,6 @@
 package com.example.recipeapp.db.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 import kotlinx.coroutines.flow.Flow
 
@@ -55,4 +52,11 @@ interface ShoppingItemEntDAO {
      * */
     @Query("UPDATE item_table SET checked = (:check) WHERE id = (:id)")
     fun checkItem(id: Int, check: Boolean)
+
+    /**
+     * Delete item from db
+     * @param item to delete
+     * */
+    @Delete
+    fun removeItem(item: ShoppingItemEnt)
 }
