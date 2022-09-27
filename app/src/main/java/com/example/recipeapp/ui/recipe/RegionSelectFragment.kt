@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.recipeapp.MainActivity
 import com.example.recipeapp.R
 import com.example.recipeapp.consts.Constants
 import com.example.recipeapp.databinding.FragmentRegionSelectBinding
@@ -29,6 +30,7 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as MainActivity).supportActionBar!!.hide()
         val fragmentBinding = FragmentRegionSelectBinding.inflate(inflater)
         binding = fragmentBinding
         binding.NorthAmerica.setOnClickListener(this)
@@ -110,5 +112,11 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
         }
         binding.title.text = title
         binding.blurb.text = blurb
+    }
+
+    override fun onPause() {
+        super.onPause()
+        (requireActivity() as MainActivity).supportActionBar!!.show()
+
     }
 }

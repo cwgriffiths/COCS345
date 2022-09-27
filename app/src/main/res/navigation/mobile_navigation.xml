@@ -16,7 +16,8 @@
     <fragment
         android:id="@+id/mealPlannerFragment"
         android:name="com.example.recipeapp.ui.mealPlanner.MealPlannerFragment"
-        android:label="@string/title_meal_planner" >
+        android:label="@string/title_meal_planner"
+        tools:layout="@layout/fragment_meal_planner">
         <action
             android:id="@+id/action_mealPlannerFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
@@ -24,7 +25,8 @@
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.example.recipeapp.ui.recipe.RecipeFragment"
-        android:label="@string/title_recipes" >
+        android:label="@string/title_recipes"
+        tools:layout="@layout/fragment_recipe">
         <action
             android:id="@+id/action_recipeFragment_to_addListFromRecipeFragment"
             app:destination="@id/addListFromRecipeFragment" />
@@ -32,11 +34,13 @@
     <fragment
         android:id="@+id/addListFromRecipeFragment"
         android:name="com.example.recipeapp.ui.shoppingList.AddListFromRecipeFragment"
-        android:label="@string/title_shopping_list" />
+        android:label="@string/title_shopping_list"
+        tools:layout="@layout/fragment_add_list_from_recipe"/>
     <fragment
         android:id="@+id/recipeListFragment"
         android:name="com.example.recipeapp.ui.recipe.RecipeListFragment"
-        android:label="RecipeListFragment" >
+        android:label="RecipeListFragment"
+        tools:layout="@layout/fragment_recipe_list">
         <action
             android:id="@+id/action_recipeListFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
@@ -44,11 +48,13 @@
     <fragment
         android:id="@+id/addShoppingItemFragment"
         android:name="com.example.recipeapp.ui.shoppingList.AddShoppingItemFragment"
-        android:label="@string/title_shopping_list" />
+        android:label="@string/title_shopping_list"
+        tools:layout="@layout/fragment_add_shopping_item"/>
     <fragment
         android:id="@+id/shoppingListFragment"
         android:name="com.example.recipeapp.ui.shoppingList.ShoppingListFragment"
-        android:label="@string/title_shopping_list" >
+        android:label="@string/title_shopping_list"
+        tools:layout="@layout/fragment_shopping_list">
         <action
             android:id="@+id/action_shoppingListFragment_to_addShoppingItemFragment"
             app:destination="@id/addShoppingItemFragment" />
