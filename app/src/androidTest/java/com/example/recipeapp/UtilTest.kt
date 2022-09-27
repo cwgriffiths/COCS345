@@ -42,9 +42,14 @@ class UtilTest {
      * */
     @Test
     fun mapByProp(){
-        val itemList: List<ShoppingItemEnt> = listOf( ShoppingItemEnt(0,"Apples",2.1,"kg",false,"Fruit"),ShoppingItemEnt(1,"Carrots",5.4,"kg",false,"Vege"),ShoppingItemEnt(2,"Pineapple",2.6,"kg",false,"Fruit"),ShoppingItemEnt(3,"Beef",2.1,"kg",false,"Meat"),ShoppingItemEnt(4,"Cheese",2.1,"kg",false,"Dairy"))
-        val fruits: List<ShoppingItemEnt> = listOf(ShoppingItemEnt(0,"Apples",2.1,"kg",false,"Fruit"),ShoppingItemEnt(2,"Pineapple",2.6,"kg",false,"Fruit"))
-        val meats: List<ShoppingItemEnt> = listOf(ShoppingItemEnt(3,"Beef",2.1,"kg",false,"Meat"))
+        val item1 = ShoppingItemEnt(0,"Apples",2.1,"kg",false,"Fruit")
+        val item2 = ShoppingItemEnt(1,"Carrots",5.4,"kg",false,"Vege")
+        val item3 = ShoppingItemEnt(2,"Pineapple",2.6,"kg",false,"Fruit")
+        val item4 = ShoppingItemEnt(3,"Beef",2.1,"kg",false,"Meat")
+        val item5 = ShoppingItemEnt(4,"Cheese",2.1,"kg",false,"Vege")
+        val itemList: List<ShoppingItemEnt> = listOf(item1,item2,item3,item4,item5)
+        val fruits: List<ShoppingItemEnt> = listOf(item1,item3)
+        val meats: List<ShoppingItemEnt> = listOf(item4)
         val map = Util.mapByProp(itemList)
         assertEquals(map["fruit"],fruits)
         assertEquals(map["meat"]!!.size,meats.size)
@@ -66,10 +71,9 @@ class UtilTest {
      * */
     @Test
     fun ingredientsToList(){
-        val ing = "1, Whole, pantry, Pie"
+        val ing = "1, Whole, pantry, Pie, 2, Kg, Produce, Apples"
         val expectedItem = ShoppingItemEnt(0,"Pie",1.0,"Whole",true,"pantry")
         val list = Util.ingredientsToList(ing)
-        println(list)
         assert(list.contains(expectedItem))
     }
 }
