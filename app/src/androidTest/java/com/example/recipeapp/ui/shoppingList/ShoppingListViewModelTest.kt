@@ -110,7 +110,7 @@ class ShoppingListViewModelTest : TestCase() {
      * */
     @Test
     fun mergeItems() {
-        val itemsToMerge : List<ShoppingItemEnt> = listOf(ShoppingItemEnt(0,"Apples",3.0,"kg",true,"Fruit"),ShoppingItemEnt(0,"Carrots",3.0,"kg",true,"Produce"),ShoppingItemEnt(0,"Banana",3.0,"kg",true,"meats&seafood"),ShoppingItemEnt(0,"flour",3.0,"kg",true,"baking goods"),ShoppingItemEnt(0,"ice cream",3.0,"kg",true,"frozen"),ShoppingItemEnt(0,"bread",3.0,"kg",true,"bakery"),ShoppingItemEnt(0,"Milk",3.0,"kg",true,"dairy"))
+        val itemsToMerge : List<ShoppingItemEnt> = listOf(ShoppingItemEnt(0,"Apples",3.0,"kg",true,"Fruit"),ShoppingItemEnt(0,"Carrots",3.0,"kg",true,"Produce"),ShoppingItemEnt(0,"Banana",3.0,"kg",true,"meats&seafood"),ShoppingItemEnt(0,"flour",3.0,"kg",true,"baking goods"),ShoppingItemEnt(0,"ice cream",3.0,"kg",true,"frozen"),ShoppingItemEnt(0,"bread",3.0,"kg",true,"bakery"),ShoppingItemEnt(0,"Milk",3.0,"kg",true,"dairy"),ShoppingItemEnt(0,"Choc",3.0,"kg",true,"pantry"))
         val expectedAmount = 5.0
         val items = viewModel.items.getOrAwaitValue()
         viewModel.mergeItems(itemsToMerge)
