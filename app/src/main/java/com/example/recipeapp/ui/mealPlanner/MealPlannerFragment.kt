@@ -52,8 +52,6 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
                 buttonList[i].text = recipe.name
             }
         }
-
-
         return fragmentBinding.root
     }
 

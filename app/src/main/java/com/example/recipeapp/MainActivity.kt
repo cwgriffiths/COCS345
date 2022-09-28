@@ -76,11 +76,8 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
-    /**
-     * This method tests the recipe list to make sure the list doesnt contain any extra categories or metrics
-     * @param recipes a list of recipes
-     * */
-    fun seeRecipes(recipes: List<RecipeEnt>) {
+
+    private fun seeRecipes(recipes: List<RecipeEnt>) {
         val categoryList = mutableListOf<String>()
         val metricList = mutableListOf<String>()
         val nameList = mutableListOf<String>()
