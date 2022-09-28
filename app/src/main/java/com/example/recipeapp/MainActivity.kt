@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.regionSelectFragment, R.id.mealPlannerFragment, R.id.shoppingListFragment
+                R.id.shoppingListFragment,R.id.regionSelectFragment, R.id.mealPlannerFragment
             )
         )
         setSupportActionBar(binding.toolbar)

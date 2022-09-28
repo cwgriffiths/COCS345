@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="oceanBlue">#99D9EA</color>
     <color name="hf_green">#408349</color>
+    <color name="TextColor">#000000</color>
 
     <color name="primaryColor">#408349</color>
     <color name="primaryColorDark">#366C3D</color>

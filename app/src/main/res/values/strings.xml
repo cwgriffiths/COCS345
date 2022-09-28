@@ -69,5 +69,13 @@
     <string name="daySelector">Select Day</string>
     <string name="add_to_shopping_list_option">Add to Shopping List</string>
     <string name="add_to_meal_planner_option">Add to Meal Planner</string>
+    <string name="no_meal_assigned_to_this_day">Nothing here</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="sun">Sun</string>
 
 </resources>
