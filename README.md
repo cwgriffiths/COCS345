@@ -1,4 +1,4 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2bf3f99fc1aa4d33b472f3660a88b0c9)](https://www.codacy.com/gh/CDonalO/Scrap-Kitchen-COSC345/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CDonalO/Scrap-Kitchen-COSC345&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2bf3f99fc1aa4d33b472f3660a88b0c9)](https://www.codacy.com/gh/CDonalO/Scrap-Kitchen-COSC345/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CDonalO/Scrap-Kitchen-COSC345&amp;utm_campaign=Badge_Grade) [![codecov](https://codecov.io/gh/CDonalO/Scrap-Kitchen-COSC345/branch/main/graph/badge.svg?token=7B8DTHOTGY)](https://codecov.io/gh/CDonalO/Scrap-Kitchen-COSC345)
 
 #Scrap Kitchen
 
