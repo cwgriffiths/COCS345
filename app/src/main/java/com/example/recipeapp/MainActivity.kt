@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         mealPlannerViewModel.items.observeForever {}
         recipeViewModel.getRecipes()
 
-        seeRecipes(recipeViewModel.getRecipes())
+//        seeRecipes(recipeViewModel.getRecipes())
     }
 
     /**
@@ -77,33 +77,33 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun seeRecipes(recipes: List<RecipeEnt>) {
-        val categoryList = mutableListOf<String>()
-        val metricList = mutableListOf<String>()
-        val nameList = mutableListOf<String>()
-        recipes.forEach {
-            val ingredientList = it.recipeShopping.split(",")
-            if (ingredientList.size % 4 != 0) {
-                println("Recipe id " + it.name)
-            } else {
-                for (i in ingredientList.indices step 4) {
-                    val cat = ingredientList[i + 2].trim().lowercase()
-                    val metric = ingredientList[i + 1].trim().lowercase()
-                    val name = ingredientList[i + 3].trim().lowercase()
-                    if (!categoryList.contains(cat)) {
-                        categoryList.add(cat)
-                    }
-                    if (!nameList.contains(name)) {
-                        nameList.add(name)
-                    }
-                    if (!metricList.contains(metric)) {
-                        metricList.add(metric)
-                    }
-                }
-            }
-        }
+//    private fun seeRecipes(recipes: List<RecipeEnt>) {
+//        val categoryList = mutableListOf<String>()
+//        val metricList = mutableListOf<String>()
+//        val nameList = mutableListOf<String>()
+//        recipes.forEach {
+//            val ingredientList = it.recipeShopping.split(",")
+//            if (ingredientList.size % 4 != 0) {
+//                println("Recipe id " + it.name)
+//            } else {
+//                for (i in ingredientList.indices step 4) {
+//                    val cat = ingredientList[i + 2].trim().lowercase()
+//                    val metric = ingredientList[i + 1].trim().lowercase()
+//                    val name = ingredientList[i + 3].trim().lowercase()
+//                    if (!categoryList.contains(cat)) {
+//                        categoryList.add(cat)
+//                    }
+//                    if (!nameList.contains(name)) {
+//                        nameList.add(name)
+//                    }
+//                    if (!metricList.contains(metric)) {
+//                        metricList.add(metric)
+//                    }
+//                }
+//            }
+//        }
 //        println(nameList)
 //        println(metricList)
 //        println(categoryList)
-    }
+//    }
 }
