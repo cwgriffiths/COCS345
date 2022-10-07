@@ -1,4 +1,4 @@
-package com.example.recipeapp.activities
+package com.example.recipeapp
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -6,13 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.example.recipeapp.R
 //import com.example.recipeapp.RecipeFilter
 import com.example.recipeapp.databinding.ActivityMainBinding
-import com.example.recipeapp.ui.mealPlanner.MealPlanner
-import com.example.recipeapp.ui.recipe.Recipe
+import com.example.recipeapp.ui.mealPlanner.MealPlannerFragment
+import com.example.recipeapp.ui.recipe.RecipeFragment
 import com.example.recipeapp.ui.recipe.RecipeViewModel
-import com.example.recipeapp.ui.recipe.RegionSelectNew
+import com.example.recipeapp.ui.recipe.RegionSelectFragment
 import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
 import com.example.recipeapp.ui.shoppingList.ShoppingListFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -54,8 +53,8 @@ class MainActivity : AppCompatActivity() {
         navBar = binding.bottomNavigation
 
         val shoppingListFragment = ShoppingListFragment()
-        val mealPlannerFragment = MealPlanner()
-        val recipeSelectFragment = RegionSelectNew(supportFragmentManager)
+        val mealPlannerFragment = MealPlannerFragment()
+        val recipeSelectFragment = RegionSelectFragment(supportFragmentManager)
         // Set default fragment
         setCurrentFragment(recipeSelectFragment)
         navBar.menu.findItem(R.id.recipes).isChecked = true
@@ -81,12 +80,12 @@ class MainActivity : AppCompatActivity() {
      * If the user is on the recipe select fragment and presses the back button the app is closed
      */
     override fun onBackPressed() {
-        if(supportFragmentManager.findFragmentById(R.id.fragmentContainer) is RegionSelectNew){
+        if(supportFragmentManager.findFragmentById(R.id.fragmentContainer) is RegionSelectFragment){
             super.onBackPressed()
         } else {
             continentID = -1
             navBar.menu.findItem(R.id.recipes).isChecked = true
-            setCurrentFragment(RegionSelectNew(supportFragmentManager))
+            setCurrentFragment(RegionSelectFragment(supportFragmentManager))
         }
     }
 
@@ -96,10 +95,10 @@ class MainActivity : AppCompatActivity() {
      * Otherwise, show the user the screen to select a continent
      */
     private fun onRecipeSelected() {
-        if (continentID == -1 || supportFragmentManager.findFragmentById(R.id.fragmentContainer) is Recipe) {
-            setCurrentFragment(RegionSelectNew(supportFragmentManager))
+        if (continentID == -1 || supportFragmentManager.findFragmentById(R.id.fragmentContainer) is RecipeFragment) {
+            setCurrentFragment(RegionSelectFragment(supportFragmentManager))
         } else {
-            setCurrentFragment(Recipe(continentID))
+            setCurrentFragment(RecipeFragment(continentID))
         }
     }
 

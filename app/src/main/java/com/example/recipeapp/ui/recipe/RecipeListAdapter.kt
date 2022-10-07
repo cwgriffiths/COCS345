@@ -1,4 +1,4 @@
-package com.example.recipeapp
+package com.example.recipeapp.ui.recipe
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.RecipeRowBinding
 import com.example.recipeapp.db.entities.RecipeEnt
-import com.example.recipeapp.ui.recipe.Recipe
 
 /**
  * Adapter class for the list of available recipes
  */
-class ListAdapter(private val listener: Recipe): RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class RecipeListAdapter(private val listener: RecipeFragment): RecyclerView.Adapter<RecipeListAdapter.MyViewHolder>() {
 
     private var recipeList = emptyList<RecipeEnt>()
     private val emojis = Emojis.Companion

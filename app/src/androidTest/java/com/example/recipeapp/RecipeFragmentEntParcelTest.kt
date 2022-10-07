@@ -10,7 +10,7 @@ import org.junit.runner.RunWith
  * @author Conor Griffiths
  */
 @RunWith(AndroidJUnit4::class)
-class RecipeEntParcelTest {
+class RecipeFragmentEntParcelTest {
 
     private val recipe = RecipeEnt(
         id = 1,

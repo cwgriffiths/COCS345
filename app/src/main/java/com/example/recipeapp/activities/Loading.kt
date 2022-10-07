@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.example.recipeapp.MainActivity
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.ActivityLoadingBinding
 
@@ -36,7 +37,7 @@ class Loading : AppCompatActivity() {
              */
             override fun onAnimationEnd(p0: Animation?) {
                 Handler(Looper.getMainLooper()).postDelayed({
-                    startActivity(Intent(this@Loading,MainActivity::class.java))
+                    startActivity(Intent(this@Loading, MainActivity::class.java))
                     finish()
                 },1000)
             }

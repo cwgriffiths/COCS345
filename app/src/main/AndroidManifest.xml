@@ -34,7 +34,7 @@
             android:name=".activities.RecipeDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".MainActivity"
             android:exported="false"></activity>
     </application>
 

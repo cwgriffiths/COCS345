@@ -19,7 +19,7 @@ import com.example.recipeapp.db.entities.MealPlannerEnt
  * Add click listeners to fragment buttons to show Recipe
  * @author Ariana
  */
-class MealPlanner:Fragment(R.layout.fragment_meal_planner), View.OnClickListener {
+class MealPlannerFragment:Fragment(R.layout.fragment_meal_planner), View.OnClickListener {
 
     private lateinit var binding: FragmentMealPlannerBinding
     private lateinit var recipe: RecipeEnt

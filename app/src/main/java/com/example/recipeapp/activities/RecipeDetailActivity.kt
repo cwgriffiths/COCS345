@@ -11,7 +11,7 @@ import com.example.recipeapp.Util.Companion.stringToFormattedList
 import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.ActivityRecipeDetailBinding
 import com.example.recipeapp.db.entities.RecipeEnt
-import com.example.recipeapp.ui.mealPlanner.AddMealPlannerDialog
+import com.example.recipeapp.ui.mealPlanner.MealPlannerSelectDialog
 
 /**
  * @author Conor Griffiths
@@ -51,7 +51,7 @@ class RecipeDetailActivity : AppCompatActivity() {
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.action_meal_planner -> AddMealPlannerDialog(recipe, applicationContext).show(supportFragmentManager, "AddMealPlannerDialog")
+            R.id.action_meal_planner -> MealPlannerSelectDialog(recipe, applicationContext).show(supportFragmentManager, "AddMealPlannerDialog")
             R.id.action_shopping_list -> {
                 val intent = Intent (applicationContext, AddFromRecipe()::class.java)
                 intent.putExtra("recipe2", recipe)

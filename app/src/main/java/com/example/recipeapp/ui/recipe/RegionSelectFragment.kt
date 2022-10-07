@@ -7,16 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import com.example.recipeapp.R
-import com.example.recipeapp.activities.MainActivity
+import com.example.recipeapp.MainActivity
 import com.example.recipeapp.consts.Maps
 import com.example.recipeapp.databinding.FragmentRegionSelectNewBinding
-import com.example.recipeapp.ui.recipe.Recipe
 
 /**
  * Continent select fragment
  * @author Conor Griffiths
  */
-class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fragment(), View.OnClickListener {
+class RegionSelectFragment(private val supportFragmentManager: FragmentManager) : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentRegionSelectNewBinding
 
@@ -54,7 +53,7 @@ class RegionSelectNew(private val supportFragmentManager: FragmentManager) : Fra
     private fun viewRecipes() {
         MainActivity.setContinentID(selectedRecipes)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, Recipe(selectedRecipes))
+            .replace(R.id.fragmentContainer, RecipeFragment(selectedRecipes))
             .commit()
     }
 

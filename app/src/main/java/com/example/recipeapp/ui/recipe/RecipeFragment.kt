@@ -9,16 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.db.AppDB
-import com.example.recipeapp.ListAdapter
 import com.example.recipeapp.R
-import com.example.recipeapp.activities.MainActivity
+import com.example.recipeapp.MainActivity
 import com.example.recipeapp.activities.RecipeDetailActivity
 import com.example.recipeapp.db.entities.RecipeEnt
 
 /**
  * Fragment to show list of recipes
  */
-class Recipe(private val regionID: Int = -1):Fragment(), ListAdapter.OnItemClickListener {
+class RecipeFragment(private val regionID: Int = -1):Fragment(), RecipeListAdapter.OnItemClickListener {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var recipes : List<RecipeEnt>
@@ -33,7 +32,7 @@ class Recipe(private val regionID: Int = -1):Fragment(), ListAdapter.OnItemClick
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_recipe, container, false)
-        val adapter = ListAdapter(this)
+        val adapter = RecipeListAdapter(this)
         //Get a reference to the recycler view in the recipe fragment
         recyclerView = view.findViewById(R.id.recipeRecycler)
         //Set the layout manager for the recycler view

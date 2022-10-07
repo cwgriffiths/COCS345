@@ -8,7 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner
  * @author Conor Griffiths
  */
 @RunWith(MockitoJUnitRunner::class)
-class RecipeEntTest {
+class RecipeFragmentEntTest {
 
     private val recipe = RecipeEnt(
         id = 1,

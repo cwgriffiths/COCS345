@@ -7,7 +7,7 @@ import org.junit.Test
  * Tests for the meal planner entity
  * Does not use and database calls
  */
-class MealPlannerEntTest {
+class MealPlannerFragmentEntTest {
 
     private val mealPlanner = MealPlannerEnt(1,2,3)
 

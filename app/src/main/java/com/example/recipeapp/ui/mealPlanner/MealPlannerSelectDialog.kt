@@ -15,7 +15,7 @@ import java.lang.IllegalStateException
 /**
  * Class for adding an item to the meal planner popup
  */
-class AddMealPlannerDialog(val recipe :RecipeEnt, private val applicationContext: Context) : DialogFragment() {
+class MealPlannerSelectDialog(val recipe :RecipeEnt, private val applicationContext: Context) : DialogFragment() {
     private lateinit var db : AppDB
 
     /**
