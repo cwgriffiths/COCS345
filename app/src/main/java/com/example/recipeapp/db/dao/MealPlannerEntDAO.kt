@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface MealPlannerEntDAO {
     /**
-     * Gets the mealplanner
+     * Gets the meal planner
      * @return a list of meal planner entities
      * */
     @Query("SELECT * FROM meal_planner_table")

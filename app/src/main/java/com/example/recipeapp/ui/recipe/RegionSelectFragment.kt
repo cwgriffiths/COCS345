@@ -53,44 +53,44 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View) {
         var blurb = getString(R.string.welcome_blurb)
         var title = getString(R.string.app_name)
-        val consts = Constants()
+        val constants = Constants()
         when (v.id) {
             R.id.view_recipes -> findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
             R.id.Antarctica -> recipeViewModel.selectedRecipes = -1
             R.id.Africa -> {
-                if (recipeViewModel.selectedRecipes == consts.AFRICA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
-                recipeViewModel.selectedRecipes = consts.AFRICA
+                if (recipeViewModel.selectedRecipes == constants.AFRICA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
+                recipeViewModel.selectedRecipes = constants.AFRICA
                 title = getString(R.string.africa_title)
                 blurb = getString(R.string.africa_blurb)
             }
             R.id.Asia -> {
-                if (recipeViewModel.selectedRecipes == consts.ASIA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
-                recipeViewModel.selectedRecipes = consts.ASIA
+                if (recipeViewModel.selectedRecipes == constants.ASIA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
+                recipeViewModel.selectedRecipes = constants.ASIA
                 title = getString(R.string.asia_title)
                 blurb = getString(R.string.asia_blurb)
             }
             R.id.NorthAmerica -> {
-                if (recipeViewModel.selectedRecipes == consts.NORTH_AMERICA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
-                recipeViewModel.selectedRecipes = consts.NORTH_AMERICA
+                if (recipeViewModel.selectedRecipes == constants.NORTH_AMERICA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
+                recipeViewModel.selectedRecipes = constants.NORTH_AMERICA
                 title = getString(R.string.north_america_title)
                 blurb = getString(R.string.north_america_blurb)
             }
             R.id.SouthAmerica -> {
-                if (recipeViewModel.selectedRecipes == consts.SOUTH_AMERICA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
-                recipeViewModel.selectedRecipes = consts.SOUTH_AMERICA
+                if (recipeViewModel.selectedRecipes == constants.SOUTH_AMERICA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
+                recipeViewModel.selectedRecipes = constants.SOUTH_AMERICA
                 title = getString(R.string.south_america_title)
                 blurb = getString(R.string.south_america_blurb)
             }
             R.id.Europe -> {
-                if (recipeViewModel.selectedRecipes == consts.EUROPE) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
+                if (recipeViewModel.selectedRecipes == constants.EUROPE) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
 
-                recipeViewModel.selectedRecipes = consts.EUROPE
+                recipeViewModel.selectedRecipes = constants.EUROPE
                 title = getString(R.string.europe_title)
                 blurb = getString(R.string.europe_blurb)
             }
             R.id.Oceania -> {
-                if (recipeViewModel.selectedRecipes == consts.OCEANIA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
-                recipeViewModel.selectedRecipes = consts.OCEANIA
+                if (recipeViewModel.selectedRecipes == constants.OCEANIA) findNavController().navigate(R.id.action_regionSelectFragment_to_recipeListFragment)
+                recipeViewModel.selectedRecipes = constants.OCEANIA
                 title = getString(R.string.oceania_title)
                 blurb = getString(R.string.oceania_blurb)
             }

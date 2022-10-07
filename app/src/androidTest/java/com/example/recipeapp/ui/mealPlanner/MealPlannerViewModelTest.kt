@@ -30,7 +30,7 @@ class MealPlannerViewModelTest : TestCase(){
 
 
     /**
-     * Sets up the viewmodel for each test to use it
+     * Sets up the view model for each test to use it
      * */
     @Before
     public override fun setUp() {

@@ -63,7 +63,7 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
     fun mergeItems(newItems: List<ShoppingItemEnt>) {
         val oldItems: HashMap<String, ShoppingItemEnt> =
             items.value!!.associateBy({ it.item.lowercase() }, { it }) as HashMap
-        var items = newItems.filter { it.checked }
+        val items = newItems.filter { it.checked }
         items.forEach { newItem ->
             if (oldItems.containsKey(newItem.item.lowercase())) {
                 val item = oldItems[newItem.item.lowercase()]!!

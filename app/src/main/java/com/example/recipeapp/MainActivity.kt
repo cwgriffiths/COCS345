@@ -2,7 +2,6 @@ package com.example.recipeapp
 
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -11,10 +10,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.recipeapp.databinding.ActivityMainBinding
-import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.ui.mealPlanner.MealPlannerViewModel
 import com.example.recipeapp.ui.recipe.RecipeViewModel
 import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
  * @author Ariana,Conor,Cordell,Derek
