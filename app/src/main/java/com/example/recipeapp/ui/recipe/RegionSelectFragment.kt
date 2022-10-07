@@ -30,6 +30,7 @@ class RegionSelectFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        println("REGION SELECT FRAGMENT")
         (requireActivity() as MainActivity).supportActionBar!!.hide()
         val fragmentBinding = FragmentRegionSelectBinding.inflate(inflater)
         binding = fragmentBinding

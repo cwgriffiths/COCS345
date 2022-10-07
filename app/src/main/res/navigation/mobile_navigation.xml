@@ -1,88 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/regionSelectFragment">
-    <fragment
-        android:id="@+id/regionSelectFragment"
-        android:name="com.example.recipeapp.ui.recipe.RegionSelectFragment"
-        android:label="@string/title_recipes"
-        tools:layout="@layout/fragment_region_select">
-        <action
-            android:id="@+id/action_regionSelectFragment_to_recipeListFragment"
-            app:destination="@id/recipeListFragment"
-            app:popUpTo="@id/regionSelectFragment"
-            app:popUpToInclusive="true"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
-    </fragment>
-    <fragment
-        android:id="@+id/mealPlannerFragment"
-        android:name="com.example.recipeapp.ui.mealPlanner.MealPlannerFragment"
-        android:label="@string/title_meal_planner"
-        tools:layout="@layout/fragment_meal_planner">
-        <action
-            android:id="@+id/action_mealPlannerFragment_to_recipeFragment"
-            app:destination="@id/recipeFragment"
-            app:popUpTo="@id/mealPlannerFragment"
-            app:popUpToInclusive="true"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
-    </fragment>
-    <fragment
-        android:id="@+id/recipeFragment"
-        android:name="com.example.recipeapp.ui.recipe.RecipeFragment"
-        android:label="@string/title_recipes"
-        tools:layout="@layout/fragment_recipe">
-        <action
-            android:id="@+id/action_recipeFragment_to_addListFromRecipeFragment"
-            app:destination="@id/addListFromRecipeFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
-    </fragment>
-    <fragment
-        android:id="@+id/addListFromRecipeFragment"
-        android:name="com.example.recipeapp.ui.shoppingList.AddListFromRecipeFragment"
-        android:label="@string/title_shopping_list"
-        tools:layout="@layout/fragment_add_list_from_recipe"/>
-    <fragment
-        android:id="@+id/recipeListFragment"
-        android:name="com.example.recipeapp.ui.recipe.RecipeListFragment"
-        android:label="RecipeListFragment"
-        tools:layout="@layout/fragment_recipe_list">
-        <action
-            android:id="@+id/action_recipeListFragment_to_recipeFragment"
-            app:destination="@id/recipeFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
-    </fragment>
-    <fragment
-        android:id="@+id/addShoppingItemFragment"
-        android:name="com.example.recipeapp.ui.shoppingList.AddShoppingItemFragment"
-        android:label="@string/title_shopping_list"
-        tools:layout="@layout/fragment_add_shopping_item"/>
-    <fragment
-        android:id="@+id/shoppingListFragment"
-        android:name="com.example.recipeapp.ui.shoppingList.ShoppingListFragment"
-        android:label="@string/title_shopping_list"
-        tools:layout="@layout/fragment_shopping_list">
-        <action
-            android:id="@+id/action_shoppingListFragment_to_addShoppingItemFragment"
-            app:destination="@id/addShoppingItemFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@id/shoppingListFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+    app:startDestination="@+id/recipe_navigation">
+    <include app:graph="@navigation/recipe_navigation" />
+    <include app:graph="@navigation/shopping_list_navigation" />
+    <include app:graph="@navigation/meal_planner_navigation" />
 </navigation>

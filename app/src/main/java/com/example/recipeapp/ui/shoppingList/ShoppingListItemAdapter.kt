@@ -28,7 +28,6 @@ class ShoppingListItemAdapter(
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
         init {
             view.findViewById<CheckBox>(R.id.s_got).setOnClickListener(this)
-            println(shoppingList)
         }
 
         val name: TextView = view.findViewById(R.id.slist_name)

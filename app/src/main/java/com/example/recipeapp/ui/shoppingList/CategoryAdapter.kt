@@ -23,7 +23,6 @@ class CategoryAdapter(
     private val vm: ShoppingListViewModel
 ) : RecyclerView.Adapter<CategoryAdapter.MyViewHolder>() {
     private val items = Util.mapByProp(itemsIn)
-
     /**
      * Maps items in the recipe row binding to variables in the holder
      * @param itemView the binding of each shopping item

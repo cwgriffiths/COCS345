@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentAddShoppingItemBinding
 import com.example.recipeapp.db.entities.ShoppingItemEnt
@@ -38,11 +39,11 @@ class AddShoppingItemFragment : Fragment() {
     }
 
     private fun addItem() {
-        val name = view?.findViewById<EditText>(R.id.name)?.text.toString()
+        val name = if(view?.findViewById<EditText>(R.id.name)?.text.toString() == "") "No Name" else view?.findViewById<EditText>(R.id.name)?.text.toString()
         val category = view?.findViewById<Spinner>(R.id.category)?.selectedItem.toString()
         val metric = view?.findViewById<Spinner>(R.id.metric)?.selectedItem.toString()
-        val amount = view?.findViewById<EditText>(R.id.amount)?.text.toString()
-        val ent = ShoppingItemEnt(0, name, amount.toDouble(), metric, true, category)
+        val amount = view?.findViewById<EditText>(R.id.amount)?.text.toString().toDoubleOrNull() ?: 0.0
+        val ent = ShoppingItemEnt(0, name, amount, metric, true, category)
         shoppingListViewModel.mergeItems(listOf(ent))
 //        shoppingListViewModel.addItem(ent)
     }

@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationView = binding.bottomNav
         val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.nav_host_container) as NavHostFragment
         navController = navHostFragment.findNavController()
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        shoppingListViewModel.items.observeForever { println() }
+        shoppingListViewModel.items.observeForever {}
         mealPlannerViewModel.items.observeForever {}
         recipeViewModel.getRecipes()
 
