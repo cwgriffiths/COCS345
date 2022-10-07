@@ -1,7 +1,5 @@
 package com.example.recipeapp.ui.recipe
 
-import android.app.Application
-import android.os.Bundle
 import androidx.lifecycle.*
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.CreationExtras
@@ -9,31 +7,63 @@ import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.repos.RecipeRepo
 
-
+/**
+ * recipe view model to store all recipe data
+ * @author Ariana,Conor,Cordell,Derek
+ * @param repo the repo for the recipe data access
+ * */
 class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
-    private var recipes : List<RecipeEnt> = repo.getRecipes()
-    private var curRecipe : RecipeEnt? = null
+    private var recipes: List<RecipeEnt> = repo.getRecipes()
+    private var curRecipe: RecipeEnt? = null
     var selectedRecipes = -1
 
-    fun setCurRecipe(recipe : RecipeEnt){
+    /**
+     * Sets the current recipe property
+     * @param recipe the recipe to set
+     * */
+    fun setCurRecipe(recipe: RecipeEnt) {
         this.curRecipe = recipe
     }
-    fun getCurRecipe() : RecipeEnt?{
+
+    /**
+     * Inserts a recipe into the db
+     * @param recipe the recipe to insert
+     * */
+    fun insertRecipe(recipe: RecipeEnt){
+        repo.insertRecipe(recipe)
+    }
+
+    /**
+     * Returns current recipe
+     * @return the current recipe
+     * */
+    fun getCurRecipe(): RecipeEnt? {
         return curRecipe
     }
-    fun getRecipes(): List<RecipeEnt>{
+
+    /**
+     * Gets a list of recipes
+     * @return list of recipes
+     * */
+    fun getRecipes(): List<RecipeEnt> {
         setRecipes()
         return recipes
     }
-    fun getRecipeById(id : Int) : RecipeEnt{
-        return repo.getRecipeById(id);
+
+    /**
+     * Gets a recipe based off id
+     * @param id of the recipe
+     * @return recipe
+     * */
+    fun getRecipeById(id: Int): RecipeEnt {
+        return repo.getRecipeById(id)
     }
 
-    private fun setRecipes(){
-        if (selectedRecipes == -1){
-            recipes = repo.getRecipes()
+    private fun setRecipes() {
+        recipes = if (selectedRecipes == -1) {
+            repo.getRecipes()
         } else {
-            recipes = repo.getRecipeByCountry(selectedRecipes)
+            repo.getRecipeByCountry(selectedRecipes)
         }
     }
 
@@ -52,7 +82,7 @@ class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
                 val repo = RecipeRepo(AppDB.getInstance(application.applicationContext).recipeDAO())
 
                 return RecipeViewModel(
-                    (repo as RecipeRepo)
+                    (repo)
                 ) as T
             }
         }
