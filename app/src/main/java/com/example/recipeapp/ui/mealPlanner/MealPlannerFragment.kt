@@ -32,7 +32,6 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        println("MEAL PLANNER FRAGMENT")
         val fragmentBinding = FragmentMealPlannerBinding.inflate(inflater)
         binding = fragmentBinding
         buttonList.clear()

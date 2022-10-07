@@ -1,11 +1,15 @@
 package com.example.recipeapp.ui.recipe
 
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.*
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.CreationExtras
+import androidx.navigation.fragment.findNavController
+import com.example.recipeapp.R
 import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.db.repos.RecipeRepo
+import com.example.recipeapp.ui.mealPlanner.MealPlannerSelectDialog
 
 /**
  * recipe view model to store all recipe data
@@ -65,6 +69,12 @@ class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
         } else {
             repo.getRecipeByCountry(selectedRecipes)
         }
+    }
+
+    fun addMealPlanner(childFragmentManager: FragmentManager) {
+        MealPlannerSelectDialog().show(
+            childFragmentManager, MealPlannerSelectDialog.TAG
+        )
     }
 
     companion object {

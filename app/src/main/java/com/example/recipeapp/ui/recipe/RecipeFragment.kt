@@ -1,5 +1,6 @@
 package com.example.recipeapp.ui.recipe
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -41,6 +42,25 @@ class RecipeFragment : Fragment() {
         binding.ingredientsTxt.text = stringToFormattedList(recipe.ingredients)
         binding.methodTxt.text = stringToFormattedList(recipe.method)
         binding.servesTxt.text = "Serves ${recipe.servings}"
+
+        binding.menuButton.setOnClickListener {
+            //show floating action menu buttons
+            if(binding.addShoppingList.visibility == View.GONE){
+                binding.addShoppingList.visibility = View.VISIBLE
+                binding.addMealPlan.visibility = View.VISIBLE
+            }else{
+                binding.addShoppingList.visibility = View.GONE
+                binding.addMealPlan.visibility = View.GONE
+            }
+
+        }
+        binding.addShoppingList.setOnClickListener {
+            findNavController().navigate(R.id.action_recipeFragment_to_addListFromRecipeFragment)
+        }
+        binding.addMealPlan.setOnClickListener {
+            recipeViewModel.addMealPlanner(childFragmentManager)
+        }
+
         return fragmentBinding.root
     }
 
@@ -51,36 +71,6 @@ class RecipeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-    }
-
-    /**
-     * Inflates the menu with the recipe_menu layout
-     * @param menu the menu in the toolbar
-     * @param inflater the inflater object
-     * */
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.recipe_menu, menu)
-    }
-
-    /**
-     * Creating click handler for each toolbar menu item
-     * @param item the menu option that was selected
-     * @return a boolean
-     * */
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.addToList -> {
-                findNavController().navigate(R.id.action_recipeFragment_to_addListFromRecipeFragment)
-                return true
-            }
-            R.id.addToMealPlanner -> {
-                MealPlannerSelectDialog().show(
-                    childFragmentManager, MealPlannerSelectDialog.TAG
-                )
-                return true
-            }
-        }
-        return false
     }
 
 }
