@@ -61,42 +61,27 @@ class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
      * @param newItems the new items to merge into the shopping list
      * */
     fun mergeItems(newItems: List<ShoppingItemEnt>) {
-        val oldItems: HashMap<String,ShoppingItemEnt> = items.value!!.associateBy({it.item.lowercase()},{it}) as HashMap
-        newItems.forEach { newItem ->
-            if (newItem.checked){
-                if (oldItems.containsKey(newItem.item.lowercase())){
-                    val item = oldItems[newItem.item.lowercase()]!!
-                    item.amount += newItem.amount
-                    updateItem(item)
-                } else {
-                    newItem.checked = false
-                    when (newItem.cat.lowercase().trim()) {
-                        "produce" -> {
-                            newItem.cat = "Produce \uD83C\uDF4E"
-                        }
-                        "meats&seafood" -> {
-                            newItem.cat = "Meats & Seafood \uD83C\uDF57"
-                        }
-                        "baking goods" -> {
-                            newItem.cat = "Baking Goods \uD83E\uDDC8"
-                        }
-                        "frozen" -> {
-                            newItem.cat = "Frozen \uD83C\uDF66"
-                        }
-                        "pantry" -> {
-                            newItem.cat = "Pantry \uD83C\uDF6B"
-                        }
-                        "bakery" -> {
-                            newItem.cat = "Bakery \uD83C\uDF5E"
-                        }
-                        "dairy" -> {
-                            newItem.cat = "Dairy \uD83E\uDD5B"
-                        }
-                    }
-                    addItem(newItem)
+        val oldItems: HashMap<String, ShoppingItemEnt> =
+            items.value!!.associateBy({ it.item.lowercase() }, { it }) as HashMap
+        var items = newItems.filter { it.checked }
+        items.forEach { newItem ->
+            if (oldItems.containsKey(newItem.item.lowercase())) {
+                val item = oldItems[newItem.item.lowercase()]!!
+                item.amount += newItem.amount
+                updateItem(item)
+            } else {
+                newItem.checked = false
+                when (newItem.cat.lowercase().trim()) {
+                    "produce" -> newItem.cat = "Produce \uD83C\uDF4E"
+                    "meats&seafood" -> newItem.cat = "Meats & Seafood \uD83C\uDF57"
+                    "baking goods" -> newItem.cat = "Baking Goods \uD83E\uDDC8"
+                    "frozen" -> newItem.cat = "Frozen \uD83C\uDF66"
+                    "pantry" -> newItem.cat = "Pantry \uD83C\uDF6B"
+                    "bakery" -> newItem.cat = "Bakery \uD83C\uDF5E"
+                    "dairy" -> newItem.cat = "Dairy \uD83E\uDD5B"
                 }
+                addItem(newItem)
             }
-
         }
     }
 
