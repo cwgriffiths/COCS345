@@ -35,7 +35,6 @@ class ShoppingListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        println("SHOPPING LIST FRAGMENT")
         val fragmentBinding = FragmentShoppingListBinding.inflate(inflater)
         binding = fragmentBinding
         recyclerView = binding.shoppingListRecycle

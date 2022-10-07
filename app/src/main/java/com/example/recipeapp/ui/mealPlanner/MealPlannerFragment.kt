@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentMealPlannerBinding
+import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.ui.recipe.RecipeViewModel
 
 /**
@@ -46,10 +47,18 @@ class MealPlannerFragment : Fragment(), View.OnClickListener {
         mealPlannerViewModel.items.observe(viewLifecycleOwner) {
             mealPlannerViewModel.weekRecipes.clear()
             for (i in 0 until buttonList.size) {
-                buttonList[i].setOnClickListener(this)
                 val recipe = recipeViewModel.getRecipeById(it[i].dinner_recipe)
-                mealPlannerViewModel.weekRecipes.add(recipe)
-                buttonList[i].text = recipe.name
+                if (recipe != null){
+                    buttonList[i].setOnClickListener(this)
+                    mealPlannerViewModel.weekRecipes.add(recipe)
+                    buttonList[i].text = recipe.name
+                } else {
+                    buttonList[i].setOnClickListener { findNavController().navigate(R.id.action_mealPlannerFragment_to_recipeListFragment) }
+                    mealPlannerViewModel.weekRecipes.add(RecipeEnt(0,"Blank","Blank",1,"Blank","Blank",4,"Blank","Blank"))
+                    buttonList[i].text = getString(R.string.no_recipe)
+                }
+
+
             }
         }
         return fragmentBinding.root

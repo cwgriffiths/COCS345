@@ -4,7 +4,7 @@
     <string name="title_meal_planner">Meal Planner</string>
     <string name="title_shopping_list">Shopping List</string>
     <!-- TODO: Remove or change this placeholder text -->
-
+    <string name="no_recipe">No Recipe Selected</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="add_shopping_item">Add Shopping Item</string>
