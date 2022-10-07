@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentShoppingListBinding
-import com.example.recipeapp.db.entities.ShoppingItemEnt
 import kotlinx.coroutines.launch
 
 /**

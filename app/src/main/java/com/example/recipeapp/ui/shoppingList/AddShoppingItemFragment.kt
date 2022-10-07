@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentAddShoppingItemBinding
 import com.example.recipeapp.db.entities.ShoppingItemEnt

@@ -9,10 +9,8 @@ import com.example.recipeapp.db.AppDB
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 import com.example.recipeapp.db.repos.ShoppingItemRepo
 import com.example.recipeapp.getOrAwaitValue
-import junit.framework.TestCase
 import org.junit.Before
 import org.junit.Rule
-
 import org.junit.Test
 import org.junit.runner.RunWith
 
