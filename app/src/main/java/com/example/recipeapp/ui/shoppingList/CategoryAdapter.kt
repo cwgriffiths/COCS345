@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,7 +55,7 @@ class CategoryAdapter(
                     actionState: Int
                 ) {
                     if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
-                        viewHolder?.itemView?.setBackgroundColor(Color.parseColor("#ff5e5e"))
+                        viewHolder?.itemView?.findViewById<LinearLayout>(R.id.shopping_list_item_root)?.setBackgroundColor(Color.argb(1.3f,1f,0f,0f))
                     }
                 }
 
@@ -65,7 +66,7 @@ class CategoryAdapter(
                     recyclerView: RecyclerView,
                     viewHolder: RecyclerView.ViewHolder
                 ) {
-                    viewHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"))
+                    viewHolder.itemView.findViewById<LinearLayout>(R.id.shopping_list_item_root)?.setBackgroundResource(R.drawable.shopping_item_corners)
                     super.clearView(recyclerView, viewHolder)
                 }
             }
