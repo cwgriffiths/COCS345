@@ -31,7 +31,7 @@ class ShoppingListItemAdapter(
             view.findViewById<CheckBox>(R.id.s_got).setOnClickListener(this)
         }
 
-        val name: TextView = view.findViewById(R.id.slist_name)
+//        val name: TextView = view.findViewById(R.id.slist_name)
         val metric: TextView = view.findViewById(R.id.slist_amount_metric)
         val checkbox: CheckBox = view.findViewById(R.id.s_got)
         /**
@@ -86,8 +86,9 @@ class ShoppingListItemAdapter(
      * */
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = shoppingList[position]
-        holder.name.text = Util.titleCase(item.item)
+//        holder.name.text = Util.titleCase(item.item)
         holder.checkbox.isChecked = item.checked
+        holder.checkbox.text = Util.titleCase(item.item)
         var amount = item.amount.toString()
         if (item.amount == floor(item.amount)) {
             amount = item.amount.toInt().toString()
