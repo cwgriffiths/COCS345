@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
 //                }
 //            }
 //        }
-//        println(nameList)
+//        println(nameList.sorted())
 //        println(metricList)
 //        println(categoryList)
 //    }
