@@ -7,6 +7,7 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.R
+import com.example.recipeapp.Util
 import com.example.recipeapp.db.entities.ShoppingItemEnt
 import kotlin.math.floor
 
@@ -85,7 +86,7 @@ class ShoppingListItemAdapter(
      * */
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = shoppingList[position]
-        holder.name.text = item.item
+        holder.name.text = Util.titleCase(item.item)
         holder.checkbox.isChecked = item.checked
         var amount = item.amount.toString()
         if (item.amount == floor(item.amount)) {

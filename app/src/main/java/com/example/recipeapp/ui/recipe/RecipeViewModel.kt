@@ -63,6 +63,9 @@ class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
         return repo.getRecipeById(id)
     }
 
+    /**
+     * Sets the recipes property
+     */
     private fun setRecipes() {
         recipes = if (selectedRecipes == -1) {
             repo.getRecipes()
@@ -71,6 +74,10 @@ class RecipeViewModel(private val repo: RecipeRepo) : ViewModel() {
         }
     }
 
+    /**
+     * Adds a recipe to the meal planner
+     * @param childFragmentManager the fragment manager
+     */
     fun addMealPlanner(childFragmentManager: FragmentManager) {
         MealPlannerSelectDialog().show(
             childFragmentManager, MealPlannerSelectDialog.TAG
