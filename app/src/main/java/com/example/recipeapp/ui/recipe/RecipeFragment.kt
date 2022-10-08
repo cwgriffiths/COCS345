@@ -50,9 +50,11 @@ class RecipeFragment : Fragment() {
             if(binding.addShoppingList.visibility == View.GONE){
                 binding.addShoppingList.visibility = View.VISIBLE
                 binding.addMealPlan.visibility = View.VISIBLE
+                binding.menuButton.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
             }else{
                 binding.addShoppingList.visibility = View.GONE
                 binding.addMealPlan.visibility = View.GONE
+                binding.menuButton.setImageResource(R.drawable.ic_baseline_menu_24)
             }
 
         }
