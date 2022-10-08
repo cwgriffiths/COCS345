@@ -11,10 +11,12 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.recipeapp.databinding.ActivityMainBinding
+import com.example.recipeapp.db.entities.RecipeEnt
 import com.example.recipeapp.ui.mealPlanner.MealPlannerViewModel
 import com.example.recipeapp.ui.recipe.RecipeViewModel
 import com.example.recipeapp.ui.shoppingList.ShoppingListViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.lang.Exception
 
 /**
  * @author Ariana,Conor,Cordell,Derek
@@ -82,6 +84,12 @@ class MainActivity : AppCompatActivity() {
 //        val metricList = mutableListOf<String>()
 //        val nameList = mutableListOf<String>()
 //        recipes.forEach {
+//            try {
+//                Util.ingredientsToList(it.recipeShopping)
+//            } catch (e : Exception){
+//                println(it.name)
+//            }
+//
 //            val ingredientList = it.recipeShopping.split(",")
 //            if (ingredientList.size % 4 != 0) {
 //                println("Recipe id " + it.name)

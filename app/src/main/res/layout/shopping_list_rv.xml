@@ -32,16 +32,19 @@
             android:button="@drawable/custom_check_box"
             android:clickable="true"
             android:focusable="true"
+            android:text="TextView"
+            android:layout_marginLeft="15dp"
+            android:paddingLeft="8dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
 
-        <TextView
-            android:id="@+id/slist_name"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="TextView"
-            android:textColor="@color/black" />
+<!--        <TextView-->
+<!--            android:id="@+id/slist_name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:text="TextView"-->
+<!--            android:textColor="@color/black" />-->
 
         <TextView
             android:id="@+id/slist_amount_metric"
@@ -52,43 +55,4 @@
             android:text="TextView"
             android:textColor="@color/black" />
     </LinearLayout>
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/shopping_list_item_root"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:padding="10dp"-->
-    <!--        android:orientation="vertical"-->
-    <!--        android:background="@drawable/shopping_item_corners"-->
-    <!--        >-->
-    <!--        <TextView-->
-    <!--            android:id="@+id/slist_name"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:textColor="@color/black"-->
-    <!--            android:text="TextView" />-->
-
-    <!--        <LinearLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="35dp"-->
-    <!--            android:orientation="horizontal"-->
-    <!--            >-->
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/slist_amount_metric"-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:text="TextView" />-->
-
-    <!--            <CheckBox-->
-    <!--                android:id="@+id/s_got"-->
-    <!--                android:layout_width="0dp"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_weight="1"-->
-    <!--                android:layoutDirection="rtl"-->
-    <!--                android:text="Check"-->
-    <!--                android:textAlignment="textEnd"-->
-    <!--                tools:ignore="TouchTargetSizeCheck" />-->
-    <!--        </LinearLayout>-->
-    <!--    </LinearLayout>-->
 </androidx.cardview.widget.CardView>

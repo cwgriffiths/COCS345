@@ -44,8 +44,7 @@ class ShoppingListFragment : Fragment() {
             recyclerView.adapter = adapter
             if(it.isEmpty()){
                 binding.Empty.visibility = View.VISIBLE
-            }
-            else{
+            } else{
                 binding.Empty.visibility = View.GONE
             }
         }
