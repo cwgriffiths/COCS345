@@ -2,21 +2,39 @@
 
 #Scrap Kitchen
 
-In the current beta version the working features are
+After completing the beta user testing we where given a few ideas on what we could change given the 
+feedback that we where given:
 
--   recipe filtering by continent
--   shopping list
-    - Items can be added via the shopping list or by adding recipe ingredients via a recipe
--   meal planner 
-    - Meals can be added to the meal planner via a recipe
--   Navigation scheme
+- One major feedback was that is was hard to find out where the button was to actually add the 
+  recipes to the meal planner and your shopping list, the three dotted add button was the wrong design choice
 
-What our beta release has improved: 
-- Users can now adjust the meal planner by adding meals to particular days
-- Users can now add items from a recipe to the shopping list
-- The design has been upgraded - most notably, our home page with continent filtering
+We have changed this to a option box in the bottom right corner which is easy to see and once opened the two option expand to 
+allow you to ether add a recipe to your weekly meal planner or add to shopping list. 
 
-The design of the app is still rough and this is something we will be focussing on prior to the final release
+- We where asked to implement some way of viewing all the recipes from the main screen, the current way to do
+  so is by selecting Antarctica and view the recipes from there. 
+
+Researching this we find this quit hard to figure out so out solution was to add a description on how to navigate the app
+main screen, with this we describe how by clicking on the Antarctica continent you can access all the recipes. 
+
+There where a few design feature's that where recommended to update: 
+- rounding off the button corners to make it look more appealing 
+
+In the shopping list feature we have rounded off all shopping list items that you add to the list as well as changing the colour 
+of the selected item when ticking it off.
+
+There where a few suggestion for the app that unfortunately where just to much for as to be able to expand on since most of
+them involved updating the entire data base which we decided as a group we wouldn't touch once the beta was released so we
+wouldn't add any more bugs into the software.
+Things like adding photos for each recipe instead of the country emoji would of been a nice touch and adding nutritional 
+information into every recipe.
+
+The last major change we did was change the app from the MVC architecture to MVVM which we believed was a better choice for our app
+
+with respect to the copyright of all the recipes, there are many source that say the copy right of recipes are only so when
+the recipe itself is completely original eg "from my grandma" but the idea itself can not be. All these recipes have been 
+slightly altered from the various websites they where gained from including some methods so in fact can even be seen as original.
+
 
 App has been tested on a google pixel 5 using gesture navigation
 
