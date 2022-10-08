@@ -14,10 +14,6 @@ import com.example.recipeapp.db.repos.ShoppingItemRepo
 class ShoppingListViewModel(private val repo: ShoppingItemRepo) : ViewModel() {
     var items: LiveData<List<ShoppingItemEnt>> = repo.getShoppingList().asLiveData()
 
-    fun isEmpty(): Boolean {
-        return items.value?.isEmpty() ?: true
-    }
-
     /**
      * adds an item to the db
      * @param item shopping item to insert
