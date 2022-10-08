@@ -1,17 +1,16 @@
 package com.example.recipeapp.ui.recipe
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.recipeapp.MainActivity
 import com.example.recipeapp.R
 import com.example.recipeapp.Util.Companion.stringToFormattedList
 import com.example.recipeapp.consts.Emojis
 import com.example.recipeapp.databinding.FragmentRecipeBinding
 import com.example.recipeapp.db.entities.RecipeEnt
-import com.example.recipeapp.ui.mealPlanner.MealPlannerSelectDialog
 
 /**
  * Recipe fragment for any recipe, sets up the binding
@@ -35,6 +34,9 @@ class RecipeFragment : Fragment() {
     ): View {
         recipe = recipeViewModel.getCurRecipe()!!
         val fragmentBinding = FragmentRecipeBinding.inflate(inflater)
+
+        (activity as MainActivity).supportActionBar?.title = recipe.name
+
         binding = fragmentBinding
         binding.flag.text = emojis.getEmoji(recipe.country)
         binding.titleTxt.text = recipe.name.replace("(", "\n(")
