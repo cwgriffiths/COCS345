@@ -2,8 +2,7 @@
 
 #Scrap Kitchen
 
-After completing the beta user testing we where given a few ideas on what we could change given the 
-feedback that we where given:
+After completing the beta user testing, this feedback was generally very positive but we where given a few ideas on what we could change:
 
 - One major feedback was that is was hard to find out where the button was to actually add the 
   recipes to the meal planner and your shopping list, the three dotted add button was the wrong design choice
