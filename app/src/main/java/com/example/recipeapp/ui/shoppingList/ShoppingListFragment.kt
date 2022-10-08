@@ -1,6 +1,7 @@
 package com.example.recipeapp.ui.shoppingList
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,8 +41,10 @@ class ShoppingListFragment : Fragment() {
         recyclerView = binding.shoppingListRecycle
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         shoppingListViewModel.items.observe(viewLifecycleOwner) {
+            val recyclerViewState : Parcelable = recyclerView.layoutManager!!.onSaveInstanceState()!!
             adapter = CategoryAdapter(it, shoppingListViewModel)
             recyclerView.adapter = adapter
+            recyclerView.layoutManager!!.onRestoreInstanceState(recyclerViewState)
             if(it.isEmpty()){
                 binding.Empty.visibility = View.VISIBLE
             } else{
