@@ -42,10 +42,10 @@ class ShoppingListFragment : Fragment() {
         shoppingListViewModel.items.observe(viewLifecycleOwner) {
             adapter = CategoryAdapter(it, shoppingListViewModel)
             recyclerView.adapter = adapter
-            if(it.isEmpty()){
+            if(it.isEmpty() && binding.Empty.visibility == View.GONE){
                 binding.Empty.visibility = View.VISIBLE
             }
-            else{
+            else if(binding.Empty.visibility == View.VISIBLE){
                 binding.Empty.visibility = View.GONE
             }
         }

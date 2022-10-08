@@ -24,18 +24,20 @@ In the shopping list feature we have rounded off all shopping list items that yo
 of the selected item when ticking it off.
 
 There where a few suggestion for the app that unfortunately where just to much for as to be able to expand on since most of
-them involved updating the entire data base which we decided as a group we wouldn't touch once the beta was released so we
-wouldn't add any more bugs into the software.
+them involved updating the structure of the database which we decided as a group we wouldn't touch once the beta was released so we
+wouldn't add any more bugs into the software. These changes would have also required us to change our database builder script
+which could have introduced further issues. If we had more time adding these quality of life features to the app would likely be our
+focus.
 Things like adding photos for each recipe instead of the country emoji would of been a nice touch and adding nutritional 
-information into every recipe.
+information into every recipe or a vegetarian mode. 
 
-The last major change we did was change the app from the MVC architecture to MVVM which we believed was a better choice for our app
+The last major change was implementing the MVVM design pattern which was a major refactor project ongoing since before the Beta to
+enable easier unit testing and to make the code more readable and easier to understand. While our code coverage is not as high as
+we would like it as it hasn't been a priority since the beta, our current app design would make getting this higher very simple.
 
 with respect to the copyright of all the recipes, there are many source that say the copy right of recipes are only so when
 the recipe itself is completely original eg "from my grandma" but the idea itself can not be. All these recipes have been 
 slightly altered from the various websites they where gained from including some methods so in fact can even be seen as original.
 
+App has been tested on a google pixel 5 using gesture navigation functional in both night mode and day mode
 
-App has been tested on a google pixel 5 using gesture navigation
-
-https://codecov.io/gh/CDonalO/Scrap-Kitchen-COSC345/branch/main/graphs/icicle.svg?token=7B8DTHOTGY
