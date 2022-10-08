@@ -1,8 +1,11 @@
 package com.example.recipeapp.ui.shoppingList
 
 import android.graphics.Color
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recipeapp.R
 
 /**
  * Class to allow swipe actions
@@ -19,14 +22,5 @@ abstract class SwipeGesture : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.
         target: RecyclerView.ViewHolder,
     ): Boolean {
         return false
-    }
-
-    /**
-     * handles what happens when you swipe a view
-     * */
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-        if (direction == ItemTouchHelper.LEFT) {
-            viewHolder.itemView.setBackgroundColor(Color.RED)
-        }
     }
 }

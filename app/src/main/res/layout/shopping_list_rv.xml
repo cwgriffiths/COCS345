@@ -5,28 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:cardCornerRadius="10dp"
     app:contentPadding="0dp"
     app:barrierMargin="0dp"
-    android:layout_marginTop="3dp"
-    android:layout_marginBottom="3dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="5dp"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    app:cardElevation="8dp"
+    app:cardElevation="0dp"
     app:cardMaxElevation="10dp"
-    app:cardPreventCornerOverlap="true"
+    app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="false">
 
 
     <LinearLayout
+        android:id="@+id/shopping_list_item_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
         android:orientation="vertical"
+        android:background="@drawable/shopping_item_corners"
         >
         <TextView
             android:id="@+id/slist_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="TextView" />
 
         <LinearLayout
@@ -39,6 +44,7 @@
                 android:id="@+id/slist_amount_metric"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="TextView" />
 
             <CheckBox
