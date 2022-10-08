@@ -1,6 +1,7 @@
 package com.example.recipeapp
 
 import android.os.Bundle
+import android.os.Debug
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        shoppingListViewModel.items.observeForever {}
+        shoppingListViewModel.items.observeForever{}
         mealPlannerViewModel.items.observeForever {}
         recipeViewModel.getRecipes()
 

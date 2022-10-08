@@ -40,6 +40,7 @@
         <item>Pantry &#127851;</item>
         <item>Bakery &#127838;</item>
         <item>Dairy &#129371;</item>
+        <item>Misc &#129531;</item>
     </string-array>
 
     <string name="north_america_title">"North America"</string>
